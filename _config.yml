@@ -1,0 +1,27 @@
+keywords: Github，前端，互联网，博客，nodejs，vue，jekyll
+description: 互联网技术大杂烩
+title: Limbory-个人博客
+baseurl: ''
+
+source: ./public
+destination: ./_site
+
+navigation:
+  collections: 站点收藏
+  test: 测试分页
+  # about: 关于
+
+encoding: UTF-8
+exclude: [
+  '.git',
+]
+
+kramdown:
+  input: GFM
+permalink: pretty
+
+date_format: "%Y-%m-%d"
+
+# gems: ['jekyll-paginate']
+# paginate: 10
+# paginate_path: "page:num"

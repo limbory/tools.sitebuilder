@@ -1,0 +1,49 @@
+doctype html
+| <!--[if lt IE 7 ]><html class="ie ie6" lang="zh-CN"> <![endif]-->
+| <!--[if IE 7 ]><html class="ie ie7" lang="zh-CN"> <![endif]-->
+| <!--[if IE 8 ]><html class="ie ie8" lang="zh-CN"> <![endif]-->
+| <!--[if (gte IE 9)|!(IE)]><!--><html lang="zh-CN"><!--<![endif]-->
+head
+  //- 浏览器适配
+  meta(charset='utf-8')
+  meta(name='renderer', content='webkit')
+  meta(http-equiv='X-UA-Compatible', content='IE=Edge, chrome=1')
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+  
+  //- 站点描述
+  title {% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}
+  meta(name='keywords', content='{{ site.keywords }}')
+  meta(name='description', content='{{ site.description }}')
+  link(rel='shortcut icon', href='{{ site.baseurl }}/assets/images/favicon.ico')
+  
+  //- 样式引入与兼容性调整
+  link(rel='stylesheet', href='{{ site.baseurl }}/dist/css/custom.css')
+  | <!--[if lte IE 8]>
+  script(src='{{ site.baseurl }}/assets/js/html5-shiv.min.js')
+  script(src='{{ site.baseurl }}/assets/js/respond.min.js')
+  | <![endif]-->
+  script.
+    window.BASE_URL = '{{ site.baseurl }}';
+
+body
+  main
+    header.site-header
+      h1.site-title
+        a(href='{{ site.baseurl }}/') {{ site.title }}
+
+      nav.site-nav
+        a(href='//github.com/limbory') Github
+        | {% for msg in site.navigation %}
+        | {% capture joinStr %}{{ site.baseurl }}/{{ msg[0] }}/{% endcapture %}
+        
+        a(
+          class='{% if page.url == joinStr %}active{% endif %}',
+          href='{{ joinStr }}'
+        ) {{ msg[1] }}
+
+        | {% endfor %}
+
+    | {{ content }}
+
+  script(src='{{ site.baseurl }}/dist/js/custom.js')
+| </html>
