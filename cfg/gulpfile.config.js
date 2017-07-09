@@ -25,6 +25,6 @@ module.exports = {
     dist: DIST_DIR + 'js/',
   },
   watch: {
-    dir: ROOT_DIR + '_site/**/*'
+    dir: ROOT_DIR + 'public/_site/**/*'
   }
 };

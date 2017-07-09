@@ -11,7 +11,7 @@ module.exports = function() {
   });
 
   cleanDir.push(config.dist);
-  cleanDir.push(config.html.dist + '*.*');
+  cleanDir.push(config.html.dist + '*.html');
   cleanDir.push(config.watch.dir.replace(/\/[^\/]+\/[^\/]+$/, ''));
 
   return gulp.src(cleanDir, {
