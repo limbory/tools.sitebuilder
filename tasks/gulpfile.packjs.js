@@ -12,17 +12,16 @@ var
   named = require('vinyl-named'),
 
   strHandle = function(obj) {
-    var
-      his = (obj.history || [])[0],
-      base = obj.base
-    ;
-    return his.slice(base.length).replace(/\.[^\.]+$/, '');
+    var his = (obj.history || [])[0];
+    return his.replace(/\.[^\.]+$/, '')
+      .replace(/(^[\s\S]+client[\\\/]+js[\\\/]+controllers[\\\/]+)([\s\S]+)/, '$2');
+
   };
 
-module.exports = function() {
+module.exports = function(path) {
   gutil.log('********************开始执行jshint任务********************');
 
-  return gulp.src(config.js.src.replace(/\/[^\/]+\/[^\/]+$/, '/controllers/**/*.js'))
+  return gulp.src(typeof(path) === 'string' ? path : config.js.src.replace(/\/[^\/]+\/[^\/]+$/, '/controllers/**/*.js'))
     .pipe(jshint(jshintCfg))
     .pipe(jshint.reporter('default'))
     .on('end', function() {
@@ -32,5 +31,8 @@ module.exports = function() {
     .pipe(named(function(file) {
       return strHandle(file);
     })).pipe(webpack(webpackCfg))
-    .pipe(gulp.dest(config.js.dist));
+    .pipe(gulp.dest(config.js.dist))
+    .on('end', function() {
+      gutil.log('...task done!');
+    });
 }

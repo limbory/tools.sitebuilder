@@ -62,5 +62,6 @@
 * [gulp.js - 基于流的自动化构建工具。 | gulp.js 中文网](http://www.gulpjs.com.cn/)
 * [npm packages search](https://www.npmjs.com/)
 * [Browsersync - Time-saving synchronised browser testing](https://browsersync.io/)
+* [gulp-sequence](https://www.npmjs.com/package/gulp-sequence)
 
 <div style="height: 100px;"></div>
