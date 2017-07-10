@@ -14,7 +14,9 @@ var
   refresh = require(TASK_DIR + 'gulpfile.refresh'),
   jade2html = require(TASK_DIR + 'gulpfile.jade2html'),
   styl2css = require(TASK_DIR + 'gulpfile.styl2css'),
-  packjs = require(TASK_DIR + 'gulpfile.packjs');
+  packjs = require(TASK_DIR + 'gulpfile.packjs'),
+
+  html2jade = require(TASK_DIR + 'gulpfile.html2jade');
 
 
 gulp.task('j:clean', clean);
@@ -42,3 +44,5 @@ gulp.task('j:watch', function() {
   gulp.watch(config.js.src, ['j:js']);
 
 });
+
+gulp.task('j:html2jade', html2jade);

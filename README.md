@@ -31,6 +31,8 @@
  gulp x:js    # 构建js
  gulp x:init  # 快速构建
  gulp x:watch # 打开jekyll服务，监视变动
+
+ gulp x:html2jade # 转换html为jade模板
 ```
 ### 构建文档结构
 ```

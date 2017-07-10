@@ -26,5 +26,9 @@ module.exports = {
   },
   watch: {
     dir: ROOT_DIR + 'public/_site/**/*'
+  },
+  tool: {
+    src: ROOT_DIR + 'tools_path/src/',
+    dist: ROOT_DIR + 'tools_path/dist/'
   }
 };
