@@ -1,6 +1,6 @@
 # node-gulp前端自动化构建工具
 
-> ###环境依赖
+###  环境依赖
 ```
  nodejs 6.2.0
  npm 3.8.9
@@ -13,7 +13,7 @@
 
  git bash 2.12.0
 ```
-> ###环境安装指令
+### 环境安装指令
 ```
  npm install
  npm install gulp -g
@@ -23,7 +23,7 @@
  gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
  gem sources -l # 确保只有 gems.ruby-china.org
 ```
-> ###自定义指令
+### 自定义指令
 ```
  gulp x:clean # 清除构建文件
  gulp x:html  # 构建html
@@ -32,7 +32,7 @@
  gulp x:init  # 快速构建
  gulp x:watch # 打开jekyll服务，监视变动
 ```
-> ###构建文档结构
+### 构建文档结构
 ```
  |- cfg/           # node组件配置文件
  |- tasks/         # node组件构建文件
@@ -49,7 +49,7 @@
  |- xxx.sh         # shell脚本
  |- gulpfile.js    # gulp入口文件
 ```
-> ###参考文档
+### 参考文档
 
 * [写一份gulp常用配置文件，构建前端工作流 - 梦空间- 博客频道 - CSDN.NET](http://blog.csdn.net/qq_15096707/article/details/54293203)
 * [Jekyll • 简单的博客、静态网站工具](http://jekyll.com.cn/)
