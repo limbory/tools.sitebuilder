@@ -1,0 +1,1 @@
+gulp j:init && cd public && jekyll b --watch

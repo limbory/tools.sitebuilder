@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "description": "> 个人博客站点",
   "main": "index.js",
-  "scripts": {
-    "j:init": "gulp j:init",
-    "j:server": "jekyll build --watch",
-    "j:watch": "gulp j:watch"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/limbory/limbory.github.io"
