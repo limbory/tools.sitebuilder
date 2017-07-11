@@ -20,6 +20,9 @@ var
   html2jade = require(TASK_DIR + 'gulpfile.html2jade');
 
 
+gulp.task('html2jade', html2jade);
+
+/***************************Github pages***************************/
 gulp.task('j:clean', clean);
 gulp.task('j:html', jade2html);
 gulp.task('j:css', styl2css);
@@ -80,7 +83,7 @@ gulp.task('j:watch', function() {
       }
     };
   });
-
 });
 
-gulp.task('j:html2jade', html2jade);
+/*******************************Vue********************************/
+

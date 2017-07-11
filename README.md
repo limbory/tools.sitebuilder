@@ -32,20 +32,24 @@
  gulp x:init  # 快速构建
  gulp x:watch # 打开jekyll服务，监视变动
 
- gulp x:html2jade # 转换html为jade模板
+ gulp html2jade # 转换html为jade模板
 ```
 ### 构建文档结构
 ```
  |- cfg/           # node组件配置文件
  |- tasks/         # node组件构建文件
  |- client/        # 开发代码区域
+ |  |- components/ # 自定义组件
+ |  |- tpls/       # 页面组件
+ |  |  |- pug/     # pug模板
+ |  |  |- vue/     # vue模板
  |  |- views/      # html源码
  |  |- styl/       # css源码
  |  |  |- assets/  # 静态样式
  |  |  |- commons/ # 自定义样式组件
  |  |- js/         # js源码
  |  |  |- commons/ # 自定义脚本组件
- |- public/        # 服务端文件
+ |- public/        # jekyll服务端文件
  |  |- assets/     # 静态资源目录
  |  |- dist/       # 构建资源目录
  |- xxx.sh         # shell脚本

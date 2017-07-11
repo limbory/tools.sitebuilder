@@ -1,3 +1,4 @@
+.git/
 logs
 *.log
 
@@ -5,3 +6,9 @@ logs
 /public
 /node_modules
 /tools_path
+
+/public/_site
+/public/dist
+/public/*.html
+/public/.gitignore
+/public/_layouts

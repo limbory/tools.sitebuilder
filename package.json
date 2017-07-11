@@ -25,6 +25,7 @@
     "gulp-html2jade": "^1.1.2",
     "gulp-jade": "^1.1.0",
     "gulp-jshint": "^2.0.4",
+    "gulp-pug": "^3.3.0",
     "gulp-sequence": "^0.4.6",
     "gulp-stylus": "^2.6.0",
     "gulp-util": "^3.0.8",
