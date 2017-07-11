@@ -5,9 +5,9 @@ logs
 /node_modules
 /tools_path
 
-/public/.git/
-/public/_site
-/public/dist
-/public/*.html
-/public/.gitignore
-/public/_layouts
+public/.git
+public/_site
+public/dist
+public/*.html
+public/.gitignore
+public/_layouts
