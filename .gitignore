@@ -3,7 +3,6 @@ logs
 *.log
 
 /_site
-/public
 /node_modules
 /tools_path
 
