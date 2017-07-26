@@ -13,7 +13,8 @@ module.exports = {
     src: SRC_DIR + 'views/**/*.jade',
     dist: DIST_DIR.replace(/\/[^\/]+\/$/, '/'),
     folder: [
-      '_layouts'
+      '_layouts',
+      'netease',
     ],
   },
   css: {

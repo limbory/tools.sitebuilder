@@ -1,0 +1,15 @@
+doctype html
+
+html
+  head
+    //- 浏览器适配
+    meta(charset='utf-8')
+    meta(name='renderer', content='webkit')
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge, chrome=1')
+    meta(name='viewport' content='width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(content='telephone=no' name='format-detection')
+    link(rel='stylesheet', href='{{ site.baseurl }}/dist/css/netease.css')
+
+  body
+    | {{ content }}

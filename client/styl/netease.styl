@@ -1,0 +1,116 @@
+@charset "utf-8"
+
+@import './commons/common-mixin'
+@import './commons/common-color'
+@import './commons/common-style'
+@import './assets/icon-moon.css'
+
+$n-red = rgba(188,47,46,1)
+$n-gray = rgba(228,228,231,1)
+
+*, *:before, *:after
+  padding 0
+  margin 0
+  border 0
+  font-size 100%
+  font inherit
+  vertical-align baseline
+  outline 0
+  -webkit-tap-highlight-color transparent
+html
+  font 14px/22px -apple-system,'microsoft yahei',SF UI Text,Helvetica Neue,Helvetica,Arial,sans-serif
+  background-color #fff
+h1
+  font-size 20px
+h2
+  font-size 18px
+h3
+  font-size 16px
+a
+  text-decoration none
+
+
+body
+  padding-top 30px
+#main-con
+  width (1200px / 1.25)
+  height (800px / 1.25)
+  margin 0 auto
+  box-shadow 0 0 20px 4px darken(#fff, 50)
+  header
+    color #fff
+    height (40px / 1.25)
+    padding-left (16px / 1.25)
+    line-height @height
+    background-color $n-red
+    [class^="icon-"], [class*=" icon-"] 
+      line-height inherit
+      width (60px / 1.25)
+      text-align center
+      &:hover
+        background-color darken($n-red,5)
+      &:active
+        background-color rgba(255,255,255,.5)
+  footer
+    height (75px / 1.25)
+    width 100%
+    border-top 1px solid $n-gray
+    img
+      height 100%
+      box-sizing border-box
+      border 1px solid #fff
+    .footer-block
+      height 100%
+    .ctrl-block
+      line-height @height
+      padding-left (36px / 1.25)
+      .play, .next
+        background-color lighten($n-red,5)
+        color #fff
+        font-size 16px
+        transition transform .1s
+        transform scale(1)
+        &:active
+          transform scale(.9)
+      .play
+        line-height (40px / 1.25)
+        width @line-height
+        margin-right (25px / 1.25)
+      .next
+        line-height (35px / 1.25)
+        width @line-height
+      .progress-bar
+        width (740px / 1.25)
+        line-height 22px
+        
+.body-content
+  aside
+    color #333
+    height 547px
+    width (240px / 1.25)
+    border-right 1px solid $n-gray
+    background-color rgba(243,243,245,1)
+    [class^="icon-"], [class*=" icon-"] 
+      color lighten(#000, 55)
+      font-size 16px
+    .toggle
+      padding-left (16px / 1.25)
+      line-height (54px / 1.25)
+    .bottom-msg
+      width 100%
+      padding (20px / 1.25) (16px / 1.25)
+      box-sizing border-box
+      line-height (36px / 1.25)
+      border-top 1px solid $n-gray
+      img
+        width @line-height
+        margin-right (16px / 1.25)
+      [class^="icon-"], [class*=" icon-"]
+        line-height inherit
+        width (42px / 1.25)
+        text-align center
+
+#pages-content
+  height 100%
+  width (940px / 1.25)
+    
