@@ -1,5 +1,5 @@
 'use strict';
 
-jquery = require('jquery');
+// jquery = require('jquery');
 
-console.log('ff');
+// console.log('ff');
