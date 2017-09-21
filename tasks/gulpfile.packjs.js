@@ -19,6 +19,7 @@ var
   };
 
 module.exports = function(path) {
+  return ;
   gutil.log('********************开始执行jshint任务********************');
 
   return gulp.src(typeof(path) === 'string' ? path : config.js.src.replace(/\/[^\/]+\/[^\/]+$/, '/controllers/**/*.js'))
