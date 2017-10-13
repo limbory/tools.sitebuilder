@@ -22,10 +22,11 @@
 ```
 ### 构建文档结构
 ```
+ |- config/
  |- lib/
  |- public/
- |- config/
  |- tasks/
+ |- gulpfile.js
  |- package.json
  |- README.md
 ```
