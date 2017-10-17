@@ -30,6 +30,10 @@
  |- package.json
  |- README.md
 ```
+### 备注
+
+* 如遇“spawn cmd ENOENT”报错，请在环境变量PATH里添加C:\Windows\System32路径；
+
 ### 参考文档
 
 * [Jekyll • 简单的博客、静态网站工具](http://jekyll.com.cn/)
