@@ -9,9 +9,7 @@
 
 const
   gulp = require('gulp'),
-  gutil = require('gulp-util'),
-
-  util = require('../tasks/util');
+  gutil = require('gulp-util');
 
 const
   SRC_DIR = 'lib/',
@@ -24,20 +22,20 @@ const
  */
 module.exports = function(pathName) {
   return {
-    src: util.dir(SRC_DIR + pathName + '/'),
-    dist: util.dir(DIST_DIR + pathName + '/'),
-    exclude: ['assets', 'components', 'common', 'layout'],
+    src: SRC_DIR + pathName,
+    dist: DIST_DIR + pathName,
+    exclude: ['assets/', 'components/', 'common/', 'layout/'],
     html: {
-      src: util.dir(SRC_DIR + pathName + '/views/'),
-      dist: util.dir(DIST_DIR + pathName + '/')
+      src: SRC_DIR + pathName + 'views/',
+      dist: DIST_DIR + pathName
     },
     css: {
-      src: util.dir(SRC_DIR + pathName + '/style/'),
-      dist: util.dir(DIST_DIR + pathName + '/dist/css/')
+      src: SRC_DIR + pathName + 'style/',
+      dist: DIST_DIR + pathName + 'dist/css/'
     },
     js: {
-      src: util.dir(SRC_DIR + pathName + '/javascript/'),
-      dist: util.dir(DIST_DIR + pathName + '/dist/js/')
+      src: SRC_DIR + pathName + 'javascript/',
+      dist: DIST_DIR + pathName + 'dist/js/'
     }
   };
 };

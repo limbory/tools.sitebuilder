@@ -1,3 +1,130 @@
-h1
-  h2
-    h3 hello, world
+| ---
+| layout: default
+| script: ./dist/js/index.js
+| ---
+| 
+.page-content
+  header#header
+    section.logo.tc
+      a.c-inl(href="javascript:;") logo
+
+    section.nav
+      nav.nav-content
+        h1.nav-title 相关分类
+        ul.nav-inner.c-list-n.tc.bg-dotted
+          - for (var i = 0; i < 7; i++) {
+          li.item.c-inl.c-rel.bg-dotted
+            i.book-arrow.c-abs.tz.lz
+            a.c-blo(href="javascript:;") tag
+          - }
+
+    section.page-title.cf
+      h1.title.fl page title
+      a.btn.fr(href="javascript:;") fork me on github !
+
+
+  .main-content#main
+    .content-inner
+      .row.cf
+        article.content-left.fl
+          #app jkbvjh
+            comp(:ex='example')
+          ul.inner-list.c-hidden.c-list-n
+            - for (var i = 0; i < 1; i++) {
+            li.list-item
+              section.post-msg.c-rel
+                .date.c-abs.tz.lz.tc 27
+                  .month 三月
+                .link-title
+                  .c-tb
+                    .c-tbc
+                      .inner
+                        a(href="javascript:;") link
+                          i.icon-link
+
+                ul.describe.c-list-n.cf
+                  li.item.fl
+                    i.icon-user
+                    | 分类：
+                    a(href="javascript:;") 站点收藏
+                  li.item.fl
+                    i.icon-price-tags
+                    | 标签：
+                    a(href="javascript:;") HTML
+                    a(href="javascript:;") CSS
+                    a(href="javascript:;") Javascript
+                    a(href="javascript:;") Node.js
+              section.post-pic
+                a.c-blo(href="javascript:;")
+                  .img.tc(style='background-image: url(./assets/images/gh-pages/e.g.jpg)')
+                    i.icon-image.c-hidden
+              section.post-detail.c-rel
+                .detail-content 要得到窗口的尺寸，对于不同的浏览器，需要使用不同的属性和方法：若要检测窗口的真实尺寸，在Netscape下需要使用Window的属性；在IE下需要深入Document内部对body进行检测；在DOM环境下，若要得到窗口的尺寸，需要注意根元素的尺寸，而不是元素。
+                a.c-abs.bz.lz(href="javascript:;") 查看更多>>
+            - }
+          .footer-pagination.cf
+            section.pager.fr
+              - for (var i = 0; i < 5; i++) {
+              a(href="javascript:;")
+                = i
+              - }
+            section.crr-index
+              i.icon-files-empty
+              | 第 1 页／共 2 页
+        aside.content-right.fr
+          section.auth-msg
+            .describe.c-rel
+              img.c-abs.tz.lz(src="./assets/images/gh-pages/violine.jpg")
+              h1 作者
+              p 作者简介作者简介作者简介
+            ul.count.c-list-n.cf.tc
+              - for (var i = 0; i < 3; i++) {
+              li.count-item.fl
+                a(href="javascript:;") 10
+                .title 日志
+              - }
+
+          section.search
+            .section-title 站内搜索
+            form.c-rel.c-blo(action="", method='GET', onsubmit="javascript: return false;")
+              input.kw.c-blo(type="text", placeholder='输入关键字', name='kw')
+              button.btn-submit.c-abs.tc.tz.rz(type='submit')
+                i.icon-search
+            ul.search-tag.c-list-n
+              - for (var i = 0; i < 10; i++) {
+              li.tag-item.c-inl.c-rel
+                a(href="javascript:;") 标签
+              - }
+
+          section.recommend
+            .section-title 文章推荐
+            ul.list.c-list-n.bg-dotted
+              - for (var i = 0; i < 5; i++) {
+              li.list-item.bg-dotted
+                .item-inner.c-rel
+                  a.img.tc.c-abs.tz.lz(href="javascript:;")
+                    .img-inner(style='background-image: url(./assets/images/gh-pages/e.g.jpg)')
+                      i.icon-image.c-hidden
+                  .title
+                    .c-tb
+                      .c-tbc
+                        .inner
+                          a(href="javascript:;") link
+                            i.icon-link
+                  .date 18 Mar 2016
+              - }
+
+  
+  footer#footer
+    section.footer-msg
+      ul.msg-inner.c-list-n.cf
+        - for (var i = 0; i < 3; i++) {
+        li.item.fl
+          .item-title 公告
+        - }
+
+    section.copyright.tc
+        | 王宬翰 &copy;2016. All Rights Reserved.
+        br
+        | Powered by
+        a(href='http://jekyllcn.com/', target='_blank', title='Jekyll') Jekyll

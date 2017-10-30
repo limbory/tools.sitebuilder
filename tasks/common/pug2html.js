@@ -15,11 +15,18 @@ const
   util = require('../util'),
   dir = require(util.dir('config/directory'));
 
-module.exports = function(rootDir, baseDir, distDir) {
-  return gulp.src(rootDir, { base: baseDir })
+module.exports = function(config) {
+  var cfg = Object.assign({
+    rootDir: '', // 源文件路径
+    baseDir: '', // 带转换文件根路径
+    distDir: '', // 构建路径
+    isCompress: false // 转换后是否压缩（默认不压缩）
+  }, config);
 
-    .pipe(pug())
-    .pipe(gulp.dest(distDir))
+  return gulp.src(cfg.rootDir, { base: cfg.baseDir })
+
+    .pipe(pug({pretty: !cfg.isCompress}))
+    .pipe(gulp.dest(cfg.distDir))
 
     .on('end', function() {
       gutil.log('Finished task--------------------pug2html!');

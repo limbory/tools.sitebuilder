@@ -46,3 +46,4 @@
 * [node工具包搜索](https://www.npmjs.com/)
 * [Plugin-browsersync](https://browsersync.io/)
 * [Plugin-gulp-sequence](https://www.npmjs.com/package/gulp-sequence)
+* [glob匹配规则](http://www.jianshu.com/p/ce7cf53274bb)
