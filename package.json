@@ -4,14 +4,23 @@
   "description": "",
   "main": "",
   "scripts": {
+    "comment": "start、restart、test、stop命令不需要加run",
     "test": "gulp",
-    "ghpages:dev": "gulp",
+    "ghpages:dev": "better-npm-run ghpages:debug",
     "ghpages:production": "better-npm-run ghpages:build"
   },
   "betterScripts": {
+    "ghpages:debug": {
+      "command": "gulp",
+      "env": {
+        "PROJECT": "limbory.github.io",
+        "NODE_ENV": "dev"
+      }
+    },
     "ghpages:build": {
       "command": "gulp",
       "env": {
+        "PROJECT": "limbory.github.io",
         "NODE_ENV": "production"
       }
     }
