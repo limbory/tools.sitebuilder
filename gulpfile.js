@@ -14,13 +14,21 @@ const
 
   util = require('./tasks/util'),
   dir = require('./config/directory')(process.env.PROJECT + '/'),
-  pug2html = require('./tasks/common/pug2html');
+  pug2html = require('./tasks/common/pug2html'),
+  stylus2css = require('./tasks/common/stylus2css');
 
 /* 测试用 */
 gulp.task('default', function() {
-  pug2html({
-    rootDir: util.createSrcDir(dir.html.src, '.pug', dir.exclude),
-    baseDir: util.dir(dir.html.src),
-    distDir: util.dir(dir.html.dist)
-  });
+  // pug2html({
+  //   rootDir: util.createSrcDir(dir.html.src, '.pug', dir.exclude),
+  //   baseDir: util.dir(dir.html.src),
+  //   distDir: util.dir(dir.html.dist)
+  // });
+  // stylus2css({
+  //   rootDir: util.createSrcDir(dir.css.src, '.styl', dir.exclude),
+  //   baseDir: util.dir(dir.css.src),
+  //   distDir: util.dir(dir.css.dist),
+  //   assetsDir: util.dir(dir.dist),
+  //   isCompress: true,
+  // });
 });
