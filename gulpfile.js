@@ -15,7 +15,8 @@ const
   util = require('./tasks/util'),
   dir = require('./config/directory')(process.env.PROJECT + '/'),
   pug2html = require('./tasks/common/pug2html'),
-  stylus2css = require('./tasks/common/stylus2css');
+  stylus2css = require('./tasks/common/stylus2css'),
+  clean = require('./tasks/common/clean');
 
 /* 测试用 */
 gulp.task('default', function() {
@@ -31,4 +32,5 @@ gulp.task('default', function() {
   //   assetsDir: util.dir(dir.dist),
   //   isCompress: true,
   // });
+  clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*']) });
 });

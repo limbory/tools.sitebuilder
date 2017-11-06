@@ -41,6 +41,26 @@ const
       }
 
       return fullDir;
+    },
+
+    /**
+     * 创建删除文件路径
+     * @param  {String} dir        相对路径字符串（相对于项目根路径）
+     * @param  {Array} excludeArr 不删除的路径
+     * @return {Array}            完整构建路径
+     */
+    deleteSrcDir: function(dir, excludeArr) {
+      var fullDir = [util.dir(dir + '*'), util.dir(dir + '.*')];
+
+      if (excludeArr) {
+        excludeArr.forEach(function(dirPath) {
+          fullDir.push.apply(fullDir, [
+            '!' + util.dir(dir + dirPath),
+          ]);
+        });
+      }
+
+      return fullDir;
     }
 
   };
