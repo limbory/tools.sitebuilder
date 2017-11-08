@@ -8,18 +8,19 @@
 'use strict';
 
 const
-  gulp = require('gulp'),
-  path = require('path'),
-  gutil = require('gulp-util'),
+  gulp         = require('gulp'),
+  path         = require('path'),
+  gutil        = require('gulp-util'),
   gulpSequence = require('gulp-sequence'),
 
-  util = require('./tasks/util'),
-  dir = require('./config/directory')(process.env.PROJECT + '/'),
-  pug2html = require('./tasks/common/pug2html'),
+  util       = require('./tasks/util'),
+  dir        = require('./config/directory')(process.env.PROJECT + '/'),
+  pug2html   = require('./tasks/common/pug2html'),
   stylus2css = require('./tasks/common/stylus2css'),
-  packjs = require('./tasks/common/packjs'),
-  clean = require('./tasks/common/clean');
+  packjs     = require('./tasks/common/packjs'),
+  clean      = require('./tasks/common/clean');
 
+require('./tasks/' + process.env.PROJECT + '/main')(gulp);
 /* 测试用 */
 gulp.task('default', function() {
   // clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*']) });
@@ -27,8 +28,7 @@ gulp.task('default', function() {
   // pug2html({
   //   rootDir: util.createSrcDir(dir.html.src, '.pug', dir.exclude),
   //   baseDir: util.dir(dir.html.src),
-  //   distDir: util.dir(dir.html.dist),
-  //   isCompress: true
+  //   distDir: util.dir(dir.html.dist)
   // });
   // stylus2css({
   //   rootDir: util.createSrcDir(dir.css.src, '.styl', dir.exclude),
@@ -36,9 +36,9 @@ gulp.task('default', function() {
   //   distDir: util.dir(dir.css.dist),
   //   assetsDir: util.dir(dir.dist),
   // });
-  packjs({
-    rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
-    baseDir: util.dir(dir.js.src),
-    distDir: util.dir(dir.js.dist)
-  });
+  // packjs({
+  //   rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
+  //   baseDir: util.dir(dir.js.src),
+  //   distDir: util.dir(dir.js.dist)
+  // });
 });
