@@ -61,7 +61,19 @@ const
       }
 
       return fullDir;
-    }
+    },
+
+    /**
+     * 处理路径字符串为数组
+     * @param  {String} str 绝对路径
+     * @return {Array}     结构数组
+     */
+    handleDirString: function(str) {
+      if (typeof str !== 'string') {
+        str = str[0];
+      }
+      return str.replace(/[\\\/]+$/, '').split(/[\\\/]+/);
+    },
 
   };
 
