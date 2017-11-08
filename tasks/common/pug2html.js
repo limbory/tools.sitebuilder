@@ -11,6 +11,7 @@ const
   gulp = require('gulp'),
   gutil = require('gulp-util'),
   pug = require('gulp-pug'),
+  named = require('vinyl-named'),
   prettify = require('gulp-html-prettify'),
 
   util = require('../util');
@@ -21,7 +22,6 @@ module.exports = function(config) {
     baseDir: '', // 带转换文件根路径
     distDir: '', // 构建路径
     isCompress: false, // 转换后是否压缩（默认不压缩）
-    isPrettify: false // 转换后是否格式化HTML（默认不格式化）
   }, config);
 
   var stream = gulp.src(cfg.rootDir, {
@@ -30,9 +30,17 @@ module.exports = function(config) {
     pretty: !cfg.isCompress
   }));
 
-  if (!cfg.isCompress && cfg.isPrettify) {
+  if (!cfg.isCompress) {
     stream = stream.pipe(prettify({
       indent_size: 2
+    })).pipe(named(function(file) {
+      var fileStr = String(file.contents);
+      var cutStr = fileStr.match(/^\-{3}[\s\S]+\-{3}/g);
+      if (cutStr) {
+        fileStr = fileStr.replace(/^\-{3}[\s\S]+\-{3}/, cutStr[0].replace(/([^\:])\s+/g, '$1\n'));
+        file.contents = new Buffer(fileStr);
+      }
+      this.queue(file)
     }));
   }
 
