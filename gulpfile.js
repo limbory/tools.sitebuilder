@@ -36,9 +36,9 @@ gulp.task('default', function() {
   //   distDir: util.dir(dir.css.dist),
   //   assetsDir: util.dir(dir.dist),
   // });
-  // packjs({
-  //   rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
-  //   baseDir: util.dir(dir.js.src),
-  //   distDir: util.dir(dir.js.dist),
-  // });
+  packjs({
+    rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
+    baseDir: util.dir(dir.js.src),
+    distDir: util.dir(dir.js.dist)
+  });
 });

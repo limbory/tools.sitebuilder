@@ -24,7 +24,8 @@ module.exports = function(config) {
     rootDir: '', // 源文件路径
     baseDir: '', // 带转换文件根路径
     distDir: '', // 构建路径
-    isCompress: false // 转换后是否压缩（默认不压缩）
+    isCompress: false, // 转换后是否压缩（默认不压缩）
+    devMode: '', // 调试模式
   }, config);
 
   var stream = gulp.src(cfg.rootDir, {
@@ -36,6 +37,8 @@ module.exports = function(config) {
       return util.handleDirString(file.history.slice(0, 1))
         .slice(util.handleDirString(cfg.baseDir).length).join('/').replace(/\.[^\.]*$/, '');
     }));
+
+  webpackCfg.devtool = cfg.devMode;
 
   if (cfg.isCompress) {
     webpackCfg.plugins.push(new webpackOrigin.optimize.UglifyJsPlugin({
