@@ -43,4 +43,8 @@ module.exports = function(gulp) {
   });
 
 
+  gulp.task('gh:dev', function() {});
+  gulp.task('gh:dev:pug2html', function() {
+    pug2html(fullDirMsgHTML)
+  });
 };
