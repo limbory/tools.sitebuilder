@@ -9,6 +9,7 @@
 const
   gutil        = require('gulp-util'),
   gulpSequence = require('gulp-sequence'),
+  gulpWatch    = require('gulp-watch'),
   browserSync  = require('browser-sync').create(),
   fs           = require('fs'),
   exec         = require('child_process').exec,
@@ -20,6 +21,10 @@ const
   stylus2css = require(util.dir('tasks/common/stylus2css')),
   packjs     = require(util.dir('tasks/common/packjs')),
   clean      = require(util.dir('tasks/common/clean'));
+
+function watch() {
+
+};
 
 module.exports = function(gulp) {
 
@@ -64,6 +69,9 @@ module.exports = function(gulp) {
         port: 3355,
         logLevel: "silent"
       });
+
+      // 启动构建目录监听
+
 
     });
   });
