@@ -7,18 +7,22 @@
 'use strict';
 
 const
-  path         = require('path'),
   gutil        = require('gulp-util'),
   gulpSequence = require('gulp-sequence'),
+  browserSync  = require('browser-sync').create(),
+  fs           = require('fs'),
+  exec         = require('child_process').exec,
 
+  env        = process.env,
   util       = require('../util'),
-  dir        = require(util.dir('config/directory'))(process.env.PROJECT + '/'),
+  dir        = require(util.dir('config/directory'))(env.PROJECT + '/'),
   pug2html   = require(util.dir('tasks/common/pug2html')),
   stylus2css = require(util.dir('tasks/common/stylus2css')),
   packjs     = require(util.dir('tasks/common/packjs')),
   clean      = require(util.dir('tasks/common/clean'));
 
 module.exports = function(gulp) {
+
   const
     fullDirMsgHTML = {
       rootDir: util.createSrcDir(dir.html.src, '.pug', dir.exclude),
@@ -36,15 +40,43 @@ module.exports = function(gulp) {
       baseDir: util.dir(dir.js.src),
       distDir: util.dir(dir.js.dist)
     };
-  
+
   // 清除构建文件
-  gulp.task('gh:clean', function() {
-    clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*']) });
+  gulp.task('clean', function() {
+    return clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*']) });
   });
 
 
-  gulp.task('gh:dev', function() {});
-  gulp.task('gh:dev:pug2html', function() {
-    pug2html(fullDirMsgHTML)
+  // 开发模块
+  gulp.task('dev', function() {
+    return gulpSequence('clean', 'dev:pug2html', 'dev:stylus2css', 'dev:packjs', function() {
+      
+      var serviceFolder = util.dir(dir.dist + '_site/');
+
+      // 创建服务端目录
+      fs.mkdirSync(serviceFolder);
+      // 启动jekyll构建任务
+      exec('cd ' + dir.dist + ' && jekyll b --watch');
+      // 启动服务端
+      browserSync.init({
+        server: { baseDir: serviceFolder },
+        notify: false,
+        port: 3355,
+        logLevel: "silent"
+      });
+
+    });
   });
+  gulp.task('dev:pug2html', function() { return pug2html(fullDirMsgHTML); });
+  gulp.task('dev:stylus2css', function() { return stylus2css(fullDirMsgCSS); });
+  gulp.task('dev:packjs', function() {
+    return packjs(Object.assign(fullDirMsgJS, {
+      devMode: 'eval-source-map'
+    }));
+  });
+
+
+  // 静态文件构建模块
+  gulp.task('production', function() {});
+
 };
