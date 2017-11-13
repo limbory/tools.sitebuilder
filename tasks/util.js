@@ -75,6 +75,11 @@ const
       return str.replace(/[\\\/]+$/, '').split(/[\\\/]+/);
     },
 
+    /**
+     * 空函数
+     */
+    noop: function() {},
+
   };
 
 module.exports = util;
