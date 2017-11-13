@@ -1,6 +1,6 @@
 | ---
 | layout: default
-| script: ./dist/js/index.js
+| script: ./dist/js/main.js
 | ---
 | 
 .page-content
@@ -27,10 +27,8 @@
     .content-inner
       .row.cf
         article.content-left.fl
-          #app jkbvjh
-            comp(:ex='example')
-          ul.inner-list.c-hidden.c-list-n
-            - for (var i = 0; i < 1; i++) {
+          ul.inner-list.c-list-n
+            - for (var i = 0; i < 5; i++) {
             li.list-item
               section.post-msg.c-rel
                 .date.c-abs.tz.lz.tc 27
