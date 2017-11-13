@@ -24,7 +24,7 @@ module.exports = function(pathName) {
   return {
     src: SRC_DIR + pathName,
     dist: DIST_DIR + pathName,
-    exclude: ['assets/', 'components/', 'common/', 'layout/'],
+    exclude: ['assets/', 'components/', 'layouts/', 'common/'],
     html: {
       src: SRC_DIR + pathName + 'views/',
       dist: DIST_DIR + pathName

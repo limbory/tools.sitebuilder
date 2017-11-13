@@ -1,18 +1,23 @@
-extends ../layout/default
+extends ../../../common/views/layouts/default
 
+//- 站点描述
 append title
   title {% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}
 append description
   meta(name='keywords', content='{{ site.keywords }}')
   meta(name='description', content='{{ site.description }}')
   link(rel='shortcut icon', href='./assets/images/favicon.ico')
+
+//- 静态资源
 append css
-  link(rel='stylesheet', href='./dist/css/gh-pages/index.css')
+  link(rel='stylesheet', href='./dist/css/main.css')
   script
     include ../../javascript/components/dynamicRootFonts-width.js
 append js
   | {% if page.script %}
   script(src='{{ page.script }}')
   | {% endif %}
+
+//- 正文
 append content
   | {{ content }}
