@@ -33,6 +33,7 @@
 ### 备注
 
 * 如遇“spawn cmd ENOENT”报错，请在环境变量PATH里添加C:\Windows\System32路径；
+* git制作增量更新包：git archive -o hot.zip HEAD $(git diff 19ed634...82c8c6d --name-only)
 
 ### 参考文档
 
