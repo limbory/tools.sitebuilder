@@ -1,4 +1,4 @@
-extends ../../../common/views/layouts/default
+extends ../../../common/views/layouts/default.ie8.pug
 
 //- 站点描述
 append title
@@ -11,8 +11,10 @@ append description
 //- 静态资源
 append css
   link(rel='stylesheet', href='./dist/css/main.css')
-  script
-    include ../../javascript/components/dynamicRootFonts-width.js
+  <!--[if lte IE 8]>
+    script(src='/assets/js/html5-shiv.min.js')
+    script(src='/assets/js/respond.min.js')
+  <![endif]-->
 append js
   | {% if page.script %}
   script(src='{{ page.script }}')
