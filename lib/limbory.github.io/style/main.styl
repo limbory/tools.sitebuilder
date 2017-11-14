@@ -3,410 +3,191 @@
 @import "nib"
 
 @import "../../common/style/common/mixin"
-@import "../../common/style/common/reset"
-@import "../../common/style/common/common"
-
-@import "./common/constant"
 @import "./assets/font.css"
 @import "./assets/icomoon.css"
+@import "./common/constant"
+@import "./common/reset"
+@import "./common/common"
 
-html
-  overflow-y scroll
 
-body
-  font $base-font-size/$base-line-height $base-font-family
-  color $text-color
-  background-color #c13a2d
-
-.page-content
-  border-top 10px solid #c13a2d
-  background inline-url('assets/images/gh-pages/bg-body.jpg') repeat
-  
-.bg-dotted
-  background-image inline-url('assets/images/gh-pages/dotted.png')!important
-  
-#header,
-#main,
-#footer .footer-msg
-  max-width $max-width
-  margin 0 auto
-  
-#header
-  .logo
-    height 185px
-    line-height @height
-    a
-      text-decoration none
-      color transparent
-      height 43px
-      line-height @height
-      width 233px
-      background inline-url('assets/images/gh-pages/logo.png') center no-repeat
-  .nav
-    height 52px
-    line-height @height
-    &, & .nav-content
-      background  inline-url('assets/images/gh-pages/dashed.png') top repeat-x
-    .nav-content
-      background-position bottom left
-    .nav-title
-      display none
-    .item a
-      padding 0 20px
-      text-decoration none
-      color $color-white
-  .page-title
-    padding 50px 40px 40px
-    .title
-      font-size 40px
-      color $color-white
-      line-height 50px
-      text-transform uppercase
-      text-shadow 2px 2px 0 #df352a
-      &:before
-        content '「'
-      &:after
-        content '」'
-    .btn
-      height 40px
-      line-height @height
-      padding 0 20px
-      text-decoration none
-      color #e75143
-      background-color #f78b76
-      text-transform uppercase
-      border-radius 3px
-      box-shadow -3px 6px 5px -4px #d43d32
-      margin-top 10px
-      
-#main
-  .content-inner
-    padding 0 30px
-    background inline-url('assets/images/gh-pages/bg-main.jpg') #f5f0ef 65% 0 repeat-y
-    border-radius 7px
-  .row
-    width 100%
-  .content-right
-    width percentage(1 / 3)
-    padding 30px 10px 20px 40px
-    box-sizing border-box
-    & > section
-      margin-bottom 38px
-    .auth-msg
-      $border-color = #b5b5b5
-      .describe
-        padding-left 95px
-        height 80px
-        overflow hidden
-        h1
-          font-size 19px
-          line-height 2em
-        img
-          width @height
-          padding 3px
-          border 1px dashed $border-color
-          box-sizing border-box
-        p
-          font-size 13px
-          color $color-gray
-      .count
-        color $color-gray
-        border-right 1px dashed $border-color
-        margin-top 12px
-        a
-          color inherit
-          text-decoration none
-        .count-item
-          text-shadow 1px 1px 3px darken(@color, 5)
-          width percentage(1 / 3)
-          font-size 13px
-          box-sizing border-box
-          border-left @border-right
-    .section-title
-      color $page-red
-      text-shadow 1px 1px 1px lighten(@color, 20)
-      padding-bottom 20px
-    .search
-      form
-        background-color #fff
-        border 1px solid #e2dcdb
-        border-width 1px 0 0 1px
-        box-shadow inset 1px 2px 0 #f5f3f3
-        font-size 13px
-        line-height 30px
-        color $color-gray
-        inputColor(@color)
-        .kw, .btn-submit
-          padding 0
-          margin 0
-          border 0
-          background-color transparent
-          line-height inherit
-        .kw
-          width 100%
-          box-sizing border-box
-          padding 0 @line-height 0 10px
-          height @line-height
-        .btn-submit
-          width @line-height
-          cursor pointer
-          outline 0
-          color @color
-      .search-tag
-        padding-top 24px
-        padding-left 14px
-      .tag-item
-        background-color #fab4a6
-        line-height 20px
-        box-shadow 1px 1px 10px #bbb
-        color $page-red
-        padding 0 10px 0 7px
-        margin-right 24px
-        margin-bottom 7px
-        &:before
-          content ''
-          padding 0
-          position absolute
-          top 0
-          left -15px
-          border 1px solid transparent
-          border-width 10px 7px 11px
-          border-right-color @background-color
-        a
-          font-size 13px
-          color inherit
-          text-decoration none
-    .recommend
-      .list, .list-item
-        background transparent bottom repeat-x
-      .list-item
-        padding 10px 0
-        background-position top
-        a
-          text-decoration none
-          color $text-color
-        i
-          color $color-gray
-      .item-inner
-        height 64px
-        padding-left 122px
-        font-size 13px
-        .img-inner
-          height @height
-          line-height @height
-          width 108px
-          color $color-gray
-          background-color #fff
-          border-radius 4px
-          font-size 20px
-          background-size cover
-          background-position center center
-          background-repeat no-repeat
-        .title
-          line-height 1.5em
-          height @line-height * 2
-          i
-            margin-left .4em
-          .inner
-            word-break break-all
-            overflow hidden
-            max-height @line-height * 2
-        .date
-          color $color-gray
-        
-  .content-left
-    width percentage(2 / 3)
-    padding 40px 30px 54px 10px
-    box-sizing border-box
-    .list-item, .footer-pagination
-      padding 30px 20px 30px 18px
-      margin-bottom 40px
-      background-color #fff
-      border-radius 5px
-      border-bottom 1px solid #ece3e1
+lesscss-percentage(n)
+  (n * 100)%
+/*********
+*标签容器*
+**********/
+#sidebar .tag-container
+  tag-bgc = lighten(rgb(247, 139, 118, 1), 10%)
+  arrow-width = 7px
+  background-image none
+  line-height 30px
+  letter-spacing 1.5em
+  padding-left (arrow-width * 2)
+  li
+    background tag-bgc
+    line-height normal
+    letter-spacing normal
+    display inline-block
+    margin 0
+    padding 2px (3px + arrow-width) 3px 7px
+    position relative
+    box-shadow 1px 1px 10px #bbb
+    transition background .5s
+    cursor pointer
+    &:before
+      content ''
+      padding 0
+      position absolute
+      top 0
+      left - ((arrow-width * 2) + 1) ((arrow-width * 2) + 1)
+      border 1px solid transparent
+      border-width 10px arrow-width 11px
+      border-right-color tag-bgc
+      transition border-right-color 0.5s
+    &:hover
       a
-        color $page-red
-        text-decoration none
-    .post-msg
-      padding-left 80px
-      $max-height = 70px
-      i
-        color $color-gray
-      .date
-        background-color #fcfafa
-        color #3a3534
-        font-size 26px
-        width 60px
-        line-height 45px
-        border-radius 5px
-        overflow hidden
-      .month
-        background-color $page-red
-        color $color-white
-        font-size 12px
-        line-height 25px
-      .link-title
-        font-size 20px
-        height ($max-height - 10px)
-        line-height (@height / 2)
-        i
-          margin-left .3em
-        .inner
-          word-break break-all
-          max-height @height
-          overflow hidden
-      .describe
-        color $color-gray
-        font-size 12px
-        word-break break-all
-        max-height @font-size * 3 * 1.5
-        i
-          display inline-block
-          width 2em
-          text-align center
-        a
-          margin-right .7em
-    .post-pic
-      margin 25px 0
-      .img
-        color $color-gray
-        line-height @height
-        font-size 70px
-        vertical-align middle
-        background-size cover
-        background-position center center
-        background-repeat no-repeat
-        border-radius 4px
-    .post-detail
-      font-size 13px
-      padding-bottom 30px
-      .detail-content
-        color $color-gray
-        max-height @font-size * 1.5 * 3
-        overflow hidden
-    .footer-pagination
-      padding 10px 20px
-      font-size 12px
-      color darken($color-gray, 10)
-      .pager a
-        margin 0 5px
-      .crr-index i
-        margin-right .5em
-#footer
-  .msg-inner
-    padding 50px 30px 20px
-    color $color-white
-    .item
-      width percentage(1 / 3)
-      box-sizing border-box
-      padding 0 10px
-      min-height 100px
-    .item-title
-      border-bottom 1px dashed #fb917d
-      line-height 43px
-  .copyright
-    color #ff8065
-    background-color #c13a2d
-    font-size 11px
-    line-height 20px
-    padding 15px 0
+        color white
+      background darken(tag-bgc, 10%)
+      &:before
+        border-right-color darken(tag-bgc, 10%)
     a
-      color inherit
-
-@media screen and (min-width: 1020px)
-  #main .content-left .post-pic .img
-    height 562px * (9 / 16)
-@media screen and (min-width: 768px) and (max-width: 1019px)
-  #main .content-left .post-pic .img
-    height 10rem * (562 / 1020) * (9 / 16)
-@media screen and (min-width: 480px) and (max-width: 767px)
-  #main .content-left .post-pic .img
-    height 362px * (9 / 16)
-@media screen and (max-width: 479px)
-  #main .content-left .post-pic .img
-    height 10rem * (362 / 480) * (9 / 16)
-@media screen and (max-width: 373px)
-  #header .logo a
-    width 10rem * (233 / 373)
-    height @width * (43 / 233)
-    background-size cover
-      
-@media screen and (min-width: 768px)
-  #header .nav
-    .nav-inner, .item
-      background-image none!important
-    .item i
-      display none
-           
-@media screen and (max-width: 767px)
-  #header,
-  #main,
-  #footer .footer-msg
-    max-width 480px
-
-  #header
-    .nav
-      position fixed
+      color #e85244
+/*********
+*网站概述*
+**********/
+#sidebar .site-about
+  img-size = 72px
+  dashed-border = 1px dashed darken(rgb(206, 206, 206, 1), 10%)
+  .face-img
+    float left
+    width img-size
+    height img-size
+    line-height img-size
+    overflow hidden
+    padding ((78 - img-size) / 2)
+    border dashed-border
+    img
+      width 100%
+      height auto
+  .self-abstract
+    ab-font-size = 19px
+    margin-left 95px
+    h2
+      font-size ab-font-size
+      font-family 'Nova Square', 'microsoft yahei', cursive
+      line-height (ab-font-size * 2)
+      margin 0
+    p
+      height (img-size - (ab-font-size * 2))
+      margin 0
+  ul
+    background none
+    padding 0
+    border-left dashed-border
+    margin-top 20px
+    li
+      padding 0
+      margin 0
+      background none
+      display inline-block
+      width 33.3%
+      box-sizing border-box
+      text-align center
+      border-right dashed-border
+      text-shadow 1px 1px 3px lighten(rgb(143, 143, 143, 1), 10%)
+      &:before
+        content ''
+        padding 0
+  &:after
+    content ' '
+    clear both
+/*************
+*多说组件样式*
+**************/
+.at-index-page .ds-meta
+  display none
+#sidebar .ds-thread.textwidget
+  li:before
+    content ''
+    padding 0
+  .ds-post .ds-sync label
+    display none
+.no-result-there
+  display table
+  width 100%
+  height 150px
+  p
+    display table-cell
+    vertical-align middle
+    text-align center
+.link-ico
+  vertical-align middle
+/*********
+*标签列表*
+*********/
+.page-tag-list
+  divi-dist = 15px
+  setDotPosition(dot-radius, line-height)
+    content ''
+    position absolute
+    left - dot-radius dot-radius
+    top (line-height - dot-radius)
+    border dot-radius solid darken(rgb(245, 245, 245, 1), 20%)
+    border-radius dot-radius
+  h2
+    margin-bottom - divi-dist divi-dist
+    padding-left 19px
+    margin-left 21px
+    position relative
+    z-index 2
+    &:before
+      setDotPosition(4px, 16)
+  ul
+    position relative
+    list-style none
+    padding-top (divi-dist + 15)
+    li
+      padding 12px 0 12px 103px
+      margin-left 2px
+      position relative
+      border-bottom 1px dashed darken(rgb(245, 245, 245, 1), 20%)
+      span
+        position absolute
+        top 12px
+        left 0
+        float left
+        padding 0 10px 0 20px
+        &:before
+          setDotPosition(3px, 10)
+    &:before
+      content ''
+      position absolute
       top 0
       left 0
-      width 100%
       height 100%
-      z-index 1000
-      background rgba(0,0,0,.5)
-      line-height inherit
-      display none
-      .nav-content
-        position absolute
-        top 0
-        right 0
-        height 100%
-        width 200px
-        background #f2ede9
-        box-sizing border-box
-        padding 0 30px
-      .nav-title
-        display block
-        font-size 20px
-        line-height 66px
-        color $page-red
-      .nav-inner
-        background transparent top repeat-x
-      .item
-        display block
-        background transparent bottom repeat-x
-        line-height 34px
-        text-align left
-        font-size 13px
-        a
-          color $page-red
-          padding-left 12px
-        i
-          line-height inherit
-          color $color-gray
-          font-style normal
-      &.open
-        display block
-        .nav-content
-          animation slideLeft .3s
-          @keyframes slideLeft
-            from
-              transform translate3d(200px,0,0)
-            to
-              transform translate3d(0,0,0)
-  #main
-    .content-inner
-      background-image none
-    .content-left, .content-right
-      float none
-      width auto
-    .content-left
-      padding-right 10px
-    .content-right
-      padding-left 10px
-  #footer .msg-inner .item
-    float none
-    width auto
-     
+      width 4px
+      background darken(rgb(245, 245, 245, 1), 10%)
+      background none
+  strong
+    color red
+/*********
+*文章详情*
+*********/
+.post-title
+  text-align center
+  margin-top 15px
+.post-msg
+  list-style none
+  text-align center
+  margin 30px 0 45px
+  li
+    display inline-block
+    padding-left 3px
+    padding-right 3px
+.post-content p
+  text-indent 2em
+  font-size 114.3%
+@media only screen and (max-width: 767px)
+  .post-content p
+    font-size 100%
 
-      
-      
+

@@ -1,0 +1,3012 @@
+@import "nib"
+
+body
+  font-family 'microsoft yahei', Roboto, sans-serif
+  font-size 13px
+  margin 0 auto
+  padding 0
+  line-height 20px
+  color #8f8f8f
+  background url('baseurl/img/bg-body.jpg')
+
+*
+  margin 0
+  padding 0
+  html
+    .slides
+      height 1%
+    .pp_content
+      width 40px
+
+:focus
+  outline 0
+
+form
+  margin 0
+  padding 0
+  margin 0
+  padding 0
+  margin 0
+  padding 0
+
+hr
+  border-width 0
+  height 1px
+  line-height 0
+  margin 30px 0
+  page-break-after always
+  text-align center
+  width 100%
+  clear both
+  color #bababa
+  background-color #bababa
+
+em
+  font-style italic
+
+.copyrights
+  text-indent -9999px
+  height 0
+  line-height 0
+  font-size 0
+  overflow hidden
+
+h1,
+h2
+  margin-bottom 15px
+  line-height normal
+
+h3,
+h4,
+h5
+  margin-bottom 15px
+  line-height normal
+
+h1
+  font-size 50px
+
+h2
+  font-size 24px
+  &.trigger
+    padding 0
+    margin 0 0 7px
+    font-size 13px
+    font-weight 400
+    cursor pointer
+    span
+      text-decoration none
+      display inline-block
+      padding 10px 12px
+      margin-right 20px
+      font-size 14px
+      font-weight 700
+
+h3
+  font-size 20px
+
+h4
+  font-size 15px
+
+h5
+  font-size 13px
+
+h6
+  font-size 9px
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.pagetitle,
+.pagedesc
+  font-family 'microsoft yahei', 'Droid Serif', serif, Arial
+
+.title
+  padding 8px 0 7px 8px
+  text-transform uppercase
+
+.titleRegular
+  font-weight 400
+
+.titleBold
+  font-weight 700
+
+.titleLight
+  font-weight 300
+
+.titleUppercase
+  text-transform uppercase
+
+.titleNormal
+  text-transform none
+
+.italic
+  font-style italic
+
+.textBoldUppercase
+  font-weight 700
+  text-transform uppercase
+
+a,
+a:visited
+  text-decoration none
+  transition color .2s
+
+a
+  &:hover
+    text-decoration none
+  img
+    border 0
+  &.pp_next
+    background url('baseurl/img/light_rounded/btnNext.png') 10000px 10000px no-repeat
+    display block
+    float right
+    height 100%
+    text-indent -10000px
+    width 49%
+  &.pp_previous
+    background url('baseurl/img/light_rounded/btnNext.png') 10000px 10000px no-repeat
+    display block
+    float left
+    height 100%
+    text-indent -10000px
+    width 49%
+  &.pp_close
+    display block
+    line-height 22px
+    position absolute
+    right 0
+    text-indent -10000px
+    top 0
+
+.alignleft,
+img.alignleft
+  display inline
+  float left
+  margin-right 15px
+  margin-top 3px
+
+.alignright,
+img.alignright
+  display inline
+  float right
+  margin-left 15px
+  margin-top 5px
+
+.aligncenter,
+img.aligncenter
+  clear both
+  display block
+  margin-left auto
+  margin-right auto
+
+.alignnone,
+img.alignnone
+  clear both
+  display block
+  margin-left auto
+  margin-right auto
+  margin 0
+
+img.alignleft,
+img.alignright,
+img.aligncenter
+  margin-bottom 12px
+
+p,
+ul,
+ol,
+blockquote
+  margin-bottom 20px
+
+ul
+  list-style disc
+  margin 0 0 18px 1.5em
+  li
+    padding-bottom 10px
+  &.list
+    list-style-type none
+    margin 5px 0 0
+    padding 0
+    li
+      padding-bottom 0
+      &:before
+        content "\00bb"
+        padding-right 5px
+  &.tabs
+    margin 0
+    margin-bottom 0
+    padding 0
+    list-style none
+    width 100%
+    float left
+    li
+      float left
+      margin 0
+      padding 0 15px
+      overflow hidden
+      position relative
+      font-size 13px
+      a
+        text-decoration none
+        display block
+        padding 5px 0
+        outline 0
+  &.flickr
+    list-style-type none
+    padding 0
+    margin 0
+    li
+      float left
+      margin-right 7px!important
+      img
+        -webkit-border-radius 5px
+        -moz-border-radius 5px
+        border-radius 5px
+
+ol
+  list-style decimal
+  margin 0 0 18px 2.2em
+  ol
+    list-style upper-alpha
+    ol
+      list-style lower-roman
+      ol
+        list-style lower-alpha
+
+ul ul,
+ol ol,
+ul ol,
+ol ul
+  margin-bottom 0
+
+blockquote
+  background-image url('baseurl/img/quote.png')
+  background-position 0 0
+  background-repeat no-repeat
+  clear both
+  margin 0 40px 20px
+  padding 0 0 0 20px
+  font-size 14px
+  font-family 'microsoft yahei', 'Droid Serif', serif, Arial
+  color #e85244
+  &.left
+    float left
+    margin-left 0
+    margin-right 20px
+
+blockquote.left,
+blockquote.right
+  float right
+  margin 0 0 0 20px
+  width 65%
+
+code
+  font-family Verdana, Arial
+  letter-spacing 1px
+  margin 25px 0
+  display block
+  font-size .9em
+  padding 15px 10px
+  border-left 4px solid #e9e9e9
+
+.placeholder()
+  font-family 'microsoft yahei', 'Droid Serif', serif, Arial
+
+::-webkit-input-placeholder
+
+:-moz-placeholder
+
+::-moz-placeholder
+
+:-ms-input-placeholder
+
+#outerheader
+  max-width 1020px
+  margin 0 auto
+  padding 0
+
+}
+  #logo
+    text-align center
+    font-family Oswald, sans-serif
+    margin-top 30px
+    margin-bottom 44px
+  }
+    #logo
+      h1
+        margin 0
+        font-size 28px
+        line-height 28px
+    .header-wrapper
+      .posttitle
+        margin 0
+  .sf-menu
+    li
+      li
+        line-height 20px
+        margin 0
+        padding 0
+        width auto
+  #slider
+    position relative
+    margin 20px 0 0
+  .tab-body
+    padding 20px 20px 0
+    float left
+  .tabcontainer2
+    .tab-body
+      padding 0
+  .toggle_container
+    margin 0 0 7px 40px
+    margin-top -7px
+    padding 10px 20px
+    overflow hidden
+    clear both
+  table
+    text-align left
+    margin 0 -1px 24px 0
+    width 100%
+  #sidebar
+    padding-top 29px
+    padding-bottom 20px
+    .textwidget
+      p
+        margin-bottom 10px
+    .widget-title
+      color #e85244
+      text-shadow 1px 1px 1px lighten(#e85244, 20%)
+  #searchform
+    #s
+      border 0 none
+      padding 8px 40px 8px 10px!important
+  .testimonial-widget
+    h6
+      line-height 20px
+      margin-bottom 10px
+  .rp-widget
+    padding 0
+  #footersidebar
+    padding 51px 0 20px
+  .wp-pagenavi
+    padding 10px 20px
+    font-size 11px
+    display block
+    text-align right
+    margin-bottom 20px
+    -webkit-border-radius 5px
+    -moz-border-radius 5px
+    border-radius 5px
+  .reply
+    a
+      &:hover
+        text-decoration underline
+  .comment-body
+    margin 0
+    padding 0
+    margin-left 75px
+  #message
+    p
+      margin 6px 0
+  .tinynav
+    background #fff
+    border 1px solid #bababa
+
+#logo
+  img
+    animation flipInY 1s .3s both
+    @keyframes flipInY {
+        0% {
+            transform perspective(400px) rotate3d(0,1,0,90deg)
+    animation-timing-function ease-in
+    opacity 0
+  .desc
+    display block
+    font-size 14px
+    text-transform uppercase
+    color #f78f7b
+
+40%
+  transform perspective(400px) rotate3d(0,1,0,-20deg)
+  animation-timing-function ease-in
+
+60%
+  transform perspective(400px) rotate3d(0,1,0,10deg)
+  opacity 1
+
+80%
+  transform perspective(400px) rotate3d(0,1,0,-5deg)
+
+100%
+  transform perspective(400px)
+
+#navigation
+  position relative
+  z-index 200
+  margin 0
+  background url('baseurl/img/dashed.png') repeat-x
+
+#nav-wrap
+  text-align center
+  background url('baseurl/img/dashed.png') repeat-x bottom
+
+#topnav
+  margin 0 auto
+  padding 0
+  list-style-type none
+  overflow visible
+  position relative
+  font-size 13px
+  font-family 'Nova Square', 'microsoft yahei', Arial, cursive
+  text-transform uppercase
+
+.sf-menu
+  line-height 100%
+  position absolute
+  right 0
+  bottom 0
+  li
+    text-align center
+    display inline-block
+    position relative
+    margin 0
+    &:hover
+      visibility inherit
+    li
+      margin 0 0!important
+      text-align left
+      background #f78b76
+      &:first-child
+        -webkit-border-top-left-radius 2px
+        -webkit-border-top-right-radius 2px
+        -moz-border-radius-topleft 2px
+        -moz-border-radius-topright 2px
+        border-top-left-radius 2px
+        border-top-right-radius 2px
+      &:last-child
+        -webkit-border-bottom-right-radius 2px
+        -webkit-border-bottom-left-radius 2px
+        -moz-border-radius-bottomright 2px
+        -moz-border-radius-bottomleft 2px
+        border-bottom-right-radius 2px
+        border-bottom-left-radius 2px
+  a
+    text-decoration none
+    display block
+    position relative
+    padding 0
+    margin 20px
+    &.sf-with-ul
+      min-width 1px
+  ul
+    position absolute
+    top -999em
+    width 12em
+    padding-top 6px
+    background url('baseurl/img/menu-arrow.png') no-repeat 10px top
+    ul
+      padding 0
+      background 0
+    li
+      width 100%
+      a
+        padding 8px 20px 7px!important
+        margin 0
+        font-size 11px
+
+.sf-menu,
+.sf-menu *
+  margin 0
+  padding 0
+  list-style none
+
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul
+  left 2px
+  top 3.7em
+  z-index 99
+
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul
+  top -999em
+
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul
+  left 12em
+  top -1px
+  margin-left 0
+
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul
+  top -999em
+
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul
+  left 12em
+  top -1px
+
+.sf-sub-indicator
+  position absolute
+  display block
+  right 10px
+  top 1.05em
+  width 10px
+  height 10px
+  text-indent -999em
+  overflow hidden
+
+.tinynav
+  display none
+
+#slider
+  img
+    display block
+
+#beforecontent
+  margin 53px 0 40px
+  .button
+    float right
+    font-size 16px
+    padding 15px 20px
+    margin-top 10px
+    color #e75143
+    background-color #f78b76
+    -moz-box-shadow -3px 6px 5px -4px #d43d32
+    -webkit-box-shadow -3px 6px 5px -4px #d43d32
+    box-shadow -3px 6px 5px -4px #d43d32
+    &:hover
+      background-color #f67860
+
+.pagetitle
+  font-size 40px
+  float left
+  margin-bottom 0
+  color #fff
+  text-shadow 2px 2px 0 #df352a
+  text-transform uppercase
+
+.pagedesc
+  font-size 14px
+  float left
+  padding 22px 0 0 15px
+  color #fb917d
+
+#outermain
+  .container
+    -webkit-border-radius 7px
+    -moz-border-radius 7px
+    border-radius 7px
+    background-color #f5f0ef
+    background-image url('baseurl/img/bg-main.jpg')
+    background-position 65% 0
+    background-repeat repeat-y
+
+#maincontent
+  padding-top 40px
+  padding-bottom 54px
+  background #f5f0ef
+
+.row
+  max-width 100%
+  margin 0 auto
+  .positionright
+    float right
+  .positionleft
+    float left
+  .row
+    width auto
+    max-width none
+    min-width 0
+    margin 0 -10px
+  .one
+    width 8.333%
+  .two
+    width 16.667%
+  .three
+    width 33.333%
+  .four
+    width 33.333%
+  .five
+    width 41.667%
+  .six
+    width 50%
+  .seven
+    width 58.333%
+  .eight
+    width 66.667%
+  .nine
+    width 75%
+  .ten
+    width 83.333%
+  .eleven
+    width 91.667%
+  .twelve
+    width 100%
+  .one_half
+    width 50%
+  .one_third
+    width 33.333%
+  .one_fourth
+    width 25%
+  .one_fifth
+    width 20%
+  .one_sixth
+    width 16.667%
+  .two_third
+    width 66.667%
+  .two_fourth
+    width 50%
+  .two_fifth
+    width 40%
+  .two_sixth
+    width 33.333%
+  .three_fourth
+    width 75%
+  .three_fifth
+    width 60%
+  .three_sixth
+    width 50%
+  .four_fifth
+    width 80%
+  .four_sixth
+    width 66.667%
+  .content
+    width 100%
+
+.padcontent
+  padding-right 20px
+  padding-left 0
+
+.positionright
+  .padcontent
+    padding-right 0
+    padding-left 20px
+
+.indentleft
+  overflow hidden
+
+.margin_top
+  padding-top 5px
+
+.margin_bottomoff
+  margin-bottom 0!important
+
+.margin_bottom_small
+  margin-bottom 5px
+
+.margin_bottom_middle
+  margin-bottom 12px
+
+.margin_bottom_large
+  margin-bottom 16px
+
+.margin_bottom_extralarge
+  margin-bottom 25px
+
+.textCenter
+  text-align center
+
+.textMiddle
+  padding 10px 0 20px
+
+.center
+  margin 0 auto!important
+  float none
+  display block
+
+.nomargin
+  margin-right 0
+
+.nopadding
+  padding-right 0
+
+.displayblock
+  display block
+
+.header-wrapper
+  h2
+    display inline-block
+    margin-right 3px
+  a
+    font-size 10px
+    text-transform uppercase
+
+#ts-display-shortcode
+  display block
+  margin 50px -40px 46px -40px
+  padding-top 46px
+  padding-bottom 3px
+  background #fff
+  border 1px dashed #bababa
+  border-width 1px 0
+  .header-wrapper
+    margin-left 40px
+    margin-bottom 9px
+  .row
+    margin-left 30px
+    margin-right 30px
+
+.post-shortcode
+  h2
+    margin 0 0 2px
+    line-height 16px
+    a
+      font-weight 400
+      font-size 14px
+      color #3a3534!important
+      &:hover
+        color #e85244!important
+  .date
+    font-size 12px
+    margin-bottom 10px
+    color #bbb
+
+.entry-quote
+  padding-bottom 15px
+  padding-top 10px
+  blockquote
+    font-size 14px
+    margin 0 0 13px
+    padding 22px 28px 22px 42px
+    position relative
+    -webkit-border-radius 5px
+    -moz-border-radius 5px
+    border-radius 5px
+    background url('baseurl/img/quote2.png') no-repeat scroll 20px 20px #fff
+    color #8f8f8f
+  .quotearrow
+    bottom -13px
+    height 13px
+    left 27px
+    position absolute
+    width 100%
+    background-image url('baseurl/img/quotearrow.png')
+    background-position 0 0
+    background-repeat no-repeat
+  .quoteinfo
+    color #e85244
+
+.highlight-content
+  clear both
+  margin 0
+  padding 0 0 20px
+  text-align center
+  h2
+    font-size 24px
+    line-height normal
+    font-weight 400
+    margin 0 0 5px
+  h3
+    font-size 14px
+    font-weight 400
+    font-style italic
+    margin-bottom 20px
+    color #888
+  .button
+    margin-right 18px
+    font-size 14px
+    display inline-block
+    font-weight 700
+  .top
+    &.separator
+      height 20px
+      margin-bottom 22px
+  .bottom
+    &.separator
+      height 30px
+      margin-bottom 20px
+
+img
+  max-width 100%
+  height auto
+  -ms-interpolation-mode bicubic
+  &.scale-with-grid
+    max-width 100%
+    height auto
+
+.shadow
+  position relative
+  margin-bottom 11px
+  display inline-block
+  &:after
+    -webkit-transform rotate(3deg)
+    -moz-transform rotate(3deg)
+    -o-transform rotate(3deg)
+    -ms-transform rotate(3deg)
+    transform rotate(3deg)
+    right 10px
+    left auto
+  img
+    -webkit-border-radius 4px
+    -moz-border-radius 4px
+    border-radius 4px
+    z-index 2
+    position relative
+
+.shadow:before,
+.shadow:after
+  position absolute
+  content ""
+  bottom 18px
+  left 10px
+  width 50%
+  top 80%
+  max-width 250px
+  -webkit-transform rotate(-3deg)
+  -moz-transform rotate(-3deg)
+  -o-transform rotate(-3deg)
+  -ms-transform rotate(-3deg)
+  transform rotate(-3deg)
+  z-index 1
+  background #d0cccb
+  -webkit-box-shadow 0 15px 3px #d0cccb
+  -moz-box-shadow 0 15px 3px #d0cccb
+  box-shadow 0 15px 3px #d0cccb
+
+input[type=text],
+textarea,
+input[type=password],
+select
+  padding 7px 5px
+  font-size 11px
+  background #fff
+  border 1px solid #e2dcdb
+  border-width 1px 0 0 1px
+  -moz-box-shadow inset 1px 2px 0 #f5f3f3
+  -webkit-box-shadow inset 1px 2px 0 #f5f3f3
+  box-shadow inset 1px 2px 0 #f5f3f3
+  color #8f8f8f
+
+textarea
+  width 90%
+  &:focus
+    outline 0
+
+.button,
+.button:visited,
+input[type=submit],
+button
+  padding 12px 10px
+  cursor pointer
+  font-size 10px
+  line-height 10px
+  text-transform uppercase
+  display inline-block
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  border-radius 3px
+
+.button:hover,
+input[type=submit]:hover,
+button:hover
+  text-decoration none
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  border-radius 3px
+
+.separator
+  display block
+  height 28px
+  margin 0 0 46px
+  text-align center
+  width 100%
+  clear both
+  border-bottom 1px dashed #bababa
+
+.spacer
+  display block
+  height 41px
+  width 100%
+  clear both
+
+.dropcap1
+  display block
+  float left
+  font-size 32px
+  line-height 34px
+  margin 4px 8px 0 0
+  text-shadow 1px 1px 0 #d33c31
+  color #e85244
+
+.dropcap2
+  display block
+  float left
+  border-radius 55px
+  display block
+  float left
+  font-size 26px
+  line-height 47px
+  margin 6px 8px 0 0
+  text-align center
+  width 47px
+  color #fff
+  background #e85244
+  border 1px solid #d33c31
+
+.dropcap3
+  display block
+  float left
+  font-size 26px
+  line-height 35px
+  width 47px
+  height 40px
+  text-align center
+  margin 6px 8px 0 0
+  padding 5px 0
+  color #fff
+  background #e85244
+  border 1px solid #d33c31
+
+.highlight1
+  padding 2px 5px
+
+.highlight2
+  padding 2px 5px
+
+.pullquote-right,
+.pullquote-left
+  padding 0 10px 0 30px
+  background-image url('baseurl/img/quote.png')
+  background-repeat no-repeat
+  background-position 0 0
+  float right
+  font-style italic
+  font-size 12px
+  letter-spacing 0
+  line-height 22px
+  margin 0 2px 20px 20px
+  width 50%
+
+.pullquote-left
+  float left
+  margin-left 2px
+  margin-right 20px
+
+.tabcontainer
+  margin 0
+
+.tabcontainer2
+  margin 0 0 20px
+  ul
+    &.tabs
+      margin 0 25px 0 0
+      padding 0
+      list-style none
+      width 22%
+      float left
+      li
+        display block
+        float none
+        padding 0 15px
+        &:first-child
+          border-top 0
+        a
+          text-decoration none
+          display block
+          padding 10px 0
+          outline 0
+          font-size 14px
+          font-weight 700
+  .tab-content
+    padding 0
+    float left
+    width 73%
+
+#toggle
+  border 0
+
+table
+  border-collapse separate
+  border-spacing 0
+  width 100%
+  margin-bottom 18px
+  border 1px solid #bbb
+  border-bottom 0
+  border-right 0
+
+table,
+td,
+th
+  text-align left
+
+th
+  padding 10px
+  background #fff
+  color #3a3534
+  border-bottom 1px solid #bbb
+  border-right 1px solid #bbb
+
+td
+  padding 10px
+
+tfoot
+  td
+    border 0
+
+tr th,
+thead th
+  font-size 13px
+  line-height 18px
+  padding 9px 24px
+
+tr
+  td
+    padding 6px 24px
+    border-bottom 1px solid #bbb
+    border-right 1px solid #bbb
+  &.odd
+    td
+      background #F2F7FC
+
+.padsidebar
+  padding-right 0
+  padding-left 30px
+  .postimg
+    width 108px
+    height 63px
+    img
+      width 108px
+      height 58px
+
+.widget-title
+  margin-bottom 20px
+  padding-bottom 0
+  font-size 16px
+
+#sidebar
+  ul
+    list-style-type none
+    list-style-position outside
+    margin 0
+    padding 5px 0 0
+    li
+      list-style-type none
+      margin 0
+      padding 0
+  .widget-container
+    margin-bottom 38px
+    padding-bottom 0
+  li
+    li
+      list-style-type none
+      margin 0 0 6px
+      padding 0 0 8px
+      background url('baseurl/img/dotted.png') repeat-x bottom
+      &:before
+        content "\00bb"
+        padding-right 5px
+      a
+        font-size 13px
+    ul
+      background url('baseurl/img/dotted.png') repeat-x top
+  .rp-widget
+    li
+      &:before
+        content ""
+        padding-right 0
+      h3
+        a
+          color #3a3534
+          &:hover
+            color #e85244
+    .smalldate
+      color #bbb
+
+#sidebar li li a:hover,
+#sidebar li li a.active
+  text-decoration none
+
+#searchform
+  position relative
+  width 100%
+  margin 18px 0
+  input
+    background transparent
+    border 0 none
+  .bgsearch
+    background #fff
+    border 1px solid #e2dcdb
+    border-width 1px 0 0 1px
+    -moz-box-shadow inset 1px 2px 0 #f5f3f3
+    -webkit-box-shadow inset 1px 2px 0 #f5f3f3
+    box-shadow inset 1px 2px 0 #f5f3f3
+
+.searchbutton
+  height 20px
+  position absolute
+  right 10px
+  top 6px
+  width 25px
+  background url('baseurl/img/search.png') no-repeat scroll 8px 5px transparent!important
+
+.testimonial-widget
+  .alignleft
+    margin-right 10px
+  .quote
+    display block
+    padding 5px 0 0
+    font-size 13px
+    font-style italic
+
+.tags
+  a
+    padding 5px 10px!important
+    margin 0 0 3px!important
+    display inline-block
+    font-size 11px
+    font-weight 700
+
+.rp-widget
+  li
+    padding 8px 0!important
+    margin-bottom 0!important
+    clear both
+    list-style none!important
+    .postimg
+      float left
+      margin 0 14px 0 0
+      padding 0
+      min-height auto
+      img
+        position relative
+        z-index 2px
+    &.last
+      margin 0!important
+      padding 0!important
+    h3
+      font-size 13px
+      margin-bottom 0
+      font-family 'microsoft yahei', Roboto, sans-serif
+    .smalldate
+      font-size 10px
+      display block
+      overflow hidden
+      padding 0
+      color #bbb
+
+#footersidebar
+  .rp-widget
+    img
+      -webkit-border-radius 5px
+      -moz-border-radius 5px
+      border-radius 5px
+      float left
+      margin-right 14px
+    li
+      h3
+        a
+          font-size 13px
+    .smalldate
+      font-size 11px
+      color #ffb4a5
+    p
+      margin-top 20px
+      margin-bottom 15px
+    .more
+      text-transform uppercase
+      font-size 10px
+    a
+      color #fff
+      &:hover
+        color #fcb5a8
+  ul
+    list-style-type none
+    margin 0
+    padding 0
+  li
+    &.widget-container
+      list-style-type none
+      margin 0 0 20px
+      padding 0
+      border 0
+    li
+      margin 0 0 5px
+      padding-bottom 0
+    a
+      padding 0
+      margin 0
+      &:hover
+        text-decoration none
+  .widget-title
+    font-size 16px
+    padding 0 0 11px
+    margin-bottom 20px
+    border-bottom 1px dashed #fb917d
+
+.sn
+  list-style-type none
+  margin 0
+  padding 0
+  li
+    list-style-type none
+    margin 0
+    padding 0 4px 0 0
+    display inline
+    background transparent
+  span
+    height 36px
+    width 36px
+    display inline-block
+  .icon-img
+    background-position 0 0
+    &:hover
+      background-position 0 -36px!important
+
+#copyright
+  padding 15px 10px
+  font-size 11px
+  text-align center
+
+.wp-pagenavi
+  background #fff
+  border-bottom 1px solid #ece3e1
+  .pages
+    padding-left 20px
+    float left
+    background url('baseurl/img/icon-pages.png') no-repeat 0 3px
+  .current
+    padding 0
+    margin 0 4px
+
+.wp-pagenavi a,
+.wp-pagenavi a:visited
+  padding 0
+  margin 0 4px
+  color #8f8f8f
+
+.post
+  margin-bottom 40px
+  -webkit-border-radius 5px
+  -moz-border-radius 5px
+  border-radius 5px
+  padding 30px 20px 30px 18px
+  background-color #fff
+  border-bottom 1px solid #ece3e1
+  .header-wrapper
+    overflow hidden
+  .date-wrapper
+    float left
+    text-align center
+    width 60px
+    margin-right 20px
+    -webkit-border-radius 5px
+    -moz-border-radius 5px
+    border-radius 5px
+    background-color #fcfafa
+    .date-value
+      font-size 26px
+      margin-top 10px
+      margin-bottom 15px
+      color #3a3534
+    .month-value
+      font-size 10px
+      text-transform uppercase
+      margin-bottom 6px
+      -webkit-border-bottom-right-radius 5px
+      -webkit-border-bottom-left-radius 5px
+      -moz-border-radius-bottomright 5px
+      -moz-border-radius-bottomleft 5px
+      border-bottom-right-radius 5px
+      border-bottom-left-radius 5px
+      background-color #e85244
+      color #fff
+
+.single
+  .post
+    margin-bottom 20px
+  .date-wrapper
+    text-align left
+
+.posttitle,
+.posttitle a
+  font-size 24px
+  margin-bottom 0
+  margin-top 5px
+  font-family 'microsoft yahei', Roboto, sans-serif
+  text-transform none
+
+.posttitle
+  a
+    &:hover
+      text-decoration none
+      color #3a3534
+
+.postimg
+  position relative
+  margin-bottom 20px
+  padding-top 21px
+  img
+    -webkit-border-radius 4px
+    -moz-border-radius 4px
+    border-radius 4px
+    z-index 2
+    width 100%
+    position relative
+
+.entry-utility
+  padding 3px 0 5px
+  clear both
+  font-size 11px
+  letter-spacing 1em
+  color #bbb
+  *
+    letter-spacing normal
+  .user
+    display inline-block
+    padding-left 20px
+    background url('baseurl/img/icon-user.png') no-repeat 0 5px
+  .tag
+    display inline-block
+    padding-left 15px
+    background url('baseurl/img/icon-tag.png') no-repeat 0 6px
+  .commen
+    display inline-block
+    padding-left 20px
+    background url('baseurl/img/icon-comment.png') no-repeat 0 4px
+  .visit
+    display inline-block
+    padding-left 20px
+    background url('baseurl/img/icon-eye.png') no-repeat 0 4px
+  a
+    &:hover
+      color #bbb
+
+.entry-content
+  overflow hidden
+  .entry-utility
+    padding-top 0
+
+.author
+  margin-bottom 0
+  h3
+    font-size 16px
+  h5
+    font-family 'microsoft yahei', Roboto, sans-serif
+    margin-bottom 5px
+
+.author img,
+.avatar-img img
+  -webkit-border-radius 56px
+  -moz-border-radius 56px
+  border-radius 56px
+
+.author-desc
+  overflow hidden
+  margin-left 5px
+
+.related-post
+  margin-bottom 20px
+  float left
+
+#comment
+  h3
+    margin-bottom 30px
+    font-size 16px
+
+.commentlist
+  list-style-type none
+  padding 0
+  margin 0
+  ol
+    list-style-type none
+    padding 30px 0 0 80px
+    margin 0
+  li
+    position relative
+    padding 0 0 30px
+    li
+      position relative
+      padding 0
+
+.avatar-img
+  position absolute
+  top 0
+  left 0
+
+.avatar
+  display block
+
+.fn
+  font-size 13px
+  display block
+
+}
+.tdate,
+.reply
+  font-size 11px
+
+.comment-body
+  p
+    margin-bottom 5px
+    margin-top 10px
+  .more
+    padding 0
+
+.comment-arrow
+  width 8px
+  height 18px
+  position absolute
+  left 72px
+  top 10px
+
+#commentform
+  margin-bottom 20px
+  label
+    display block
+  .text-input
+    margin-bottom 8px
+    padding 8px 5px
+    vertical-align middle
+  .textarea
+    margin-bottom 20px
+    padding 8px 5px
+    vertical-align top
+
+#frame-filter
+  margin 0 auto 30px
+  position relative
+
+#filter
+  list-style-type none
+  padding 0 0 0 3px
+  margin 0
+  display inline-block
+  clear both
+  -webkit-border-radius 5px
+  -moz-border-radius 5px
+  border-radius 5px
+  border 1px solid #e4e1e0
+  li
+    list-style-type none
+    display inline-block
+    margin-left -3px
+    padding 8px 10px
+    font-size 12px
+    border-left 1px solid #fff
+    position relative
+    z-index 10
+    background #f5f0ef
+    background url('data:image/svg+xml
+    background -moz-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
+    background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f0ef), color-stop(100%, #e9e9e9))
+    background -webkit-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
+    background -o-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
+    background -ms-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
+    background linear-gradient(to bottom, #f5f0ef 0, #e9e9e9 100%)
+    &:last-child
+      -webkit-border-top-right-radius 5px
+      -webkit-border-bottom-right-radius 5px
+      -moz-border-radius-topright 5px
+      -moz-border-radius-bottomright 5px
+      border-top-right-radius 5px
+      border-bottom-right-radius 5px
+    &:first-child
+      -webkit-border-top-left-radius 5px
+      -webkit-border-bottom-left-radius 5px
+      -moz-border-radius-topleft 5px
+      -moz-border-radius-bottomleft 5px
+      border-top-left-radius 5px
+      border-bottom-left-radius 5px
+    &.current
+      span
+        position absolute
+        bottom -7px
+        display block
+        width 13px
+        height 7px
+        left 40%
+        background url('baseurl/img/arrow-menu-pf.png') no-repeat bottom
+    a
+      color #8f8f8f
+    &:before
+      border-left 1px solid #d5d5d5
+      bottom 0
+      content ""
+      display block
+      left 0
+      position absolute
+      right 1px
+      top 0
+      z-index -1
+
+.ts-display-pf-img
+  position relative
+  a
+    &.image
+      display block
+      position relative
+      overflow hidden
+      img
+        display block
+    .rollover
+      background-color #e85244
+      display block
+      position absolute
+      z-index 10
+      display none
+      cursor pointer
+      width 100%
+      height 100%
+      -webkit-border-radius 220px
+      -moz-border-radius 220px
+      border-radius 220px
+      &.gotolink
+        background url('baseurl/img/hover-link.png')
+        background-color #000
+        background-repeat no-repeat
+        background-position center
+      &.gotopost
+        background url('baseurl/img/hover-doc.png')
+        background-color #000
+        background-repeat no-repeat
+        background-position center
+  img
+    overflow hidden
+    display block
+    position relative
+    -webkit-border-radius 220px
+    -moz-border-radius 220px
+    border-radius 220px
+  .zoom
+    background url('baseurl/img/hover-zoom.png')
+    background-repeat no-repeat
+    background-position center
+    display block
+    position absolute
+    z-index 10
+    display none
+    cursor pointer
+    width 100%
+    height 100%
+
+.ts-display-clear
+  clear both
+  height 1px!important
+  line-height 1px!important
+  float none!important
+
+.ts-display-pf-text
+  padding 16px 0 44px
+  text-align center
+  h2
+    font-size 15px
+    margin-bottom 5px
+    font-family 'microsoft yahei', Roboto, sans-serif
+    a
+      &:hover
+        color #666
+
+.isotope-item
+  z-index 2
+
+.isotope-hidden
+  &.isotope-item
+    pointer-events none
+    z-index 1
+
+.isotope,
+.isotope .isotope-item
+  -webkit-transition-duration .8s
+  -moz-transition-duration .8s
+  -o-transition-duration .8s
+  transition-duration .8s
+
+.isotope
+  -webkit-transition-property height, width
+  -moz-transition-property height, width
+  -o-transition-property height, width
+  transition-property height, width
+  .isotope-item
+    -webkit-transition-property -webkit-transform, opacity
+    -moz-transition-property -moz-transform, opacity
+    -o-transition-property top, left, opacity
+    transition-property transform, opacity
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition
+  -webkit-transition-duration 0s
+  -moz-transition-duration 0s
+  -o-transition-duration 0s
+  transition-duration 0s
+
+fieldset
+  border 0
+
+#contactform
+  margin 0 0 20px
+  position relative
+  label
+    display block
+    width 100%
+    float left
+    padding-bottom 5px
+    font-size 12px
+  input
+    &.text-input
+      margin-bottom 15px
+      vertical-align middle
+      width 40%
+      float left
+      padding 10px
+  textarea
+    width 93%
+    float left
+  .button
+    cursor pointer
+    margin-top 20px
+    float left
+
+span
+  &.error
+    color red
+    text-align left
+    font-size 11px
+    padding-bottom 15px
+    display block
+  &.required
+    color red
+
+#message
+  margin-left 0
+  font-weight 700
+
+#bodychild
+  border-top 10px solid #c13a2d
+
+a,
+.colortext
+  color #e85244
+
+a:hover,
+a.colortext:hover,
+.colortext a:hover,
+.morelink:hover
+  color #3a3534
+
+#logo h1 a,
+#logo h1 a:visited
+  color #fff
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title
+  color #3a3534
+
+.sf-menu a,
+.sf-menu a:visited
+  color #fff
+
+.sf-menu a:hover,
+.sf-menu li.current>a
+  color #fb917d
+
+}
+.sf-menu li li a,
+.sf-menu li li a:visited,
+.sf-menu li li a:hover,
+sf-menu li.current li a
+  color #fff
+
+.sf-menu li li:hover,
+.sf-menu li li.current
+  background #ed5749
+
+.icon-img
+  &.twitter
+    background url('baseurl/img/social/twitter.png')
+  &.facebook
+    background url('baseurl/img/social/facebook.png')
+  &.google
+    background url('baseurl/img/social/google.png')
+  &.rss
+    background url('baseurl/img/social/rss.png')
+  &.pinterest
+    background url('baseurl/img/social/pinterest.png')
+
+.flex-caption
+  float left
+  padding-top 12%
+  h1
+    color #fff
+    font-size 70px
+    margin-bottom 20px
+    line-height 65px
+  .desc
+    color #fb917d
+    font-size 18px
+    display block
+    line-height 25px
+    margin-top 13px
+  .button
+    background #f78b76!important
+    color #c93b2e!important
+    -moz-box-shadow -3px 6px 5px -4px #d43d32
+    -webkit-box-shadow -3px 6px 5px -4px #d43d32
+    box-shadow -3px 6px 5px -4px #d43d32
+    text-transform uppercase
+    font-size 14px
+    padding 15px 28px
+    &:hover
+      background #f67860!important
+      color #c93b2e!important
+
+.flex-control-paging
+  li
+    a
+      background #e04a3c
+      -moz-box-shadow 0 3px 1px #d23c30
+      -webkit-box-shadow 0 3px 1px #d23c30
+      box-shadow 0 3px 1px #d23c30
+      width 15px
+      height 15px
+      display block
+      cursor pointer
+      text-indent -9999px
+      -webkit-border-radius 20px
+      -moz-border-radius 20px
+      border-radius 20px
+      &:hover
+        background #f78b76
+      &.flex-active
+        background #f78b76
+
+.fullwidth
+  .container
+    background-image none!important
+
+label
+  color #8f8f8f
+
+.button,
+.button:visited,
+input[type=submit]
+  background #3a3534
+  color #fff
+  border 0
+
+.button:hover,
+input[type=submit]:hover
+  background #e85244
+  color #fff
+  border 0
+
+thead
+  th
+    border-right 1px solid #bbb!important
+
+.posttitle a,
+.posttitle a:visited
+  color #e85244
+
+.entry-comment
+  background #303030
+
+.entry-comment a,
+entry-comment a:visited
+  color #fff
+
+.entry-utility a,
+.entry-utility a:visited
+  color #e85244
+
+#comment h3,
+.author h3
+  color #e85244
+
+.tdate,
+.reply a,
+.reply a:visited
+  color #666
+
+.fn,
+.fn a,
+.fn a:visited
+  color #3a3534
+
+.reply a:hover,
+.fn a:hover
+  color #e85244
+
+.wp-pagenavi .current,
+.wp-pagenavi a:hover
+  color #e85244
+
+#filter li.current a,
+#filter li a:hover
+  color #e85244
+
+#filter li:first-child,
+#filter li:first-child:before
+  border-left 0
+
+#filter li.current,
+#filter li:hover
+  background #e9e9e9
+  background url('data:image/svg+xml
+  background -moz-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(14%, #e9e9e9), color-stop(100%, #f5f0ef))
+  background -webkit-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
+  background -o-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
+  background -ms-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
+  background linear-gradient(to bottom, #e9e9e9 14%, #f5f0ef 100%)
+
+.ts-display-pf-text h2 a,
+.ts-display-pf-text h2 a:visited
+  color #3a3534
+
+#sidebar li a,
+#sidebar li li a
+  color #8f8f8f
+
+#sidebar li a:hover,
+#sidebar li li a:hover,
+#sidebar li li a.current
+  color #e85244
+
+#footer
+  color #fcb5a8
+  h2
+    color #fff
+  a
+    &:hover
+      color #fff
+
+#footer a,
+#footer a:visited
+  color #fcb5a8
+
+#outercopyright
+  background #c13a2d
+  color #ff8065
+  a
+    color #ff8065
+    &:hover
+      color #fff
+
+.container
+  margin 0 auto
+  padding 0 30px
+  max-width 960px
+  &:after
+    content "\0020"
+    display block
+    height 0
+    clear both
+    visibility hidden
+
+.row .column,
+.row .columns
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+.column,
+.columns
+  float left
+  min-height 1px
+  padding 0 10px
+  position relative
+  margin-bottom 0
+
+.column.wrapper,
+.columns.wrapper
+  padding 0
+
+object,
+embed
+  max-width 100%
+
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after
+  content '\0020'
+  display block
+  overflow hidden
+  visibility hidden
+  width 0
+  height 0
+
+.row:after,
+.clearfix:after
+  clear both
+
+.row,
+.clearfix
+  zoom 1
+
+.clear,
+.clr
+  clear both
+  display block
+  overflow hidden
+  visibility hidden
+  width 0
+  height 0
+
+@media only screen and (min-width:768px) and (max-width:959px)
+  .slider-img
+    width 40%
+  .flex-caption
+    h1
+      font-size 50px
+      line-height 45px
+    .desc
+      font-size 16px
+
+.headerPosttitle
+  ()
+    display table
+    height 2.86em
+    .pt_1 {
+        display table-cell
+    vertical-align middle
+    .pt_2 {
+            line-height 1.43em
+    max-height 2.86em
+    overflow hidden
+
+@media only screen and (max-width:767px)
+  body
+    -webkit-text-size-adjust none
+    -ms-text-size-adjust none
+    width 100%
+    min-width 0
+    margin-left 0
+    margin-right 0
+    padding-left 0
+    padding-right 0
+  .container
+    margin 0 auto
+    max-width 420px
+  .row
+    width auto
+    min-width 0
+    margin-left 0
+    margin-right 0
+  [class*=column]
+    & + [class*=column]:last-child
+      float none
+  #logo
+    text-align center
+    float none!important
+    display block
+    img
+      float none!important
+    .desc
+      float none!important
+      display block
+      border 0!important
+      margin 15px 0 0
+      padding 0
+  #topright
+    text-align center
+    float none!important
+    display block
+  #searchform
+    margin 20px auto 30px
+    float none!important
+  #navigation
+    text-align center
+    clear both
+    height auto
+    width 50%
+    margin 0 auto
+    .sn
+      text-align center
+      float none!important
+      padding 5px 0 0
+      background #272727
+      margin-top 20px
+  #nav-wrap
+    background none!important
+  .sf-menu
+    a
+      background transparent!important
+      border 0!important
+    & > li
+      border 0!important
+      display none
+  nav
+    margin 0
+    float none
+  .js
+    .tinynav
+      display block
+      display inline-block
+      text-align left
+      margin 0
+      width 100%
+    #topnav
+      display none
+  .pagedesc
+    padding 0
+  .slider-img
+    width 50%
+  .flex-caption
+    width 50%
+    padding-top 5%
+    h1
+      font-size 30px
+      line-height 28px
+    .desc
+      font-size 12px
+      line-height 16px
+  .padcontent
+    padding-right 0
+  .padsidebar
+    padding-left 0
+  #content
+    &.positionright
+      .padcontent
+        padding-left 0
+        padding-right 0
+  #outermain
+    .container
+      background-image none!important
+      background-color #f5f0ef!important
+  .header-wrapper
+    .posttitle
+  .entry-utility
+    .tag
+      margin-left 0
+  .wp-pagenavi
+    margin-bottom 30px
+  #copyright
+    margin-bottom 0
+    text-align center
+
+.row .column,
+@media only screen and (max-width:767px)     .row .columns
+  width 100%
+  float none
+
+#maincontent .column,
+@media only screen and (max-width:767px)     #maincontent .columns
+  margin-bottom 20px
+
+.column:last-child,
+@media only screen and (max-width:767px)     .columns:last-child
+  float none
+
+.column:before,
+    .columns:before,
+    .column:after,
+@media only screen and (max-width:767px)     .columns:after
+  content ""
+  display table
+
+.column:after,
+@media only screen and (max-width:767px)     .columns:after
+  clear both
+
+#content.positionright,
+@media only screen and (max-width:767px)     #content.positionleft
+  background transparent
+
+.header-wrapper .posttitle,
+@media only screen and (max-width:767px)     .header-wrapper .posttitle a
+  font-size 20px
+
+@media only screen and (max-width:479px)
+  .slider-img
+    width 50%
+  .flex-caption
+    width 40%
+    h1
+      font-size 18px
+      line-height 20px
+    .desc
+      font-size 12px
+      line-height 16px
+    .button
+      display none
+  .header-wrapper
+    h2
+      display block
+  .highlight-content
+    .button
+      margin-bottom 10px
+  .post
+    .header-wrapper
+      padding-left 0
+  .padcontent
+    padding 0!important
+  blockquote
+    margin 0 0 20px!important
+  .commentlist
+    ol
+      padding-left 35px
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus
+  outline 0
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav
+  margin 0
+  padding 0
+  list-style none
+
+.flexslider
+  margin 0
+  padding 0
+  padding 0
+  position relative
+  .slides
+    zoom 1
+    margin 0
+    padding 0
+    & > li
+      display none
+      -webkit-backface-visibility hidden
+    img
+      display block
+      max-width 100%
+      position relative
+  ul
+    li
+      margin 0
+      padding 0
+
+.flex-pauseplay
+  span
+    text-transform capitalize
+
+.slides
+  &:after
+    content "."
+    display block
+    clear both
+    visibility hidden
+    line-height 0
+    height 0
+
+html[xmlns]
+  .slides
+    display block
+
+.no-js
+  .slides
+    & > li
+      &:first-child
+        display block
+
+.flex-viewport
+  max-height 2000px
+  -webkit-transition all 1s ease
+  -moz-transition all 1s ease
+  transition all 1s ease
+
+.loading
+  .flex-viewport
+    max-height 300px
+
+.carousel
+  li
+    margin-right 5px
+
+.slider-img
+  float right
+
+.flex-direction-nav
+  *height 0
+  a
+    width 58px
+    height 58px
+    margin 0
+    display block
+    position absolute
+    top 40%
+    z-index 10
+    cursor pointer
+    text-indent -9999px
+  .flex-next
+    background url('baseurl/img/flex-next.png') no-repeat 0 0
+    right -30px
+  .flex-prev
+    background url('baseurl/img/flex-prev.png') no-repeat 0 0
+    left -30px
+  .flex-disabled
+    opacity .3!important
+    filter alpha(opacity=30)
+    cursor default
+
+.flexslider .flex-next:hover,
+.flexslider .flex-prev:hover
+  opacity .8
+
+.flex-control-nav
+  width 100%
+  position absolute
+  bottom 33px
+  text-align center
+  li
+    margin 0 6px
+    display inline-block
+    zoom 1
+    *display inline
+
+.flex-control-thumbs
+  margin 5px 0 0
+  position static
+  overflow hidden
+  li
+    width 25%
+    float left
+    margin 0
+  img
+    width 100%
+    display block
+    opacity .7
+    cursor pointer
+    &:hover
+      opacity 1
+  .flex-active
+    opacity 1
+    cursor default
+
+@media screen and (max-width:860px)
+  .flex-direction-nav
+    .flex-prev
+      opacity 1
+      left 0
+    .flex-next
+      opacity 1
+      right 0
+
+div.pp_default .pp_top,
+div.pp_default .pp_top .pp_middle,
+div.pp_default .pp_top .pp_left,
+div.pp_default .pp_top .pp_right,
+div.pp_default .pp_bottom,
+div.pp_default .pp_bottom .pp_left,
+div.pp_default .pp_bottom .pp_middle,
+div.pp_default .pp_bottom .pp_right
+  height 13px
+
+div
+  &.pp_default
+    .pp_top
+      .pp_left
+        background url('baseurl/img/default/sprite.png') -78px -93px no-repeat
+      .pp_middle
+        background url('baseurl/img/default/sprite_x.png') top left repeat-x
+      .pp_right
+        background url('baseurl/img/default/sprite.png') -112px -93px no-repeat
+    .pp_content
+      .ppt
+        color #f8f8f8
+    .pp_content_container
+      .pp_left
+        background url('baseurl/img/default/sprite_y.png') -7px 0 repeat-y
+        padding-left 13px
+      .pp_right
+        background url('baseurl/img/default/sprite_y.png') top right repeat-y
+        padding-right 13px
+      .pp_details
+        margin-top 5px
+    .pp_next
+      &:hover
+        background url('baseurl/img/default/sprite_next.png') center right no-repeat
+        cursor pointer
+    .pp_previous
+      &:hover
+        background url('baseurl/img/default/sprite_prev.png') center left no-repeat
+        cursor pointer
+    .pp_expand
+      background url('baseurl/img/default/sprite.png') 0 -29px no-repeat
+      cursor pointer
+      height 28px
+      width 28px
+      &:hover
+        background url('baseurl/img/default/sprite.png') 0 -56px no-repeat
+        cursor pointer
+    .pp_contract
+      background url('baseurl/img/default/sprite.png') 0 -84px no-repeat
+      cursor pointer
+      height 28px
+      width 28px
+      &:hover
+        background url('baseurl/img/default/sprite.png') 0 -113px no-repeat
+        cursor pointer
+    .pp_close
+      background url('baseurl/img/default/sprite.png') 2px 1px no-repeat
+      cursor pointer
+      height 30px
+      width 30px
+    .pp_gallery
+      ul
+        li
+          a
+            background url('baseurl/img/default/default_thumb.png') center center #f8f8f8
+            border 1px solid #aaa
+    .pp_social
+      margin-top 7px
+    .pp_nav
+      clear none
+      height 30px
+      position relative
+      width 110px
+      .pp_pause
+        background-position -51px -29px
+      .currentTextHolder
+        color #999
+        font-family Georgia
+        font-size 11px
+        font-style italic
+        left 75px
+        line-height 25px
+        margin 0
+        padding 0 0 0 10px
+        position absolute
+        top 2px
+    a
+      &.pp_arrow_next
+        background-position -82px -3px
+        left 52px
+    .pp_description
+      font-size 11px
+      font-weight 700
+      line-height 14px
+      margin 5px 50px 5px 0
+    .pp_bottom
+      .pp_left
+        background url('baseurl/img/default/sprite.png') -78px -127px no-repeat
+      .pp_middle
+        background url('baseurl/img/default/sprite_x.png') bottom left repeat-x
+      .pp_right
+        background url('baseurl/img/default/sprite.png') -112px -127px no-repeat
+    .pp_loaderIcon
+      background url('baseurl/img/default/loader.gif') center center no-repeat
+  &.light_rounded
+    .pp_top
+      .pp_left
+        background url('baseurl/img/light_rounded/sprite.png') -88px -53px no-repeat
+      .pp_right
+        background url('baseurl/img/light_rounded/sprite.png') -110px -53px no-repeat
+    .pp_next
+      &:hover
+        background url('baseurl/img/light_rounded/btnNext.png') center right no-repeat
+        cursor pointer
+    .pp_previous
+      &:hover
+        background url('baseurl/img/light_rounded/btnPrevious.png') center left no-repeat
+        cursor pointer
+    .pp_expand
+      background url('baseurl/img/light_rounded/sprite.png') -31px -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/light_rounded/sprite.png') -31px -47px no-repeat
+        cursor pointer
+    .pp_contract
+      background url('baseurl/img/light_rounded/sprite.png') 0 -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/light_rounded/sprite.png') 0 -47px no-repeat
+        cursor pointer
+    .pp_close
+      background url('baseurl/img/light_rounded/sprite.png') -1px -1px no-repeat
+      cursor pointer
+      height 22px
+      width 75px
+    .pp_nav
+      .pp_play
+        background url('baseurl/img/light_rounded/sprite.png') -1px -100px no-repeat
+        height 15px
+        width 14px
+      .pp_pause
+        background url('baseurl/img/light_rounded/sprite.png') -24px -100px no-repeat
+        height 15px
+        width 14px
+    .pp_arrow_previous
+      background url('baseurl/img/light_rounded/sprite.png') 0 -71px no-repeat
+    .pp_arrow_next
+      background url('baseurl/img/light_rounded/sprite.png') -22px -71px no-repeat
+    .pp_bottom
+      .pp_left
+        background url('baseurl/img/light_rounded/sprite.png') -88px -80px no-repeat
+      .pp_right
+        background url('baseurl/img/light_rounded/sprite.png') -110px -80px no-repeat
+  &.dark_rounded
+    .pp_top
+      .pp_left
+        background url('baseurl/img/dark_rounded/sprite.png') -88px -53px no-repeat
+      .pp_right
+        background url('baseurl/img/dark_rounded/sprite.png') -110px -53px no-repeat
+    .pp_content_container
+      .pp_left
+        background url('baseurl/img/dark_rounded/contentPattern.png') top left repeat-y
+      .pp_right
+        background url('baseurl/img/dark_rounded/contentPattern.png') top right repeat-y
+    .pp_next
+      &:hover
+        background url('baseurl/img/dark_rounded/btnNext.png') center right no-repeat
+        cursor pointer
+    .pp_previous
+      &:hover
+        background url('baseurl/img/dark_rounded/btnPrevious.png') center left no-repeat
+        cursor pointer
+    .pp_expand
+      background url('baseurl/img/dark_rounded/sprite.png') -31px -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/dark_rounded/sprite.png') -31px -47px no-repeat
+        cursor pointer
+    .pp_contract
+      background url('baseurl/img/dark_rounded/sprite.png') 0 -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/dark_rounded/sprite.png') 0 -47px no-repeat
+        cursor pointer
+    .pp_close
+      background url('baseurl/img/dark_rounded/sprite.png') -1px -1px no-repeat
+      cursor pointer
+      height 22px
+      width 75px
+    .pp_description
+      color #fff
+      margin-right 85px
+    .pp_nav
+      .pp_play
+        background url('baseurl/img/dark_rounded/sprite.png') -1px -100px no-repeat
+        height 15px
+        width 14px
+      .pp_pause
+        background url('baseurl/img/dark_rounded/sprite.png') -24px -100px no-repeat
+        height 15px
+        width 14px
+    .pp_arrow_previous
+      background url('baseurl/img/dark_rounded/sprite.png') 0 -71px no-repeat
+    .pp_arrow_next
+      background url('baseurl/img/dark_rounded/sprite.png') -22px -71px no-repeat
+    .pp_bottom
+      .pp_left
+        background url('baseurl/img/dark_rounded/sprite.png') -88px -80px no-repeat
+      .pp_right
+        background url('baseurl/img/dark_rounded/sprite.png') -110px -80px no-repeat
+    .pp_loaderIcon
+      background url('baseurl/img/dark_rounded/loader.gif') center center no-repeat
+  &.dark_square
+    .pp_description
+      color #fff
+      margin 0 85px 0 0
+    .pp_loaderIcon
+      background url('baseurl/img/dark_square/loader.gif') center center no-repeat
+    .pp_expand
+      background url('baseurl/img/dark_square/sprite.png') -31px -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/dark_square/sprite.png') -31px -47px no-repeat
+        cursor pointer
+    .pp_contract
+      background url('baseurl/img/dark_square/sprite.png') 0 -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/dark_square/sprite.png') 0 -47px no-repeat
+        cursor pointer
+    .pp_close
+      background url('baseurl/img/dark_square/sprite.png') -1px -1px no-repeat
+      cursor pointer
+      height 22px
+      width 75px
+    .pp_nav
+      clear none
+      .pp_play
+        background url('baseurl/img/dark_square/sprite.png') -1px -100px no-repeat
+        height 15px
+        width 14px
+      .pp_pause
+        background url('baseurl/img/dark_square/sprite.png') -24px -100px no-repeat
+        height 15px
+        width 14px
+    .pp_arrow_previous
+      background url('baseurl/img/dark_square/sprite.png') 0 -71px no-repeat
+    .pp_arrow_next
+      background url('baseurl/img/dark_square/sprite.png') -22px -71px no-repeat
+    .pp_next
+      &:hover
+        background url('baseurl/img/dark_square/btnNext.png') center right no-repeat
+        cursor pointer
+    .pp_previous
+      &:hover
+        background url('baseurl/img/dark_square/btnPrevious.png') center left no-repeat
+        cursor pointer
+  &.light_square
+    .pp_expand
+      background url('baseurl/img/light_square/sprite.png') -31px -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/light_square/sprite.png') -31px -47px no-repeat
+        cursor pointer
+    .pp_contract
+      background url('baseurl/img/light_square/sprite.png') 0 -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/light_square/sprite.png') 0 -47px no-repeat
+        cursor pointer
+    .pp_close
+      background url('baseurl/img/light_square/sprite.png') -1px -1px no-repeat
+      cursor pointer
+      height 22px
+      width 75px
+    .pp_nav
+      .pp_play
+        background url('baseurl/img/light_square/sprite.png') -1px -100px no-repeat
+        height 15px
+        width 14px
+      .pp_pause
+        background url('baseurl/img/light_square/sprite.png') -24px -100px no-repeat
+        height 15px
+        width 14px
+    .pp_arrow_previous
+      background url('baseurl/img/light_square/sprite.png') 0 -71px no-repeat
+    .pp_arrow_next
+      background url('baseurl/img/light_square/sprite.png') -22px -71px no-repeat
+    .pp_next
+      &:hover
+        background url('baseurl/img/light_square/btnNext.png') center right no-repeat
+        cursor pointer
+    .pp_previous
+      &:hover
+        background url('baseurl/img/light_square/btnPrevious.png') center left no-repeat
+        cursor pointer
+  &.facebook
+    .pp_top
+      .pp_left
+        background url('baseurl/img/facebook/sprite.png') -88px -53px no-repeat
+      .pp_middle
+        background url('baseurl/img/facebook/contentPatternTop.png') top left repeat-x
+      .pp_right
+        background url('baseurl/img/facebook/sprite.png') -110px -53px no-repeat
+    .pp_content_container
+      .pp_left
+        background url('baseurl/img/facebook/contentPatternLeft.png') top left repeat-y
+      .pp_right
+        background url('baseurl/img/facebook/contentPatternRight.png') top right repeat-y
+    .pp_expand
+      background url('baseurl/img/facebook/sprite.png') -31px -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/facebook/sprite.png') -31px -47px no-repeat
+        cursor pointer
+    .pp_contract
+      background url('baseurl/img/facebook/sprite.png') 0 -26px no-repeat
+      cursor pointer
+      &:hover
+        background url('baseurl/img/facebook/sprite.png') 0 -47px no-repeat
+        cursor pointer
+    .pp_close
+      background url('baseurl/img/facebook/sprite.png') -1px -1px no-repeat
+      cursor pointer
+      height 22px
+      width 22px
+    .pp_description
+      margin 0 37px 0 0
+    .pp_loaderIcon
+      background url('baseurl/img/facebook/loader.gif') center center no-repeat
+    .pp_arrow_previous
+      background url('baseurl/img/facebook/sprite.png') 0 -71px no-repeat
+      height 22px
+      margin-top 0
+      width 22px
+      &.disabled
+        background-position 0 -96px
+        cursor default
+    .pp_arrow_next
+      background url('baseurl/img/facebook/sprite.png') -32px -71px no-repeat
+      height 22px
+      margin-top 0
+      width 22px
+      &.disabled
+        background-position -32px -96px
+        cursor default
+    .pp_nav
+      margin-top 0
+      p
+        font-size 15px
+        padding 0 3px 0 4px
+      .pp_play
+        background url('baseurl/img/facebook/sprite.png') -1px -123px no-repeat
+        height 22px
+        width 22px
+      .pp_pause
+        background url('baseurl/img/facebook/sprite.png') -32px -123px no-repeat
+        height 22px
+        width 22px
+    .pp_next
+      &:hover
+        background url('baseurl/img/facebook/btnNext.png') center right no-repeat
+        cursor pointer
+    .pp_previous
+      &:hover
+        background url('baseurl/img/facebook/btnPrevious.png') center left no-repeat
+        cursor pointer
+    .pp_bottom
+      .pp_left
+        background url('baseurl/img/facebook/sprite.png') -88px -80px no-repeat
+      .pp_middle
+        background url('baseurl/img/facebook/contentPatternBottom.png') top left repeat-x
+      .pp_right
+        background url('baseurl/img/facebook/sprite.png') -110px -80px no-repeat
+  &.pp_pic_holder
+    display none
+    position absolute
+    width 100px
+    z-index 10000
+    a
+      &:focus
+        outline 0
+  &.pp_overlay
+    background #000
+    display none
+    left 0
+    position absolute
+    top 0
+    width 100%
+    z-index 9500
+  &.ppt
+    color #fff
+    display none
+    font-size 17px
+    margin 0 0 5px 15px
+    z-index 9999
+
+div.pp_default .pp_gallery a.pp_arrow_previous,
+div.pp_default .pp_gallery a.pp_arrow_next
+  left auto
+  position static
+
+div.pp_default .pp_nav .pp_play,
+div.pp_default .pp_nav .pp_pause
+  background url('baseurl/img/default/sprite.png') -51px 1px no-repeat
+  height 30px
+  width 30px
+
+div.pp_default a.pp_arrow_previous,
+div.pp_default a.pp_arrow_next
+  background url('baseurl/img/default/sprite.png') -31px -3px no-repeat
+  height 20px
+  margin 4px 0 0
+  width 20px
+
+div.pp_default .pp_close:hover,
+div.pp_default .pp_nav .pp_play:hover,
+div.pp_default .pp_nav .pp_pause:hover,
+div.pp_default .pp_arrow_next:hover,
+div.pp_default .pp_arrow_previous:hover
+  opacity .7
+
+div.dark_square .pp_left,
+div.dark_square .pp_middle,
+div.dark_square .pp_right,
+div.dark_square .pp_content
+  background #000
+
+.pp_content
+  height 40px
+  min-width 40px
+
+.pp_content_container
+  position relative
+  text-align left
+  width 100%
+  .pp_left
+    padding-left 20px
+  .pp_right
+    padding-right 20px
+  .pp_details
+    float left
+    margin 10px 0 2px
+
+.pp_description
+  display none
+  margin 0
+
+.pp_social
+  float left
+  margin 0
+  .facebook
+    float left
+    margin-left 5px
+    overflow hidden
+    width 55px
+  .twitter
+    float left
+
+.pp_nav
+  clear right
+  float left
+  margin 3px 10px 0 0
+  p
+    float left
+    margin 2px 4px
+    white-space nowrap
+
+.pp_nav .pp_play,
+.pp_nav .pp_pause
+  float left
+  margin-right 4px
+  text-indent -10000px
+
+a.pp_arrow_previous,
+a.pp_arrow_next
+  display block
+  float left
+  height 15px
+  margin-top 3px
+  overflow hidden
+  text-indent -10000px
+  width 14px
+
+.pp_hoverContainer
+  position absolute
+  top 0
+  width 100%
+  z-index 2000
+
+.pp_gallery
+  display none
+  left 50%
+  margin-top -50px
+  position absolute
+  z-index 10000
+  div
+    float left
+    overflow hidden
+    position relative
+  ul
+    float left
+    height 35px
+    margin 0 0 0 5px
+    padding 0
+    position relative
+    white-space nowrap
+    a
+      border 1px rgba(0, 0, 0, .5) solid
+      display block
+      float left
+      height 33px
+      overflow hidden
+      img
+        border 0
+  li
+    display block
+    float left
+    margin 0 5px 0 0
+    padding 0
+    &.default
+      a
+        background url('baseurl/img/facebook/default_thumbnail.gif') 0 0 no-repeat
+        display block
+        height 33px
+        width 50px
+
+.pp_gallery .pp_arrow_previous,
+.pp_gallery .pp_arrow_next
+  margin-top 7px!important
+
+a.pp_expand,
+a.pp_contract
+  cursor pointer
+  display none
+  height 20px
+  position absolute
+  right 30px
+  text-indent -10000px
+  top 10px
+  width 20px
+  z-index 20000
+
+.pp_loaderIcon
+  display block
+  height 24px
+  left 50%
+  margin -12px 0 0 -12px
+  position absolute
+  top 50%
+  width 24px
+
+#pp_full_res
+  line-height 1!important
+  .pp_inline
+    text-align left
+    p
+      margin 0 0 15px
+
+div.pp_default .pp_content,
+div.light_rounded .pp_content
+  background-color #fff
+
+div.pp_default #pp_full_res .pp_inline,
+div.light_rounded .pp_content .ppt,
+div.light_rounded #pp_full_res .pp_inline,
+div.light_square .pp_content .ppt,
+div.light_square #pp_full_res .pp_inline,
+div.facebook .pp_content .ppt,
+div.facebook #pp_full_res .pp_inline
+  color #000
+
+div.pp_default .pp_gallery ul li a:hover,
+div.pp_default .pp_gallery ul li.selected a,
+.pp_gallery ul a:hover,
+.pp_gallery li.selected a
+  border-color #fff
+
+div.pp_default .pp_details,
+div.light_rounded .pp_details,
+div.dark_rounded .pp_details,
+div.dark_square .pp_details,
+div.light_square .pp_details,
+div.facebook .pp_details
+  position relative
+
+div.light_rounded .pp_top .pp_middle,
+div.light_rounded .pp_content_container .pp_left,
+div.light_rounded .pp_content_container .pp_right,
+div.light_rounded .pp_bottom .pp_middle,
+div.light_square .pp_left,
+div.light_square .pp_middle,
+div.light_square .pp_right,
+div.light_square .pp_content,
+div.facebook .pp_content
+  background #fff
+
+div.light_rounded .pp_description,
+div.light_square .pp_description
+  margin-right 85px
+
+div.light_rounded .pp_gallery a.pp_arrow_previous,
+div.light_rounded .pp_gallery a.pp_arrow_next,
+div.dark_rounded .pp_gallery a.pp_arrow_previous,
+div.dark_rounded .pp_gallery a.pp_arrow_next,
+div.dark_square .pp_gallery a.pp_arrow_previous,
+div.dark_square .pp_gallery a.pp_arrow_next,
+div.light_square .pp_gallery a.pp_arrow_previous,
+div.light_square .pp_gallery a.pp_arrow_next
+  margin-top 12px!important
+
+div.light_rounded .pp_arrow_previous.disabled,
+div.dark_rounded .pp_arrow_previous.disabled,
+div.dark_square .pp_arrow_previous.disabled,
+div.light_square .pp_arrow_previous.disabled
+  background-position 0 -87px
+  cursor default
+
+div.light_rounded .pp_arrow_next.disabled,
+div.dark_rounded .pp_arrow_next.disabled,
+div.dark_square .pp_arrow_next.disabled,
+div.light_square .pp_arrow_next.disabled
+  background-position -22px -87px
+  cursor default
+
+div.light_rounded .pp_loaderIcon,
+div.light_square .pp_loaderIcon
+  background url('baseurl/img/light_rounded/loader.gif') center center no-repeat
+
+div.dark_rounded .pp_top .pp_middle,
+div.dark_rounded .pp_content,
+div.dark_rounded .pp_bottom .pp_middle
+  background url('baseurl/img/dark_rounded/contentPattern.png') top left repeat
+
+div.dark_rounded .currentTextHolder,
+div.dark_square .currentTextHolder
+  color #c4c4c4
+
+div.dark_rounded #pp_full_res .pp_inline,
+div.dark_square #pp_full_res .pp_inline
+  color #fff
+
+.pp_top,
+.pp_bottom
+  height 20px
+  position relative
+
+* html .pp_top,
+* html .pp_bottom
+  padding 0 20px
+
+.pp_top .pp_left,
+.pp_bottom .pp_left
+  height 20px
+  left 0
+  position absolute
+  width 20px
+
+.pp_top .pp_middle,
+.pp_bottom .pp_middle
+  height 20px
+  left 20px
+  position absolute
+  right 20px
+
+* html .pp_top .pp_middle,
+* html .pp_bottom .pp_middle
+  left 0
+  position static
+
+.pp_top .pp_right,
+.pp_bottom .pp_right
+  height 20px
+  left auto
+  position absolute
+  right 0
+  top 0
+  width 20px
+
+.pp_fade,
+.pp_gallery li.default a img
+  display none
+
+.nav-switch
+  position fixed
+  top 130px
+  right 0
+  width 50px
+  height 37px
+  background-image url('baseurl/img/navSwitch.png')
+  background-position top left
+  display none
+  cursor pointer
+
+.aside-nav
+  position fixed
+  width 100%
+  height 100%
+  top 0
+  left 0
+  background-color rgba(0, 0, 0, 0.5)
+  z-index 1000
+  display none
+
+.nav-outer
+  width 200px
+  height 100%
+  float right
+  background-color #f2ede9
+  transform translate(200px)
+  transition transform .3s
+  .widget-title
+    font-size 20px
+    padding 20px 30px
+    margin 0
+    color #e85244
+  ul
+    list-style none
+    margin 0 30px
+    padding 0
+    background url('baseurl/img/dotted.png') repeat-x top
+  li
+    background url('baseurl/img/dotted.png') repeat-x bottom
+    padding 6px 0 8px 0
+    &:before
+      content "\00bb"
+      padding-right 5px
+    a
+      color #8f8f8f
+
+.nav-outer li a:hover,
+.nav-outer li a.current
+  color #e85244
+
+@media only screen and (max-width:767px)
+  .nav-switch
+    display block
+  .aside-nav
+    &.slideLeft
+      display block
+  .slideLeft
+    &.in
+      .nav-outer
+        transform translate(0)
+

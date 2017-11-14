@@ -19,6 +19,8 @@ const
   dir = require(util.dir('config/directory'))(env.PROJECT + '/'),
   pug2html = require(util.dir('tasks/common/pug2html')),
   stylus2css = require(util.dir('tasks/common/stylus2css')),
+  css2stylus = require(util.dir('tasks/common/css2stylus')),
+  less2stylus = require(util.dir('tasks/common/less2stylus')),
   packjs = require(util.dir('tasks/common/packjs')),
   clean = require(util.dir('tasks/common/clean'));
 
@@ -44,6 +46,7 @@ module.exports = function(gulp) {
       devMode: env.NODE_ENV === 'production' ? '' : 'eval-source-map',
       isCompress: env.NODE_ENV === 'production' ? true : false
     };
+
 
   /* 清除构建文件 */
   gulp.task('clean', function() {
@@ -92,4 +95,8 @@ module.exports = function(gulp) {
   /* 静态文件构建模块 */
   gulp.task('production', gulpSequence('clean', 'pug2html', 'stylus2css', 'packjs'));
 
+
+  /* 工具模块 */
+  gulp.task('css2stylus', function() { return css2stylus(null); });
+  gulp.task('less2stylus', function() { return less2stylus(null); });
 };
