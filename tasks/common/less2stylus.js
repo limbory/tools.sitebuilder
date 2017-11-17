@@ -29,8 +29,16 @@ module.exports = function(config) {
 
   return gulp.src(cfg.rootDir, { base: cfg.baseDir })
     .pipe(named(function(file) {
+      var dist = util.dir(cfg.distDir + file.history[0].match(/[^\\\/]+$/)[0] + '.styl')
+        .replace(/(^|[^\\\/])([\\\/])([^\\\/]|$)/g, '$1$2$2$3');
+
       gutil.log(file.history[0]);
-      exec('less2stylus ' + file.history[0].replace(/(^|[^\\\/])([\\\/])([^\\\/]|$)/g, '$1$2$2$3') + ' > ' + util.dir(cfg.distDir + file.history[0].match(/[^\\\/]+$/)[0] + '.styl').replace(/(^|[^\\\/])([\\\/])([^\\\/]|$)/g, '$1$2$2$3'));
+      
+      if (fs.existsSync(dist)) {
+        fs.unlinkSync(dist);
+      }
+      exec('less2stylus ' + file.history[0].replace(/(^|[^\\\/])([\\\/])([^\\\/]|$)/g, '$1$2$2$3') +
+        ' > ' + dist);
       this.queue(file);
     }));
 };

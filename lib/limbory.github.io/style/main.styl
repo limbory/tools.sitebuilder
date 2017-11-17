@@ -6,111 +6,170 @@
 @import "./assets/font.css"
 @import "./assets/icomoon.css"
 @import "./common/constant"
-@import "./common/reset"
+@import "./common/css-reset"
 @import "./common/common"
 
 
-lesscss-percentage(n)
-  (n * 100)%
-/*********
-*标签容器*
-**********/
-#sidebar .tag-container
-  tag-bgc = lighten(rgb(247, 139, 118, 1), 10%)
-  arrow-width = 7px
-  background-image none
-  line-height 30px
-  letter-spacing 1.5em
-  padding-left (arrow-width * 2)
-  li
-    background tag-bgc
-    line-height normal
-    letter-spacing normal
-    display inline-block
+/* 手机端侧边导航栏 */
+.nav-switch
+  position fixed
+  top 130px
+  right 0
+  width 50px
+  height 37px
+  background-image url('/assets/images/gh-pages/navSwitch.png')
+  background-position top left
+  display none
+  cursor pointer
+
+.aside-nav
+  position fixed
+  width 100%
+  height 100%
+  top 0
+  left 0
+  background-color rgba(0, 0, 0, 0.5)
+  z-index 1000
+  display none
+
+.nav-outer
+  width 200px
+  height 100%
+  float right
+  background-color #f2ede9
+  transform translate(200px)
+  transition transform .3s
+  .widget-title
+    font-size 20px
+    padding 20px 30px
     margin 0
-    padding 2px (3px + arrow-width) 3px 7px
-    position relative
-    box-shadow 1px 1px 10px #bbb
-    transition background .5s
-    cursor pointer
-    &:before
-      content ''
-      padding 0
-      position absolute
-      top 0
-      left - ((arrow-width * 2) + 1) ((arrow-width * 2) + 1)
-      border 1px solid transparent
-      border-width 10px arrow-width 11px
-      border-right-color tag-bgc
-      transition border-right-color 0.5s
-    &:hover
-      a
-        color white
-      background darken(tag-bgc, 10%)
-      &:before
-        border-right-color darken(tag-bgc, 10%)
-    a
-      color #e85244
-/*********
-*网站概述*
-**********/
-#sidebar .site-about
-  img-size = 72px
-  dashed-border = 1px dashed darken(rgb(206, 206, 206, 1), 10%)
-  .face-img
-    float left
-    width img-size
-    height img-size
-    line-height img-size
-    overflow hidden
-    padding ((78 - img-size) / 2)
-    border dashed-border
-    img
-      width 100%
-      height auto
-  .self-abstract
-    ab-font-size = 19px
-    margin-left 95px
-    h2
-      font-size ab-font-size
-      font-family 'Nova Square', 'microsoft yahei', cursive
-      line-height (ab-font-size * 2)
-      margin 0
-    p
-      height (img-size - (ab-font-size * 2))
-      margin 0
+    color #e85244
   ul
-    background none
+    list-style none
+    margin 0 30px
     padding 0
-    border-left dashed-border
-    margin-top 20px
+    background url('/assets/images/gh-pages/dotted.png') repeat-x top
+  li
+    background url('/assets/images/gh-pages/dotted.png') repeat-x bottom
+    padding 6px 0 8px 0
+    &:before
+      content "\00bb"
+      padding-right 5px
+    a
+      color #8f8f8f
+
+.nav-outer li a:hover,
+.nav-outer li a.current
+  color #e85244
+
+@media only screen and (max-width: 767px)
+  .nav-switch
+    display block
+  .aside-nav
+    &.slideLeft
+      display block
+  .slideLeft
+    &.in
+      .nav-outer
+        transform translate(0)
+
+
+#sidebar
+  /* 标签容器 */
+  .tag-container
+    background-image none
+    line-height 30px
+    letter-spacing 1.5em
+    padding-left 14px
     li
-      padding 0
-      margin 0
-      background none
+      background #fab4a6
+      line-height normal
+      letter-spacing normal
       display inline-block
-      width 33.3%
-      box-sizing border-box
-      text-align center
-      border-right dashed-border
-      text-shadow 1px 1px 3px lighten(rgb(143, 143, 143, 1), 10%)
+      margin 0
+      padding 2px 10px 3px 7px
+      position relative
+      box-shadow 1px 1px 10px #bbb
+      transition background .5s
+      cursor pointer
       &:before
         content ''
         padding 0
-  &:after
-    content ' '
-    clear both
-/*************
-*多说组件样式*
-**************/
-.at-index-page .ds-meta
-  display none
-#sidebar .ds-thread.textwidget
-  li:before
-    content ''
-    padding 0
-  .ds-post .ds-sync label
+        position absolute
+        top 0
+        left -15px
+        border 1px solid transparent
+        border-width 10px 7px 11px
+        border-right-color #fab4a6
+        transition border-right-color 0.5s
+      &:hover
+        background #f78b76
+        a
+          color white
+        &:before
+          border-right-color #f78b76
+      a
+        color #e85244
+  /* 网站概述 */
+  .site-about
+    .face-img
+      float left
+      width 72px
+      height 72px
+      line-height 72px
+      overflow hidden
+      padding 3px
+      border 1px dashed #b5b5b5
+      img
+        width 100%
+        height auto
+    .self-abstract
+      margin-left 95px
+      h2
+        font-size 19px
+        font-family 'Nova Square', 'microsoft yahei', cursive
+        line-height 38px
+        margin 0
+      p
+        height 34px
+        margin 0
+    ul
+      background none
+      padding 0
+      border-left 1px dashed #b5b5b5
+      margin-top 20px
+      li
+        padding 0
+        margin 0
+        background none
+        float left
+        width percentage(1 / 3)
+        box-sizing border-box
+        text-align center
+        border-right 1px dashed #b5b5b5
+        text-shadow 1px 1px 3px #a9a9a9
+        &:before
+          content ''
+          padding 0
+    &:after
+      content ' '
+      clear both
+  .ds-thread
+    &.textwidget
+      li
+        &:before
+          content ''
+          padding 0
+      .ds-post
+        .ds-sync
+          label
+            display none
+
+/* 多说组件样式 */
+.at-index-page
+  .ds-meta
     display none
+
 .no-result-there
   display table
   width 100%
@@ -119,37 +178,35 @@ lesscss-percentage(n)
     display table-cell
     vertical-align middle
     text-align center
+
 .link-ico
   vertical-align middle
-/*********
-*标签列表*
-*********/
+
+
+/* 标签列表 */
 .page-tag-list
-  divi-dist = 15px
-  setDotPosition(dot-radius, line-height)
-    content ''
-    position absolute
-    left - dot-radius dot-radius
-    top (line-height - dot-radius)
-    border dot-radius solid darken(rgb(245, 245, 245, 1), 20%)
-    border-radius dot-radius
   h2
-    margin-bottom - divi-dist divi-dist
+    margin-bottom -15px
     padding-left 19px
     margin-left 21px
     position relative
     z-index 2
     &:before
-      setDotPosition(4px, 16)
+      content ''
+      position absolute
+      left -4px
+      top 12px
+      border 4px solid #c2c2c2
+      border-radius 4px
   ul
     position relative
     list-style none
-    padding-top (divi-dist + 15)
+    padding-top 30px
     li
       padding 12px 0 12px 103px
       margin-left 2px
       position relative
-      border-bottom 1px dashed darken(rgb(245, 245, 245, 1), 20%)
+      border-bottom 1px dashed #c2c2c2
       span
         position absolute
         top 12px
@@ -157,7 +214,12 @@ lesscss-percentage(n)
         float left
         padding 0 10px 0 20px
         &:before
-          setDotPosition(3px, 10)
+          content ''
+          position absolute
+          left -3px
+          top 7px
+          border 3px solid #c2c2c2
+          border-radius 3px
     &:before
       content ''
       position absolute
@@ -165,16 +227,16 @@ lesscss-percentage(n)
       left 0
       height 100%
       width 4px
-      background darken(rgb(245, 245, 245, 1), 10%)
+      background #dcdcdc
       background none
   strong
     color red
-/*********
-*文章详情*
-*********/
+
+/* 文章详情 */
 .post-title
   text-align center
   margin-top 15px
+
 .post-msg
   list-style none
   text-align center
@@ -183,11 +245,14 @@ lesscss-percentage(n)
     display inline-block
     padding-left 3px
     padding-right 3px
-.post-content p
-  text-indent 2em
-  font-size 114.3%
-@media only screen and (max-width: 767px)
-  .post-content p
-    font-size 100%
 
+.post-content
+  p
+    text-indent 2em
+    font-size 114.3%
+
+@media only screen and (max-width: 767px)
+  .post-content
+    p
+      font-size 100%
 

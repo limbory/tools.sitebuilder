@@ -1,4 +1,18 @@
-@import "nib"
+@keyframes flipInY
+  0%
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  40%
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  60%
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  80%
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  100%
+    transform: perspective(400px);
 
 body
   font-family 'microsoft yahei', Roboto, sans-serif
@@ -7,16 +21,11 @@ body
   padding 0
   line-height 20px
   color #8f8f8f
-  background url('baseurl/img/bg-body.jpg')
+  background url('/assets/images/gh-pages/bg-body.jpg')
 
 *
   margin 0
   padding 0
-  html
-    .slides
-      height 1%
-    .pp_content
-      width 40px
 
 :focus
   outline 0
@@ -132,34 +141,13 @@ h6,
 a,
 a:visited
   text-decoration none
-  transition color .2s
+  transition color 0.2s
 
 a
   &:hover
     text-decoration none
   img
     border 0
-  &.pp_next
-    background url('baseurl/img/light_rounded/btnNext.png') 10000px 10000px no-repeat
-    display block
-    float right
-    height 100%
-    text-indent -10000px
-    width 49%
-  &.pp_previous
-    background url('baseurl/img/light_rounded/btnNext.png') 10000px 10000px no-repeat
-    display block
-    float left
-    height 100%
-    text-indent -10000px
-    width 49%
-  &.pp_close
-    display block
-    line-height 22px
-    position absolute
-    right 0
-    text-indent -10000px
-    top 0
 
 .alignleft,
 img.alignleft
@@ -240,10 +228,8 @@ ul
     margin 0
     li
       float left
-      margin-right 7px!important
+      margin-right 7px !important
       img
-        -webkit-border-radius 5px
-        -moz-border-radius 5px
         border-radius 5px
 
 ol
@@ -263,7 +249,7 @@ ol ul
   margin-bottom 0
 
 blockquote
-  background-image url('baseurl/img/quote.png')
+  background-image url('/assets/images/gh-pages/quote.png')
   background-position 0 0
   background-repeat no-repeat
   clear both
@@ -292,145 +278,49 @@ code
   padding 15px 10px
   border-left 4px solid #e9e9e9
 
-.placeholder()
+::-webkit-input-placeholder
   font-family 'microsoft yahei', 'Droid Serif', serif, Arial
 
-::-webkit-input-placeholder
-
 :-moz-placeholder
+  font-family 'microsoft yahei', 'Droid Serif', serif, Arial
 
 ::-moz-placeholder
+  font-family 'microsoft yahei', 'Droid Serif', serif, Arial
 
 :-ms-input-placeholder
+  font-family 'microsoft yahei', 'Droid Serif', serif, Arial
 
 #outerheader
   max-width 1020px
   margin 0 auto
   padding 0
 
-}
-  #logo
-    text-align center
-    font-family Oswald, sans-serif
-    margin-top 30px
-    margin-bottom 44px
-  }
-    #logo
-      h1
-        margin 0
-        font-size 28px
-        line-height 28px
-    .header-wrapper
-      .posttitle
-        margin 0
-  .sf-menu
-    li
-      li
-        line-height 20px
-        margin 0
-        padding 0
-        width auto
-  #slider
-    position relative
-    margin 20px 0 0
-  .tab-body
-    padding 20px 20px 0
-    float left
-  .tabcontainer2
-    .tab-body
-      padding 0
-  .toggle_container
-    margin 0 0 7px 40px
-    margin-top -7px
-    padding 10px 20px
-    overflow hidden
-    clear both
-  table
-    text-align left
-    margin 0 -1px 24px 0
-    width 100%
-  #sidebar
-    padding-top 29px
-    padding-bottom 20px
-    .textwidget
-      p
-        margin-bottom 10px
-    .widget-title
-      color #e85244
-      text-shadow 1px 1px 1px lighten(#e85244, 20%)
-  #searchform
-    #s
-      border 0 none
-      padding 8px 40px 8px 10px!important
-  .testimonial-widget
-    h6
-      line-height 20px
-      margin-bottom 10px
-  .rp-widget
-    padding 0
-  #footersidebar
-    padding 51px 0 20px
-  .wp-pagenavi
-    padding 10px 20px
-    font-size 11px
-    display block
-    text-align right
-    margin-bottom 20px
-    -webkit-border-radius 5px
-    -moz-border-radius 5px
-    border-radius 5px
-  .reply
-    a
-      &:hover
-        text-decoration underline
-  .comment-body
-    margin 0
-    padding 0
-    margin-left 75px
-  #message
-    p
-      margin 6px 0
-  .tinynav
-    background #fff
-    border 1px solid #bababa
-
 #logo
+  text-align center
+  font-family Oswald, sans-serif
+  margin-top 30px
+  margin-bottom 44px
   img
     animation flipInY 1s .3s both
-    @keyframes flipInY {
-        0% {
-            transform perspective(400px) rotate3d(0,1,0,90deg)
-    animation-timing-function ease-in
-    opacity 0
+  h1
+    margin 0
+    font-size 28px
+    line-height 28px
   .desc
     display block
     font-size 14px
     text-transform uppercase
     color #f78f7b
 
-40%
-  transform perspective(400px) rotate3d(0,1,0,-20deg)
-  animation-timing-function ease-in
-
-60%
-  transform perspective(400px) rotate3d(0,1,0,10deg)
-  opacity 1
-
-80%
-  transform perspective(400px) rotate3d(0,1,0,-5deg)
-
-100%
-  transform perspective(400px)
-
 #navigation
   position relative
   z-index 200
   margin 0
-  background url('baseurl/img/dashed.png') repeat-x
+  background url('/assets/images/gh-pages/dashed.png') repeat-x
 
 #nav-wrap
   text-align center
-  background url('baseurl/img/dashed.png') repeat-x bottom
+  background url('/assets/images/gh-pages/dashed.png') repeat-x bottom
 
 #topnav
   margin 0 auto
@@ -452,26 +342,22 @@ code
     display inline-block
     position relative
     margin 0
-    &:hover
-      visibility inherit
     li
+      line-height 20px
+      margin 0
+      padding 0
+      width auto
       margin 0 0!important
       text-align left
       background #f78b76
       &:first-child
-        -webkit-border-top-left-radius 2px
-        -webkit-border-top-right-radius 2px
-        -moz-border-radius-topleft 2px
-        -moz-border-radius-topright 2px
         border-top-left-radius 2px
         border-top-right-radius 2px
       &:last-child
-        -webkit-border-bottom-right-radius 2px
-        -webkit-border-bottom-left-radius 2px
-        -moz-border-radius-bottomright 2px
-        -moz-border-radius-bottomleft 2px
         border-bottom-right-radius 2px
         border-bottom-left-radius 2px
+    &:hover
+      visibility inherit
   a
     text-decoration none
     display block
@@ -485,7 +371,7 @@ code
     top -999em
     width 12em
     padding-top 6px
-    background url('baseurl/img/menu-arrow.png') no-repeat 10px top
+    background url('/assets/images/gh-pages/menu-arrow.png') no-repeat 10px top
     ul
       padding 0
       background 0
@@ -539,8 +425,12 @@ ul.sf-menu li li li.sfHover ul
 
 .tinynav
   display none
+  background #fff
+  border 1px solid #bababa
 
 #slider
+  position relative
+  margin 20px 0 0
   img
     display block
 
@@ -553,8 +443,6 @@ ul.sf-menu li li li.sfHover ul
     margin-top 10px
     color #e75143
     background-color #f78b76
-    -moz-box-shadow -3px 6px 5px -4px #d43d32
-    -webkit-box-shadow -3px 6px 5px -4px #d43d32
     box-shadow -3px 6px 5px -4px #d43d32
     &:hover
       background-color #f67860
@@ -575,11 +463,9 @@ ul.sf-menu li li li.sfHover ul
 
 #outermain
   .container
-    -webkit-border-radius 7px
-    -moz-border-radius 7px
     border-radius 7px
     background-color #f5f0ef
-    background-image url('baseurl/img/bg-main.jpg')
+    background-image url('/assets/images/gh-pages/bg-main.jpg')
     background-position 65% 0
     background-repeat repeat-y
 
@@ -671,7 +557,7 @@ ul.sf-menu li li li.sfHover ul
   padding-top 5px
 
 .margin_bottomoff
-  margin-bottom 0!important
+  margin-bottom 0 !important
 
 .margin_bottom_small
   margin-bottom 5px
@@ -735,9 +621,9 @@ ul.sf-menu li li li.sfHover ul
     a
       font-weight 400
       font-size 14px
-      color #3a3534!important
+      color #3a3534 !important
       &:hover
-        color #e85244!important
+        color #e85244 !important
   .date
     font-size 12px
     margin-bottom 10px
@@ -751,10 +637,8 @@ ul.sf-menu li li li.sfHover ul
     margin 0 0 13px
     padding 22px 28px 22px 42px
     position relative
-    -webkit-border-radius 5px
-    -moz-border-radius 5px
     border-radius 5px
-    background url('baseurl/img/quote2.png') no-repeat scroll 20px 20px #fff
+    background url('/assets/images/gh-pages/quote2.png') no-repeat scroll 20px 20px #fff
     color #8f8f8f
   .quotearrow
     bottom -13px
@@ -762,7 +646,7 @@ ul.sf-menu li li li.sfHover ul
     left 27px
     position absolute
     width 100%
-    background-image url('baseurl/img/quotearrow.png')
+    background-image url('/assets/images/gh-pages/quotearrow.png')
     background-position 0 0
     background-repeat no-repeat
   .quoteinfo
@@ -801,7 +685,6 @@ ul.sf-menu li li li.sfHover ul
 img
   max-width 100%
   height auto
-  -ms-interpolation-mode bicubic
   &.scale-with-grid
     max-width 100%
     height auto
@@ -811,16 +694,10 @@ img
   margin-bottom 11px
   display inline-block
   &:after
-    -webkit-transform rotate(3deg)
-    -moz-transform rotate(3deg)
-    -o-transform rotate(3deg)
-    -ms-transform rotate(3deg)
     transform rotate(3deg)
     right 10px
     left auto
   img
-    -webkit-border-radius 4px
-    -moz-border-radius 4px
     border-radius 4px
     z-index 2
     position relative
@@ -834,15 +711,9 @@ img
   width 50%
   top 80%
   max-width 250px
-  -webkit-transform rotate(-3deg)
-  -moz-transform rotate(-3deg)
-  -o-transform rotate(-3deg)
-  -ms-transform rotate(-3deg)
   transform rotate(-3deg)
   z-index 1
   background #d0cccb
-  -webkit-box-shadow 0 15px 3px #d0cccb
-  -moz-box-shadow 0 15px 3px #d0cccb
   box-shadow 0 15px 3px #d0cccb
 
 input[type=text],
@@ -854,8 +725,6 @@ select
   background #fff
   border 1px solid #e2dcdb
   border-width 1px 0 0 1px
-  -moz-box-shadow inset 1px 2px 0 #f5f3f3
-  -webkit-box-shadow inset 1px 2px 0 #f5f3f3
   box-shadow inset 1px 2px 0 #f5f3f3
   color #8f8f8f
 
@@ -874,16 +743,12 @@ button
   line-height 10px
   text-transform uppercase
   display inline-block
-  -webkit-border-radius 3px
-  -moz-border-radius 3px
   border-radius 3px
 
 .button:hover,
 input[type=submit]:hover,
 button:hover
   text-decoration none
-  -webkit-border-radius 3px
-  -moz-border-radius 3px
   border-radius 3px
 
 .separator
@@ -911,8 +776,6 @@ button:hover
   color #e85244
 
 .dropcap2
-  display block
-  float left
   border-radius 55px
   display block
   float left
@@ -948,7 +811,7 @@ button:hover
 .pullquote-right,
 .pullquote-left
   padding 0 10px 0 30px
-  background-image url('baseurl/img/quote.png')
+  background-image url('/assets/images/gh-pages/quote.png')
   background-repeat no-repeat
   background-position 0 0
   float right
@@ -966,6 +829,10 @@ button:hover
 
 .tabcontainer
   margin 0
+
+.tab-body
+  padding 20px 20px 0
+  float left
 
 .tabcontainer2
   margin 0 0 20px
@@ -993,15 +860,27 @@ button:hover
     padding 0
     float left
     width 73%
+  .tab-body
+    padding 0
 
 #toggle
   border 0
+
+.toggle_container
+  margin 0 0 7px 40px
+  margin-top -7px
+  padding 10px 20px
+  overflow hidden
+  clear both
 
 table
   border-collapse separate
   border-spacing 0
   width 100%
   margin-bottom 18px
+  text-align left
+  margin 0 -1px 24px 0
+  width 100%
   border 1px solid #bbb
   border-bottom 0
   border-right 0
@@ -1040,22 +919,9 @@ tr
     td
       background #F2F7FC
 
-.padsidebar
-  padding-right 0
-  padding-left 30px
-  .postimg
-    width 108px
-    height 63px
-    img
-      width 108px
-      height 58px
-
-.widget-title
-  margin-bottom 20px
-  padding-bottom 0
-  font-size 16px
-
 #sidebar
+  padding-top 29px
+  padding-bottom 20px
   ul
     list-style-type none
     list-style-position outside
@@ -1073,14 +939,17 @@ tr
       list-style-type none
       margin 0 0 6px
       padding 0 0 8px
-      background url('baseurl/img/dotted.png') repeat-x bottom
+      background url('/assets/images/gh-pages/dotted.png') repeat-x bottom
       &:before
         content "\00bb"
         padding-right 5px
       a
         font-size 13px
     ul
-      background url('baseurl/img/dotted.png') repeat-x top
+      background url('/assets/images/gh-pages/dotted.png') repeat-x top
+  .textwidget
+    p
+      margin-bottom 10px
   .rp-widget
     li
       &:before
@@ -1093,6 +962,24 @@ tr
             color #e85244
     .smalldate
       color #bbb
+  .widget-title
+    color #e85244
+    text-shadow 1px 1px 1px #f3a69f
+
+.padsidebar
+  padding-right 0
+  padding-left 30px
+  .postimg
+    width 108px
+    height 63px
+    img
+      width 108px
+      height 58px
+
+.widget-title
+  margin-bottom 20px
+  padding-bottom 0
+  font-size 16px
 
 #sidebar li li a:hover,
 #sidebar li li a.active
@@ -1102,6 +989,9 @@ tr
   position relative
   width 100%
   margin 18px 0
+  #s
+    border 0 none
+    padding 8px 40px 8px 10px !important
   input
     background transparent
     border 0 none
@@ -1109,8 +999,6 @@ tr
     background #fff
     border 1px solid #e2dcdb
     border-width 1px 0 0 1px
-    -moz-box-shadow inset 1px 2px 0 #f5f3f3
-    -webkit-box-shadow inset 1px 2px 0 #f5f3f3
     box-shadow inset 1px 2px 0 #f5f3f3
 
 .searchbutton
@@ -1119,9 +1007,12 @@ tr
   right 10px
   top 6px
   width 25px
-  background url('baseurl/img/search.png') no-repeat scroll 8px 5px transparent!important
+  background url('/assets/images/gh-pages/search.png') no-repeat scroll 8px 5px transparent !important
 
 .testimonial-widget
+  h6
+    line-height 20px
+    margin-bottom 10px
   .alignleft
     margin-right 10px
   .quote
@@ -1139,11 +1030,12 @@ tr
     font-weight 700
 
 .rp-widget
+  padding 0
   li
     padding 8px 0!important
     margin-bottom 0!important
     clear both
-    list-style none!important
+    list-style none !important
     .postimg
       float left
       margin 0 14px 0 0
@@ -1154,11 +1046,20 @@ tr
         z-index 2px
     &.last
       margin 0!important
-      padding 0!important
+      padding 0 !important
     h3
       font-size 13px
       margin-bottom 0
       font-family 'microsoft yahei', Roboto, sans-serif
+      display table
+      height 2.86em
+      .pt_1
+        display table-cell
+        vertical-align middle
+        .pt_2
+          line-height 1.43em
+          max-height 2.86em
+          overflow hidden
     .smalldate
       font-size 10px
       display block
@@ -1167,10 +1068,9 @@ tr
       color #bbb
 
 #footersidebar
+  padding 51px 0 20px
   .rp-widget
     img
-      -webkit-border-radius 5px
-      -moz-border-radius 5px
       border-radius 5px
       float left
       margin-right 14px
@@ -1232,7 +1132,7 @@ tr
   .icon-img
     background-position 0 0
     &:hover
-      background-position 0 -36px!important
+      background-position 0 -36px !important
 
 #copyright
   padding 15px 10px
@@ -1240,12 +1140,18 @@ tr
   text-align center
 
 .wp-pagenavi
+  padding 10px 20px
+  font-size 11px
+  display block
+  text-align right
+  margin-bottom 20px
+  border-radius 5px
   background #fff
   border-bottom 1px solid #ece3e1
   .pages
     padding-left 20px
     float left
-    background url('baseurl/img/icon-pages.png') no-repeat 0 3px
+    background url('/assets/images/gh-pages/icon-pages.png') no-repeat 0 3px
   .current
     padding 0
     margin 0 4px
@@ -1258,8 +1164,6 @@ tr
 
 .post
   margin-bottom 40px
-  -webkit-border-radius 5px
-  -moz-border-radius 5px
   border-radius 5px
   padding 30px 20px 30px 18px
   background-color #fff
@@ -1271,8 +1175,6 @@ tr
     text-align center
     width 60px
     margin-right 20px
-    -webkit-border-radius 5px
-    -moz-border-radius 5px
     border-radius 5px
     background-color #fcfafa
     .date-value
@@ -1284,10 +1186,6 @@ tr
       font-size 10px
       text-transform uppercase
       margin-bottom 6px
-      -webkit-border-bottom-right-radius 5px
-      -webkit-border-bottom-left-radius 5px
-      -moz-border-radius-bottomright 5px
-      -moz-border-radius-bottomleft 5px
       border-bottom-right-radius 5px
       border-bottom-left-radius 5px
       background-color #e85244
@@ -1318,8 +1216,6 @@ tr
   margin-bottom 20px
   padding-top 21px
   img
-    -webkit-border-radius 4px
-    -moz-border-radius 4px
     border-radius 4px
     z-index 2
     width 100%
@@ -1336,19 +1232,19 @@ tr
   .user
     display inline-block
     padding-left 20px
-    background url('baseurl/img/icon-user.png') no-repeat 0 5px
+    background url('/assets/images/gh-pages/icon-user.png') no-repeat 0 5px
   .tag
     display inline-block
     padding-left 15px
-    background url('baseurl/img/icon-tag.png') no-repeat 0 6px
+    background url('/assets/images/gh-pages/icon-tag.png') no-repeat 0 6px
   .commen
     display inline-block
     padding-left 20px
-    background url('baseurl/img/icon-comment.png') no-repeat 0 4px
+    background url('/assets/images/gh-pages/icon-comment.png') no-repeat 0 4px
   .visit
     display inline-block
     padding-left 20px
-    background url('baseurl/img/icon-eye.png') no-repeat 0 4px
+    background url('/assets/images/gh-pages/icon-eye.png') no-repeat 0 4px
   a
     &:hover
       color #bbb
@@ -1368,8 +1264,6 @@ tr
 
 .author img,
 .avatar-img img
-  -webkit-border-radius 56px
-  -moz-border-radius 56px
   border-radius 56px
 
 .author-desc
@@ -1412,12 +1306,19 @@ tr
   font-size 13px
   display block
 
-}
 .tdate,
 .reply
   font-size 11px
 
+.reply
+  a
+    &:hover
+      text-decoration underline
+
 .comment-body
+  margin 0
+  padding 0
+  margin-left 75px
   p
     margin-bottom 5px
     margin-top 10px
@@ -1454,8 +1355,6 @@ tr
   margin 0
   display inline-block
   clear both
-  -webkit-border-radius 5px
-  -moz-border-radius 5px
   border-radius 5px
   border 1px solid #e4e1e0
   li
@@ -1468,25 +1367,12 @@ tr
     position relative
     z-index 10
     background #f5f0ef
-    background url('data:image/svg+xml
-    background -moz-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
-    background -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f0ef), color-stop(100%, #e9e9e9))
-    background -webkit-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
-    background -o-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
-    background -ms-linear-gradient(top, #f5f0ef 0, #e9e9e9 100%)
+    background url('/assets/images/gh-pages/bg-1.svg')
     background linear-gradient(to bottom, #f5f0ef 0, #e9e9e9 100%)
     &:last-child
-      -webkit-border-top-right-radius 5px
-      -webkit-border-bottom-right-radius 5px
-      -moz-border-radius-topright 5px
-      -moz-border-radius-bottomright 5px
       border-top-right-radius 5px
       border-bottom-right-radius 5px
     &:first-child
-      -webkit-border-top-left-radius 5px
-      -webkit-border-bottom-left-radius 5px
-      -moz-border-radius-topleft 5px
-      -moz-border-radius-bottomleft 5px
       border-top-left-radius 5px
       border-bottom-left-radius 5px
     &.current
@@ -1497,7 +1383,7 @@ tr
         width 13px
         height 7px
         left 40%
-        background url('baseurl/img/arrow-menu-pf.png') no-repeat bottom
+        background url('/assets/images/gh-pages/arrow-menu-pf.png') no-repeat bottom
     a
       color #8f8f8f
     &:before
@@ -1529,16 +1415,14 @@ tr
       cursor pointer
       width 100%
       height 100%
-      -webkit-border-radius 220px
-      -moz-border-radius 220px
       border-radius 220px
       &.gotolink
-        background url('baseurl/img/hover-link.png')
+        background url('/assets/images/gh-pages/hover-link.png')
         background-color #000
         background-repeat no-repeat
         background-position center
       &.gotopost
-        background url('baseurl/img/hover-doc.png')
+        background url('/assets/images/gh-pages/hover-doc.png')
         background-color #000
         background-repeat no-repeat
         background-position center
@@ -1546,11 +1430,9 @@ tr
     overflow hidden
     display block
     position relative
-    -webkit-border-radius 220px
-    -moz-border-radius 220px
     border-radius 220px
   .zoom
-    background url('baseurl/img/hover-zoom.png')
+    background url('/assets/images/gh-pages/hover-zoom.png')
     background-repeat no-repeat
     background-position center
     display block
@@ -1565,7 +1447,7 @@ tr
   clear both
   height 1px!important
   line-height 1px!important
-  float none!important
+  float none !important
 
 .ts-display-pf-text
   padding 16px 0 44px
@@ -1588,28 +1470,16 @@ tr
 
 .isotope,
 .isotope .isotope-item
-  -webkit-transition-duration .8s
-  -moz-transition-duration .8s
-  -o-transition-duration .8s
-  transition-duration .8s
+  transition-duration 0.8s
 
 .isotope
-  -webkit-transition-property height, width
-  -moz-transition-property height, width
-  -o-transition-property height, width
   transition-property height, width
   .isotope-item
-    -webkit-transition-property -webkit-transform, opacity
-    -moz-transition-property -moz-transform, opacity
-    -o-transition-property top, left, opacity
     transition-property transform, opacity
 
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition
-  -webkit-transition-duration 0s
-  -moz-transition-duration 0s
-  -o-transition-duration 0s
   transition-duration 0s
 
 fieldset
@@ -1652,6 +1522,8 @@ span
 #message
   margin-left 0
   font-weight 700
+  p
+    margin 6px 0
 
 #bodychild
   border-top 10px solid #c13a2d
@@ -1684,10 +1556,9 @@ h6,
   color #fff
 
 .sf-menu a:hover,
-.sf-menu li.current>a
+.sf-menu li.current > a
   color #fb917d
 
-}
 .sf-menu li li a,
 .sf-menu li li a:visited,
 .sf-menu li li a:hover,
@@ -1700,58 +1571,34 @@ sf-menu li.current li a
 
 .icon-img
   &.twitter
-    background url('baseurl/img/social/twitter.png')
+    background url('/assets/images/gh-pages/social/twitter.png')
   &.facebook
-    background url('baseurl/img/social/facebook.png')
+    background url('/assets/images/gh-pages/social/facebook.png')
   &.google
-    background url('baseurl/img/social/google.png')
+    background url('/assets/images/gh-pages/social/google.png')
   &.rss
-    background url('baseurl/img/social/rss.png')
+    background url('/assets/images/gh-pages/social/rss.png')
   &.pinterest
-    background url('baseurl/img/social/pinterest.png')
+    background url('/assets/images/gh-pages/social/pinterest.png')
 
 .flex-caption
-  float left
-  padding-top 12%
   h1
     color #fff
-    font-size 70px
-    margin-bottom 20px
-    line-height 65px
   .desc
     color #fb917d
-    font-size 18px
-    display block
-    line-height 25px
-    margin-top 13px
   .button
     background #f78b76!important
     color #c93b2e!important
-    -moz-box-shadow -3px 6px 5px -4px #d43d32
-    -webkit-box-shadow -3px 6px 5px -4px #d43d32
     box-shadow -3px 6px 5px -4px #d43d32
-    text-transform uppercase
-    font-size 14px
-    padding 15px 28px
     &:hover
       background #f67860!important
-      color #c93b2e!important
+      color #c93b2e !important
 
 .flex-control-paging
   li
     a
       background #e04a3c
-      -moz-box-shadow 0 3px 1px #d23c30
-      -webkit-box-shadow 0 3px 1px #d23c30
       box-shadow 0 3px 1px #d23c30
-      width 15px
-      height 15px
-      display block
-      cursor pointer
-      text-indent -9999px
-      -webkit-border-radius 20px
-      -moz-border-radius 20px
-      border-radius 20px
       &:hover
         background #f78b76
       &.flex-active
@@ -1759,7 +1606,7 @@ sf-menu li.current li a
 
 .fullwidth
   .container
-    background-image none!important
+    background-image none !important
 
 label
   color #8f8f8f
@@ -1779,7 +1626,7 @@ input[type=submit]:hover
 
 thead
   th
-    border-right 1px solid #bbb!important
+    border-right 1px solid #bbb !important
 
 .posttitle a,
 .posttitle a:visited
@@ -1829,12 +1676,7 @@ entry-comment a:visited
 #filter li.current,
 #filter li:hover
   background #e9e9e9
-  background url('data:image/svg+xml
-  background -moz-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
-  background -webkit-gradient(linear, left top, left bottom, color-stop(14%, #e9e9e9), color-stop(100%, #f5f0ef))
-  background -webkit-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
-  background -o-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
-  background -ms-linear-gradient(top, #e9e9e9 14%, #f5f0ef 100%)
+  background url('/assets/images/gh-pages/bg-2.svg')
   background linear-gradient(to bottom, #e9e9e9 14%, #f5f0ef 100%)
 
 .ts-display-pf-text h2 a,
@@ -1883,8 +1725,6 @@ entry-comment a:visited
 
 .row .column,
 .row .columns
-  -webkit-box-sizing border-box
-  -moz-box-sizing border-box
   box-sizing border-box
 
 .column,
@@ -1931,7 +1771,7 @@ embed
   width 0
   height 0
 
-@media only screen and (min-width:768px) and (max-width:959px)
+@media only screen and (min-width: 768px) and (max-width: 959px)
   .slider-img
     width 40%
   .flex-caption
@@ -1940,59 +1780,88 @@ embed
       line-height 45px
     .desc
       font-size 16px
-
-.headerPosttitle
-  ()
+.header-wrapper
+  .posttitle
+    margin 0
     display table
     height 2.86em
-    .pt_1 {
-        display table-cell
-    vertical-align middle
-    .pt_2 {
-            line-height 1.43em
-    max-height 2.86em
-    overflow hidden
+    .pt_1
+      display table-cell
+      vertical-align middle
+      .pt_2
+        line-height 1.43em
+        max-height 2.86em
+        overflow hidden
 
-@media only screen and (max-width:767px)
+@media only screen and (max-width: 767px)        
   body
-    -webkit-text-size-adjust none
-    -ms-text-size-adjust none
     width 100%
     min-width 0
     margin-left 0
     margin-right 0
     padding-left 0
     padding-right 0
+
   .container
     margin 0 auto
     max-width 420px
+
   .row
     width auto
     min-width 0
     margin-left 0
     margin-right 0
+
+  .row .column,
+  .row .columns
+    width 100%
+    float none
+
+  #maincontent .column,
+  #maincontent .columns
+    margin-bottom 20px
+
+  .column:last-child,
+  .columns:last-child
+    float none
+
   [class*=column]
     & + [class*=column]:last-child
       float none
+
+  .column:before,
+  .columns:before,
+  .column:after,
+  .columns:after
+    content ""
+    display table
+
+  .column:after,
+  .columns:after
+    clear both
+
   #logo
     text-align center
     float none!important
     display block
     img
-      float none!important
+      float none !important
     .desc
       float none!important
       display block
       border 0!important
       margin 15px 0 0
       padding 0
+
   #topright
     text-align center
     float none!important
     display block
+
   #searchform
     margin 20px auto 30px
-    float none!important
+    float none !important
+
   #navigation
     text-align center
     clear both
@@ -2005,18 +1874,22 @@ embed
       padding 5px 0 0
       background #272727
       margin-top 20px
+
   #nav-wrap
-    background none!important
+    background none !important
+
   .sf-menu
     a
       background transparent!important
-      border 0!important
+      border 0 !important
     & > li
       border 0!important
       display none
+
   nav
     margin 0
     float none
+
   .js
     .tinynav
       display block
@@ -2026,10 +1899,13 @@ embed
       width 100%
     #topnav
       display none
+
   .pagedesc
     padding 0
+
   .slider-img
     width 50%
+
   .flex-caption
     width 50%
     padding-top 5%
@@ -2039,63 +1915,55 @@ embed
     .desc
       font-size 12px
       line-height 16px
+
+  #content.positionright,
+  #content.positionleft
+    background transparent
+
   .padcontent
     padding-right 0
+
   .padsidebar
     padding-left 0
+
   #content
     &.positionright
       .padcontent
         padding-left 0
         padding-right 0
+
   #outermain
     .container
       background-image none!important
-      background-color #f5f0ef!important
+      background-color #f5f0ef !important
+
+  .header-wrapper .posttitle,
+  .header-wrapper .posttitle a
+    font-size 20px
+
   .header-wrapper
     .posttitle
+      display table
+      height 2.86em
+      .pt_1
+        display table-cell
+        vertical-align middle
+        .pt_2
+          line-height 1.43em
+          max-height 2.86em
+          overflow hidden
+
   .entry-utility
     .tag
       margin-left 0
+
   .wp-pagenavi
     margin-bottom 30px
+
   #copyright
     margin-bottom 0
     text-align center
-
-.row .column,
-@media only screen and (max-width:767px)     .row .columns
-  width 100%
-  float none
-
-#maincontent .column,
-@media only screen and (max-width:767px)     #maincontent .columns
-  margin-bottom 20px
-
-.column:last-child,
-@media only screen and (max-width:767px)     .columns:last-child
-  float none
-
-.column:before,
-    .columns:before,
-    .column:after,
-@media only screen and (max-width:767px)     .columns:after
-  content ""
-  display table
-
-.column:after,
-@media only screen and (max-width:767px)     .columns:after
-  clear both
-
-#content.positionright,
-@media only screen and (max-width:767px)     #content.positionleft
-  background transparent
-
-.header-wrapper .posttitle,
-@media only screen and (max-width:767px)     .header-wrapper .posttitle a
-  font-size 20px
-
-@media only screen and (max-width:479px)
+@media only screen and (max-width: 479px)
   .slider-img
     width 50%
   .flex-caption
@@ -2118,9 +1986,9 @@ embed
     .header-wrapper
       padding-left 0
   .padcontent
-    padding 0!important
+    padding 0 !important
   blockquote
-    margin 0 0 20px!important
+    margin 0 0 20px !important
   .commentlist
     ol
       padding-left 35px
@@ -2149,7 +2017,6 @@ embed
     padding 0
     & > li
       display none
-      -webkit-backface-visibility hidden
     img
       display block
       max-width 100%
@@ -2176,6 +2043,11 @@ html[xmlns]
   .slides
     display block
 
+*
+  html
+    .slides
+      height 1%
+
 .no-js
   .slides
     & > li
@@ -2184,8 +2056,6 @@ html[xmlns]
 
 .flex-viewport
   max-height 2000px
-  -webkit-transition all 1s ease
-  -moz-transition all 1s ease
   transition all 1s ease
 
 .loading
@@ -2198,6 +2068,23 @@ html[xmlns]
 
 .slider-img
   float right
+
+.flex-caption
+  float left
+  padding-top 12%
+  h1
+    font-size 70px
+    margin-bottom 20px
+    line-height 65px
+  .desc
+    font-size 18px
+    display block
+    line-height 25px
+    margin-top 13px
+  .button
+    text-transform uppercase
+    font-size 14px
+    padding 15px 28px
 
 .flex-direction-nav
   *height 0
@@ -2212,19 +2099,18 @@ html[xmlns]
     cursor pointer
     text-indent -9999px
   .flex-next
-    background url('baseurl/img/flex-next.png') no-repeat 0 0
+    background url('/assets/images/gh-pages/flex-next.png') no-repeat 0 0
     right -30px
   .flex-prev
-    background url('baseurl/img/flex-prev.png') no-repeat 0 0
+    background url('/assets/images/gh-pages/flex-prev.png') no-repeat 0 0
     left -30px
   .flex-disabled
     opacity .3!important
-    filter alpha(opacity=30)
     cursor default
 
 .flexslider .flex-next:hover,
 .flexslider .flex-prev:hover
-  opacity .8
+  opacity 0.8
 
 .flex-control-nav
   width 100%
@@ -2236,6 +2122,16 @@ html[xmlns]
     display inline-block
     zoom 1
     *display inline
+
+.flex-control-paging
+  li
+    a
+      width 15px
+      height 15px
+      display block
+      cursor pointer
+      text-indent -9999px
+      border-radius 20px
 
 .flex-control-thumbs
   margin 5px 0 0
@@ -2256,7 +2152,7 @@ html[xmlns]
     opacity 1
     cursor default
 
-@media screen and (max-width:860px)
+@media screen and (max-width: 860px)
   .flex-direction-nav
     .flex-prev
       opacity 1
@@ -2279,49 +2175,49 @@ div
   &.pp_default
     .pp_top
       .pp_left
-        background url('baseurl/img/default/sprite.png') -78px -93px no-repeat
+        background url('/assets/images/gh-pages/default/sprite.png') -78px -93px no-repeat
       .pp_middle
-        background url('baseurl/img/default/sprite_x.png') top left repeat-x
+        background url('/assets/images/gh-pages/default/sprite_x.png') top left repeat-x
       .pp_right
-        background url('baseurl/img/default/sprite.png') -112px -93px no-repeat
+        background url('/assets/images/gh-pages/default/sprite.png') -112px -93px no-repeat
     .pp_content
       .ppt
         color #f8f8f8
     .pp_content_container
       .pp_left
-        background url('baseurl/img/default/sprite_y.png') -7px 0 repeat-y
+        background url('/assets/images/gh-pages/default/sprite_y.png') -7px 0 repeat-y
         padding-left 13px
       .pp_right
-        background url('baseurl/img/default/sprite_y.png') top right repeat-y
+        background url('/assets/images/gh-pages/default/sprite_y.png') top right repeat-y
         padding-right 13px
       .pp_details
         margin-top 5px
     .pp_next
       &:hover
-        background url('baseurl/img/default/sprite_next.png') center right no-repeat
+        background url('/assets/images/gh-pages/default/sprite_next.png') center right no-repeat
         cursor pointer
     .pp_previous
       &:hover
-        background url('baseurl/img/default/sprite_prev.png') center left no-repeat
+        background url('/assets/images/gh-pages/default/sprite_prev.png') center left no-repeat
         cursor pointer
     .pp_expand
-      background url('baseurl/img/default/sprite.png') 0 -29px no-repeat
+      background url('/assets/images/gh-pages/default/sprite.png') 0 -29px no-repeat
       cursor pointer
       height 28px
       width 28px
       &:hover
-        background url('baseurl/img/default/sprite.png') 0 -56px no-repeat
+        background url('/assets/images/gh-pages/default/sprite.png') 0 -56px no-repeat
         cursor pointer
     .pp_contract
-      background url('baseurl/img/default/sprite.png') 0 -84px no-repeat
+      background url('/assets/images/gh-pages/default/sprite.png') 0 -84px no-repeat
       cursor pointer
       height 28px
       width 28px
       &:hover
-        background url('baseurl/img/default/sprite.png') 0 -113px no-repeat
+        background url('/assets/images/gh-pages/default/sprite.png') 0 -113px no-repeat
         cursor pointer
     .pp_close
-      background url('baseurl/img/default/sprite.png') 2px 1px no-repeat
+      background url('/assets/images/gh-pages/default/sprite.png') 2px 1px no-repeat
       cursor pointer
       height 30px
       width 30px
@@ -2329,7 +2225,7 @@ div
       ul
         li
           a
-            background url('baseurl/img/default/default_thumb.png') center center #f8f8f8
+            background url('/assets/images/gh-pages/default/default_thumb.png') center center #f8f8f8
             border 1px solid #aaa
     .pp_social
       margin-top 7px
@@ -2362,95 +2258,95 @@ div
       margin 5px 50px 5px 0
     .pp_bottom
       .pp_left
-        background url('baseurl/img/default/sprite.png') -78px -127px no-repeat
+        background url('/assets/images/gh-pages/default/sprite.png') -78px -127px no-repeat
       .pp_middle
-        background url('baseurl/img/default/sprite_x.png') bottom left repeat-x
+        background url('/assets/images/gh-pages/default/sprite_x.png') bottom left repeat-x
       .pp_right
-        background url('baseurl/img/default/sprite.png') -112px -127px no-repeat
+        background url('/assets/images/gh-pages/default/sprite.png') -112px -127px no-repeat
     .pp_loaderIcon
-      background url('baseurl/img/default/loader.gif') center center no-repeat
+      background url('/assets/images/gh-pages/default/loader.gif') center center no-repeat
   &.light_rounded
     .pp_top
       .pp_left
-        background url('baseurl/img/light_rounded/sprite.png') -88px -53px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -88px -53px no-repeat
       .pp_right
-        background url('baseurl/img/light_rounded/sprite.png') -110px -53px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -110px -53px no-repeat
     .pp_next
       &:hover
-        background url('baseurl/img/light_rounded/btnNext.png') center right no-repeat
+        background url('/assets/images/gh-pages/light_rounded/btnNext.png') center right no-repeat
         cursor pointer
     .pp_previous
       &:hover
-        background url('baseurl/img/light_rounded/btnPrevious.png') center left no-repeat
+        background url('/assets/images/gh-pages/light_rounded/btnPrevious.png') center left no-repeat
         cursor pointer
     .pp_expand
-      background url('baseurl/img/light_rounded/sprite.png') -31px -26px no-repeat
+      background url('/assets/images/gh-pages/light_rounded/sprite.png') -31px -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/light_rounded/sprite.png') -31px -47px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -31px -47px no-repeat
         cursor pointer
     .pp_contract
-      background url('baseurl/img/light_rounded/sprite.png') 0 -26px no-repeat
+      background url('/assets/images/gh-pages/light_rounded/sprite.png') 0 -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/light_rounded/sprite.png') 0 -47px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') 0 -47px no-repeat
         cursor pointer
     .pp_close
-      background url('baseurl/img/light_rounded/sprite.png') -1px -1px no-repeat
+      background url('/assets/images/gh-pages/light_rounded/sprite.png') -1px -1px no-repeat
       cursor pointer
       height 22px
       width 75px
     .pp_nav
       .pp_play
-        background url('baseurl/img/light_rounded/sprite.png') -1px -100px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -1px -100px no-repeat
         height 15px
         width 14px
       .pp_pause
-        background url('baseurl/img/light_rounded/sprite.png') -24px -100px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -24px -100px no-repeat
         height 15px
         width 14px
     .pp_arrow_previous
-      background url('baseurl/img/light_rounded/sprite.png') 0 -71px no-repeat
+      background url('/assets/images/gh-pages/light_rounded/sprite.png') 0 -71px no-repeat
     .pp_arrow_next
-      background url('baseurl/img/light_rounded/sprite.png') -22px -71px no-repeat
+      background url('/assets/images/gh-pages/light_rounded/sprite.png') -22px -71px no-repeat
     .pp_bottom
       .pp_left
-        background url('baseurl/img/light_rounded/sprite.png') -88px -80px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -88px -80px no-repeat
       .pp_right
-        background url('baseurl/img/light_rounded/sprite.png') -110px -80px no-repeat
+        background url('/assets/images/gh-pages/light_rounded/sprite.png') -110px -80px no-repeat
   &.dark_rounded
     .pp_top
       .pp_left
-        background url('baseurl/img/dark_rounded/sprite.png') -88px -53px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -88px -53px no-repeat
       .pp_right
-        background url('baseurl/img/dark_rounded/sprite.png') -110px -53px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -110px -53px no-repeat
     .pp_content_container
       .pp_left
-        background url('baseurl/img/dark_rounded/contentPattern.png') top left repeat-y
+        background url('/assets/images/gh-pages/dark_rounded/contentPattern.png') top left repeat-y
       .pp_right
-        background url('baseurl/img/dark_rounded/contentPattern.png') top right repeat-y
+        background url('/assets/images/gh-pages/dark_rounded/contentPattern.png') top right repeat-y
     .pp_next
       &:hover
-        background url('baseurl/img/dark_rounded/btnNext.png') center right no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/btnNext.png') center right no-repeat
         cursor pointer
     .pp_previous
       &:hover
-        background url('baseurl/img/dark_rounded/btnPrevious.png') center left no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/btnPrevious.png') center left no-repeat
         cursor pointer
     .pp_expand
-      background url('baseurl/img/dark_rounded/sprite.png') -31px -26px no-repeat
+      background url('/assets/images/gh-pages/dark_rounded/sprite.png') -31px -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/dark_rounded/sprite.png') -31px -47px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -31px -47px no-repeat
         cursor pointer
     .pp_contract
-      background url('baseurl/img/dark_rounded/sprite.png') 0 -26px no-repeat
+      background url('/assets/images/gh-pages/dark_rounded/sprite.png') 0 -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/dark_rounded/sprite.png') 0 -47px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') 0 -47px no-repeat
         cursor pointer
     .pp_close
-      background url('baseurl/img/dark_rounded/sprite.png') -1px -1px no-repeat
+      background url('/assets/images/gh-pages/dark_rounded/sprite.png') -1px -1px no-repeat
       cursor pointer
       height 22px
       width 75px
@@ -2459,144 +2355,144 @@ div
       margin-right 85px
     .pp_nav
       .pp_play
-        background url('baseurl/img/dark_rounded/sprite.png') -1px -100px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -1px -100px no-repeat
         height 15px
         width 14px
       .pp_pause
-        background url('baseurl/img/dark_rounded/sprite.png') -24px -100px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -24px -100px no-repeat
         height 15px
         width 14px
     .pp_arrow_previous
-      background url('baseurl/img/dark_rounded/sprite.png') 0 -71px no-repeat
+      background url('/assets/images/gh-pages/dark_rounded/sprite.png') 0 -71px no-repeat
     .pp_arrow_next
-      background url('baseurl/img/dark_rounded/sprite.png') -22px -71px no-repeat
+      background url('/assets/images/gh-pages/dark_rounded/sprite.png') -22px -71px no-repeat
     .pp_bottom
       .pp_left
-        background url('baseurl/img/dark_rounded/sprite.png') -88px -80px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -88px -80px no-repeat
       .pp_right
-        background url('baseurl/img/dark_rounded/sprite.png') -110px -80px no-repeat
+        background url('/assets/images/gh-pages/dark_rounded/sprite.png') -110px -80px no-repeat
     .pp_loaderIcon
-      background url('baseurl/img/dark_rounded/loader.gif') center center no-repeat
+      background url('/assets/images/gh-pages/dark_rounded/loader.gif') center center no-repeat
   &.dark_square
     .pp_description
       color #fff
       margin 0 85px 0 0
     .pp_loaderIcon
-      background url('baseurl/img/dark_square/loader.gif') center center no-repeat
+      background url('/assets/images/gh-pages/dark_square/loader.gif') center center no-repeat
     .pp_expand
-      background url('baseurl/img/dark_square/sprite.png') -31px -26px no-repeat
+      background url('/assets/images/gh-pages/dark_square/sprite.png') -31px -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/dark_square/sprite.png') -31px -47px no-repeat
+        background url('/assets/images/gh-pages/dark_square/sprite.png') -31px -47px no-repeat
         cursor pointer
     .pp_contract
-      background url('baseurl/img/dark_square/sprite.png') 0 -26px no-repeat
+      background url('/assets/images/gh-pages/dark_square/sprite.png') 0 -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/dark_square/sprite.png') 0 -47px no-repeat
+        background url('/assets/images/gh-pages/dark_square/sprite.png') 0 -47px no-repeat
         cursor pointer
     .pp_close
-      background url('baseurl/img/dark_square/sprite.png') -1px -1px no-repeat
+      background url('/assets/images/gh-pages/dark_square/sprite.png') -1px -1px no-repeat
       cursor pointer
       height 22px
       width 75px
     .pp_nav
       clear none
       .pp_play
-        background url('baseurl/img/dark_square/sprite.png') -1px -100px no-repeat
+        background url('/assets/images/gh-pages/dark_square/sprite.png') -1px -100px no-repeat
         height 15px
         width 14px
       .pp_pause
-        background url('baseurl/img/dark_square/sprite.png') -24px -100px no-repeat
+        background url('/assets/images/gh-pages/dark_square/sprite.png') -24px -100px no-repeat
         height 15px
         width 14px
     .pp_arrow_previous
-      background url('baseurl/img/dark_square/sprite.png') 0 -71px no-repeat
+      background url('/assets/images/gh-pages/dark_square/sprite.png') 0 -71px no-repeat
     .pp_arrow_next
-      background url('baseurl/img/dark_square/sprite.png') -22px -71px no-repeat
+      background url('/assets/images/gh-pages/dark_square/sprite.png') -22px -71px no-repeat
     .pp_next
       &:hover
-        background url('baseurl/img/dark_square/btnNext.png') center right no-repeat
+        background url('/assets/images/gh-pages/dark_square/btnNext.png') center right no-repeat
         cursor pointer
     .pp_previous
       &:hover
-        background url('baseurl/img/dark_square/btnPrevious.png') center left no-repeat
+        background url('/assets/images/gh-pages/dark_square/btnPrevious.png') center left no-repeat
         cursor pointer
   &.light_square
     .pp_expand
-      background url('baseurl/img/light_square/sprite.png') -31px -26px no-repeat
+      background url('/assets/images/gh-pages/light_square/sprite.png') -31px -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/light_square/sprite.png') -31px -47px no-repeat
+        background url('/assets/images/gh-pages/light_square/sprite.png') -31px -47px no-repeat
         cursor pointer
     .pp_contract
-      background url('baseurl/img/light_square/sprite.png') 0 -26px no-repeat
+      background url('/assets/images/gh-pages/light_square/sprite.png') 0 -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/light_square/sprite.png') 0 -47px no-repeat
+        background url('/assets/images/gh-pages/light_square/sprite.png') 0 -47px no-repeat
         cursor pointer
     .pp_close
-      background url('baseurl/img/light_square/sprite.png') -1px -1px no-repeat
+      background url('/assets/images/gh-pages/light_square/sprite.png') -1px -1px no-repeat
       cursor pointer
       height 22px
       width 75px
     .pp_nav
       .pp_play
-        background url('baseurl/img/light_square/sprite.png') -1px -100px no-repeat
+        background url('/assets/images/gh-pages/light_square/sprite.png') -1px -100px no-repeat
         height 15px
         width 14px
       .pp_pause
-        background url('baseurl/img/light_square/sprite.png') -24px -100px no-repeat
+        background url('/assets/images/gh-pages/light_square/sprite.png') -24px -100px no-repeat
         height 15px
         width 14px
     .pp_arrow_previous
-      background url('baseurl/img/light_square/sprite.png') 0 -71px no-repeat
+      background url('/assets/images/gh-pages/light_square/sprite.png') 0 -71px no-repeat
     .pp_arrow_next
-      background url('baseurl/img/light_square/sprite.png') -22px -71px no-repeat
+      background url('/assets/images/gh-pages/light_square/sprite.png') -22px -71px no-repeat
     .pp_next
       &:hover
-        background url('baseurl/img/light_square/btnNext.png') center right no-repeat
+        background url('/assets/images/gh-pages/light_square/btnNext.png') center right no-repeat
         cursor pointer
     .pp_previous
       &:hover
-        background url('baseurl/img/light_square/btnPrevious.png') center left no-repeat
+        background url('/assets/images/gh-pages/light_square/btnPrevious.png') center left no-repeat
         cursor pointer
   &.facebook
     .pp_top
       .pp_left
-        background url('baseurl/img/facebook/sprite.png') -88px -53px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -88px -53px no-repeat
       .pp_middle
-        background url('baseurl/img/facebook/contentPatternTop.png') top left repeat-x
+        background url('/assets/images/gh-pages/facebook/contentPatternTop.png') top left repeat-x
       .pp_right
-        background url('baseurl/img/facebook/sprite.png') -110px -53px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -110px -53px no-repeat
     .pp_content_container
       .pp_left
-        background url('baseurl/img/facebook/contentPatternLeft.png') top left repeat-y
+        background url('/assets/images/gh-pages/facebook/contentPatternLeft.png') top left repeat-y
       .pp_right
-        background url('baseurl/img/facebook/contentPatternRight.png') top right repeat-y
+        background url('/assets/images/gh-pages/facebook/contentPatternRight.png') top right repeat-y
     .pp_expand
-      background url('baseurl/img/facebook/sprite.png') -31px -26px no-repeat
+      background url('/assets/images/gh-pages/facebook/sprite.png') -31px -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/facebook/sprite.png') -31px -47px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -31px -47px no-repeat
         cursor pointer
     .pp_contract
-      background url('baseurl/img/facebook/sprite.png') 0 -26px no-repeat
+      background url('/assets/images/gh-pages/facebook/sprite.png') 0 -26px no-repeat
       cursor pointer
       &:hover
-        background url('baseurl/img/facebook/sprite.png') 0 -47px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') 0 -47px no-repeat
         cursor pointer
     .pp_close
-      background url('baseurl/img/facebook/sprite.png') -1px -1px no-repeat
+      background url('/assets/images/gh-pages/facebook/sprite.png') -1px -1px no-repeat
       cursor pointer
       height 22px
       width 22px
     .pp_description
       margin 0 37px 0 0
     .pp_loaderIcon
-      background url('baseurl/img/facebook/loader.gif') center center no-repeat
+      background url('/assets/images/gh-pages/facebook/loader.gif') center center no-repeat
     .pp_arrow_previous
-      background url('baseurl/img/facebook/sprite.png') 0 -71px no-repeat
+      background url('/assets/images/gh-pages/facebook/sprite.png') 0 -71px no-repeat
       height 22px
       margin-top 0
       width 22px
@@ -2604,7 +2500,7 @@ div
         background-position 0 -96px
         cursor default
     .pp_arrow_next
-      background url('baseurl/img/facebook/sprite.png') -32px -71px no-repeat
+      background url('/assets/images/gh-pages/facebook/sprite.png') -32px -71px no-repeat
       height 22px
       margin-top 0
       width 22px
@@ -2617,28 +2513,28 @@ div
         font-size 15px
         padding 0 3px 0 4px
       .pp_play
-        background url('baseurl/img/facebook/sprite.png') -1px -123px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -1px -123px no-repeat
         height 22px
         width 22px
       .pp_pause
-        background url('baseurl/img/facebook/sprite.png') -32px -123px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -32px -123px no-repeat
         height 22px
         width 22px
     .pp_next
       &:hover
-        background url('baseurl/img/facebook/btnNext.png') center right no-repeat
+        background url('/assets/images/gh-pages/facebook/btnNext.png') center right no-repeat
         cursor pointer
     .pp_previous
       &:hover
-        background url('baseurl/img/facebook/btnPrevious.png') center left no-repeat
+        background url('/assets/images/gh-pages/facebook/btnPrevious.png') center left no-repeat
         cursor pointer
     .pp_bottom
       .pp_left
-        background url('baseurl/img/facebook/sprite.png') -88px -80px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -88px -80px no-repeat
       .pp_middle
-        background url('baseurl/img/facebook/contentPatternBottom.png') top left repeat-x
+        background url('/assets/images/gh-pages/facebook/contentPatternBottom.png') top left repeat-x
       .pp_right
-        background url('baseurl/img/facebook/sprite.png') -110px -80px no-repeat
+        background url('/assets/images/gh-pages/facebook/sprite.png') -110px -80px no-repeat
   &.pp_pic_holder
     display none
     position absolute
@@ -2669,13 +2565,13 @@ div.pp_default .pp_gallery a.pp_arrow_next
 
 div.pp_default .pp_nav .pp_play,
 div.pp_default .pp_nav .pp_pause
-  background url('baseurl/img/default/sprite.png') -51px 1px no-repeat
+  background url('/assets/images/gh-pages/default/sprite.png') -51px 1px no-repeat
   height 30px
   width 30px
 
 div.pp_default a.pp_arrow_previous,
 div.pp_default a.pp_arrow_next
-  background url('baseurl/img/default/sprite.png') -31px -3px no-repeat
+  background url('/assets/images/gh-pages/default/sprite.png') -31px -3px no-repeat
   height 20px
   margin 4px 0 0
   width 20px
@@ -2685,7 +2581,7 @@ div.pp_default .pp_nav .pp_play:hover,
 div.pp_default .pp_nav .pp_pause:hover,
 div.pp_default .pp_arrow_next:hover,
 div.pp_default .pp_arrow_previous:hover
-  opacity .7
+  opacity 0.7
 
 div.dark_square .pp_left,
 div.dark_square .pp_middle,
@@ -2696,6 +2592,11 @@ div.dark_square .pp_content
 .pp_content
   height 40px
   min-width 40px
+
+*
+  html
+    .pp_content
+      width 40px
 
 .pp_content_container
   position relative
@@ -2773,7 +2674,7 @@ a.pp_arrow_next
     position relative
     white-space nowrap
     a
-      border 1px rgba(0, 0, 0, .5) solid
+      border 1px rgba(0, 0, 0, 0.5) solid
       display block
       float left
       height 33px
@@ -2787,14 +2688,37 @@ a.pp_arrow_next
     padding 0
     &.default
       a
-        background url('baseurl/img/facebook/default_thumbnail.gif') 0 0 no-repeat
+        background url('/assets/images/gh-pages/facebook/default_thumbnail.gif') 0 0 no-repeat
         display block
         height 33px
         width 50px
 
 .pp_gallery .pp_arrow_previous,
 .pp_gallery .pp_arrow_next
-  margin-top 7px!important
+  margin-top 7px !important
+
+a
+  &.pp_next
+    background url('/assets/images/gh-pages/light_rounded/btnNext.png') 10000px 10000px no-repeat
+    display block
+    float right
+    height 100%
+    text-indent -10000px
+    width 49%
+  &.pp_previous
+    background url('/assets/images/gh-pages/light_rounded/btnNext.png') 10000px 10000px no-repeat
+    display block
+    float left
+    height 100%
+    text-indent -10000px
+    width 49%
+  &.pp_close
+    display block
+    line-height 22px
+    position absolute
+    right 0
+    text-indent -10000px
+    top 0
 
 a.pp_expand,
 a.pp_contract
@@ -2818,7 +2742,7 @@ a.pp_contract
   width 24px
 
 #pp_full_res
-  line-height 1!important
+  line-height 1 !important
   .pp_inline
     text-align left
     p
@@ -2874,7 +2798,7 @@ div.dark_square .pp_gallery a.pp_arrow_previous,
 div.dark_square .pp_gallery a.pp_arrow_next,
 div.light_square .pp_gallery a.pp_arrow_previous,
 div.light_square .pp_gallery a.pp_arrow_next
-  margin-top 12px!important
+  margin-top 12px !important
 
 div.light_rounded .pp_arrow_previous.disabled,
 div.dark_rounded .pp_arrow_previous.disabled,
@@ -2892,12 +2816,12 @@ div.light_square .pp_arrow_next.disabled
 
 div.light_rounded .pp_loaderIcon,
 div.light_square .pp_loaderIcon
-  background url('baseurl/img/light_rounded/loader.gif') center center no-repeat
+  background url('/assets/images/gh-pages/light_rounded/loader.gif') center center no-repeat
 
 div.dark_rounded .pp_top .pp_middle,
 div.dark_rounded .pp_content,
 div.dark_rounded .pp_bottom .pp_middle
-  background url('baseurl/img/dark_rounded/contentPattern.png') top left repeat
+  background url('/assets/images/gh-pages/dark_rounded/contentPattern.png') top left repeat
 
 div.dark_rounded .currentTextHolder,
 div.dark_square .currentTextHolder
@@ -2948,65 +2872,7 @@ div.dark_square #pp_full_res .pp_inline
 .pp_gallery li.default a img
   display none
 
-.nav-switch
-  position fixed
-  top 130px
-  right 0
-  width 50px
-  height 37px
-  background-image url('baseurl/img/navSwitch.png')
-  background-position top left
-  display none
-  cursor pointer
 
-.aside-nav
-  position fixed
-  width 100%
-  height 100%
-  top 0
-  left 0
-  background-color rgba(0, 0, 0, 0.5)
-  z-index 1000
-  display none
 
-.nav-outer
-  width 200px
-  height 100%
-  float right
-  background-color #f2ede9
-  transform translate(200px)
-  transition transform .3s
-  .widget-title
-    font-size 20px
-    padding 20px 30px
-    margin 0
-    color #e85244
-  ul
-    list-style none
-    margin 0 30px
-    padding 0
-    background url('baseurl/img/dotted.png') repeat-x top
-  li
-    background url('baseurl/img/dotted.png') repeat-x bottom
-    padding 6px 0 8px 0
-    &:before
-      content "\00bb"
-      padding-right 5px
-    a
-      color #8f8f8f
 
-.nav-outer li a:hover,
-.nav-outer li a.current
-  color #e85244
-
-@media only screen and (max-width:767px)
-  .nav-switch
-    display block
-  .aside-nav
-    &.slideLeft
-      display block
-  .slideLeft
-    &.in
-      .nav-outer
-        transform translate(0)
 

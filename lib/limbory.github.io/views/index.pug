@@ -3,126 +3,522 @@
 | script: ./dist/js/main.js
 | ---
 | 
-.page-content
-  header#header
-    section.logo.tc
-      a.c-inl(href="javascript:;") logo
 
-    section.nav
-      nav.nav-content
-        h1.nav-title 相关分类
-        ul.nav-inner.c-list-n.tc.bg-dotted
-          - for (var i = 0; i < 7; i++) {
-          li.item.c-inl.c-rel.bg-dotted
-            i.book-arrow.c-abs.tz.lz
-            a.c-blo(href="javascript:;") tag
-          - }
-
-    section.page-title.cf
-      h1.title.fl page titlew
-      a.btn.fr(href="javascript:;") fork me on github !
-
-
-  .main-content#main
-    .content-inner
-      .row.cf
-        article.content-left.fl
-          ul.inner-list.c-list-n
-            - for (var i = 0; i < 5; i++) {
-            li.list-item
-              section.post-msg.c-rel
-                .date.c-abs.tz.lz.tc 27
-                  .month 三月
-                .link-title
-                  .c-tb
-                    .c-tbc
-                      .inner
-                        a(href="javascript:;") link
-                          i.icon-link
-
-                ul.describe.c-list-n.cf
-                  li.item.fl
-                    i.icon-user
-                    | 分类：
-                    a(href="javascript:;") 站点收藏
-                  li.item.fl
-                    i.icon-price-tags
-                    | 标签：
-                    a(href="javascript:;") HTML
-                    a(href="javascript:;") CSS
-                    a(href="javascript:;") Javascript
-                    a(href="javascript:;") Node.js
-              section.post-pic
-                a.c-blo(href="javascript:;")
-                  .img.tc(style='background-image: url(./assets/images/gh-pages/e.g.jpg)')
-                    i.icon-image.c-hidden
-              section.post-detail.c-rel
-                .detail-content 要得到窗口的尺寸，对于不同的浏览器，需要使用不同的属性和方法：若要检测窗口的真实尺寸，在Netscape下需要使用Window的属性；在IE下需要深入Document内部对body进行检测；在DOM环境下，若要得到窗口的尺寸，需要注意根元素的尺寸，而不是元素。
-                a.c-abs.bz.lz(href="javascript:;") 查看更多>>
-            - }
-          .footer-pagination.cf
-            section.pager.fr
-              - for (var i = 0; i < 5; i++) {
-              a(href="javascript:;")
-                = i
-              - }
-            section.crr-index
-              i.icon-files-empty
-              | 第 1 页／共 2 页
-        aside.content-right.fr
-          section.auth-msg
-            .describe.c-rel
-              img.c-abs.tz.lz(src="./assets/images/gh-pages/violine.jpg")
-              h1 作者
-              p 作者简介作者简介作者简介
-            ul.count.c-list-n.cf.tc
-              - for (var i = 0; i < 3; i++) {
-              li.count-item.fl
-                a(href="javascript:;") 10
-                .title 日志
-              - }
-
-          section.search
-            .section-title 站内搜索
-            form.c-rel.c-blo(action="", method='GET', onsubmit="javascript: return false;")
-              input.kw.c-blo(type="text", placeholder='输入关键字', name='kw')
-              button.btn-submit.c-abs.tc.tz.rz(type='submit')
-                i.icon-search
-            ul.search-tag.c-list-n
-              - for (var i = 0; i < 10; i++) {
-              li.tag-item.c-inl.c-rel
-                a(href="javascript:;") 标签
-              - }
-
-          section.recommend
-            .section-title 文章推荐
-            ul.list.c-list-n.bg-dotted
-              - for (var i = 0; i < 5; i++) {
-              li.list-item.bg-dotted
-                .item-inner.c-rel
-                  a.img.tc.c-abs.tz.lz(href="javascript:;")
-                    .img-inner(style='background-image: url(./assets/images/gh-pages/e.g.jpg)')
-                      i.icon-image.c-hidden
-                  .title
-                    .c-tb
-                      .c-tbc
-                        .inner
-                          a(href="javascript:;") link
-                            i.icon-link
-                  .date 18 Mar 2016
-              - }
-
-  
-  footer#footer
-    section.footer-msg
-      ul.msg-inner.c-list-n.cf
-        - for (var i = 0; i < 3; i++) {
-        li.item.fl
-          .item-title 公告
-        - }
-
-    section.copyright.tc
-        | 王宬翰 &copy;2016. All Rights Reserved.
-        br
-        | Powered by
-        a(href='http://jekyllcn.com/', target='_blank', title='Jekyll') Jekyll
+#bodychild
+  #outercontainer
+    #outerheader
+      header#top
+        #logo
+          a(href='/ghpages.elder-version/')
+            img(src='/assets/images/gh-pages/limbory.png')
+        section#navigation
+          nav#nav-wrap
+            ul#topnav.sf-menu
+              li.current
+                a(href='/ghpages.elder-version/') 主页
+              li
+                a(href='/ghpages.elder-version/blog/') 个人日志
+              li
+                a(href='/ghpages.elder-version/reprint/') 文章转载
+              li
+                a(href='/ghpages.elder-version/collections/') 站点搜集
+              li
+                a(href='/ghpages.elder-version/modules/') 精美模板
+              li
+                a(href='/ghpages.elder-version/plugins/') 实用插件
+              li
+                a(href='/ghpages.elder-version/tools/') 前端工具
+            .nav-switch
+            .clear
+        .clear
+    #outerbeforecontent
+      .container
+        .row
+          #beforecontent.twelve.columns
+            h1.pagetitle 「主页」
+            a.button(href='http://github.com/limbory') fork me on github !
+    #outermain
+      .container
+        .row
+          section#maincontent.eight.columns.positionleft
+            .padcontent
+              section.content
+                article.post
+                  .date-wrapper
+                    .date-value 27
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://blog.csdn.net/phodal/article/details/50960160', target='_blank', title='为什么未来是全栈工程师的世界？')
+                              | 为什么未来是全栈工程师的世界？ 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/reprint/') 文章转载
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?Web应用') Web应用
+                        a(href='/ghpages.elder-version/tags/?技术') 技术
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='为什么未来是全栈工程师的世界？', data-img='http://growth.phodal.com/chapters/prelude/growth-hacking.jpg')
+                  .entry-content
+                    p 谨以此文献给每一个为成为优秀全栈工程师奋斗的人。
+                    a.more(href='http://blog.csdn.net/phodal/article/details/50960160', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 19
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://www.cnblogs.com/lovening/archive/2010/09/13/1824977.html', target='_blank', title='JS 获取浏览器和屏幕宽高信息')
+                              | JS 获取浏览器和屏幕宽高信息 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/reprint/') 文章转载
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?Javascript') Javascript
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='JS 获取浏览器和屏幕宽高信息', data-img='http://i0.hdslb.com/video/80/804e4c5af64bf0a78adbea66ea4b2228.jpg')
+                  .entry-content
+                    p 要得到窗口的尺寸，对于不同的浏览器，需要使用不同的属性和方法：若要检测窗口的真实尺寸，在Netscape下需要使用Window的属性；在IE下需要深入Document内部对body进行检测；在DOM环境下，若要得到窗口的尺寸，需要注意根元素的尺寸，而不是元素。
+                    a.more(href='http://www.cnblogs.com/lovening/archive/2010/09/13/1824977.html', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 19
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/', target='_blank', title='好吧，CSS3 3D transform变换，不过如此！')
+                              | 好吧，CSS3 3D transform变换，不过如此！ 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/reprint/') 文章转载
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?CSS3') CSS3
+                        a(href='/ghpages.elder-version/tags/?3D变换') 3D变换
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='好吧，CSS3 3D transform变换，不过如此！', data-img='/assets/images/gh-pages/3d_axes.png')
+                  .entry-content
+                    p 想必大部分的同行应该跟我一样，没有爱因斯坦爷爷的智商，没有上镜需要把表摘掉的爸爸。因此，那些术语连篇的CSS3 3D transform介绍的资料过于耀眼，无法直视。怎么办？
+                    a.more(href='http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 19
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://less.bootcss.com/', target='_blank', title='快速入门 | Less.js 中文文档')
+                              | 快速入门 | Less.js 中文文档 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/collections/') 站点搜集
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?CSS') CSS
+                        a(href='/ghpages.elder-version/tags/?LESS') LESS
+                        a(href='/ghpages.elder-version/tags/?自动化工具') 自动化工具
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='快速入门 | Less.js 中文文档', data-img='http://www.kuqin.com/upimg/allimg/111211/2149262137-3.jpg')
+                  .entry-content
+                    p Less--一种新颖的样式表书写方式； 简介、如何下载并使用、案例等。
+                    a.more(href='http://less.bootcss.com/', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 19
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://www.99css.com/cssgaga/', target='_blank', title='CssGaga 前端工具包')
+                              | CssGaga 前端工具包 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/tools/') 前端工具
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?HTML') HTML
+                        a(href='/ghpages.elder-version/tags/?CSS') CSS
+                        a(href='/ghpages.elder-version/tags/?自动化工具') 自动化工具
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='CssGaga 前端工具包', data-img='http://p13.qhimg.com/t01c6ca8ab743f65622.jpg')
+                  .entry-content
+                    p 鹅厂出品，必属精品。（笑）
+                    a.more(href='http://www.99css.com/cssgaga/', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 18
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://manos.malihu.gr/jquery-custom-content-scroller/', target='_blank', title='jQuery custom content scroller')
+                              | jQuery custom content scroller 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/plugins/') 实用插件
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?jQuery') jQuery
+                        a(href='/ghpages.elder-version/tags/?插件') 插件
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='jQuery custom content scroller', data-img='http://assets.jq22.com/plugin/pc-dfbd17c8-29c8-11e4-a320-000c29f61318.png')
+                  .entry-content
+                    p 自定义滚动条插件，神器不解释
+                    a.more(href='http://manos.malihu.gr/jquery-custom-content-scroller/', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 18
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://www.jq22.com/', target='_blank', title='jQuery插件库-收集最全最新最好的jQuery插件')
+                              | jQuery插件库-收集最全最新最好的jQuery插件 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/collections/') 站点搜集
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?jQuery') jQuery
+                        a(href='/ghpages.elder-version/tags/?插件') 插件
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='jQuery插件库-收集最全最新最好的jQuery插件', data-img='/assets/images/gh-pages/jp.jpg')
+                  .entry-content
+                    p 各种jQuery插件搜集站点，一般直接f12扒下来用就行。
+                    a.more(href='http://www.jq22.com/', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 18
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://blog.csdn.net/dont27/article/details/38097581', target='_blank', title='Liquid用法笔记')
+                              | Liquid用法笔记 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/reprint/') 文章转载
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?Liquid') Liquid
+                        a(href='/ghpages.elder-version/tags/?Jekyll') Jekyll
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='Liquid用法笔记', data-img='http://jekyllcn.com/img/logo-2x.png')
+                  .entry-content
+                    p
+                      | 在折腾github上博客的时候, 遇到一些jekyll,
+                      br
+                      | 正确来说应该是Liquid用法的问题。
+                    a.more(href='http://blog.csdn.net/dont27/article/details/38097581', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 18
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://www.kthinker.com/post/jekyll-category-and-tag/', target='_blank', title='如何使用Jekyll的Category和Tag')
+                              | 如何使用Jekyll的Category和Tag 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/reprint/') 文章转载
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?Jekyll') Jekyll
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='如何使用Jekyll的Category和Tag', data-img='http://i-7.vcimg.com/crop/9dcfe9a9588be9a19ac4df0d1ee14949422552%28600x%29/thumb.jpg')
+                  .entry-content
+                    p 文章都有分类和标签的需要，如上面。本文介绍如何使用Jekyll的Category和Tag功能，参考了minddust的文章
+                    a.more(href='http://www.kthinker.com/post/jekyll-category-and-tag/', target='_blank') 查看更多>>
+                  .clear
+                article.post
+                  .date-wrapper
+                    .date-value 18
+                    .month-value 三月
+                  .header-wrapper
+                    h2.posttitle
+                      .pt_1
+                        .pt_2
+                          .pt_3
+                            a(href='http://csssprites.com/', target='_blank', title='CSS sprites generator')
+                              | CSS sprites generator 
+                              img.link-ico(src='/assets/images/gh-pages/link-lg.png')
+                    .entry-utility
+                      .user
+                        | 分类:
+                        a(href='/ghpages.elder-version/collections/') 站点搜集
+                      .tag
+                        | 标签:
+                        a(href='/ghpages.elder-version/tags/?CSS Spirites') CSS Spirites
+                        a(href='/ghpages.elder-version/tags/?雪碧图') 雪碧图
+                  .clear
+                  .postimg
+                    img(src='/assets/images/gh-pages/preloadImg.png', alt='CSS sprites generator', data-img='/assets/images/gh-pages/spi.jpg')
+                  .entry-content
+                    p 一个在线生成雪碧图的网站，不过感觉没有cssgaga好用（笑）
+                    a.more(href='http://csssprites.com/', target='_blank') 查看更多>>
+                  .clear
+                .wp-pagenavi
+                  span.pages 第 1 页 / 共 2 页
+                  span.current
+                    span 1
+                  a.page(href='/ghpages.elder-version/page2') 2
+          aside#sidebar.four.columns
+            .padsidebar
+              ul
+                li.widget-container
+                  .site-about
+                    .face-img
+                      img(src='/assets/images/gh-pages/violine.jpg')
+                    .self-abstract
+                      h2 Limbory
+                      p 建站也要按照基本法
+                    ul
+                      li
+                        a(href='/ghpages.elder-version/blog/')
+                          span 0
+                          br
+                        | 日志
+                      li
+                        a(href='/ghpages.elder-version/')
+                          span 13
+                          br
+                        | 收录总数
+                      li
+                        a(href='javascript:;')
+                          span 19
+                          br
+                        | 标签
+                      .clear
+                li.widget-container
+                  h2.widget-title 站内搜索
+                  form#searchform(action='', onsubmit='searchKeySubmit ();return false;')
+                    .bgsearch
+                      input#s(type='text', name='s', placeholder='输入关键字', autocomplete='off')
+                      |  
+                      input.searchbutton(type='submit')
+                    script.
+                      function searchKeySubmit() {
+                        if (document.getElementById("s").value == '') return false;
+                        window.location = window.BASE_URL + "/search/?" + encodeURI(document.getElementById("s").value);
+                      };
+                  ul.tag-container
+                    li
+                      a(href='/ghpages.elder-version/tags/?Jekyll') Jekyll
+                    li
+                      a(href='/ghpages.elder-version/tags/?Github') Github
+                    li
+                      a(href='/ghpages.elder-version/tags/?Grunt') Grunt
+                    li
+                      a(href='/ghpages.elder-version/tags/?自动化工具') 自动化工具
+                    li
+                      a(href='/ghpages.elder-version/tags/?CDN加速') CDN加速
+                    li
+                      a(href='/ghpages.elder-version/tags/?框架') 框架
+                    li
+                      a(href='/ghpages.elder-version/tags/?插件') 插件
+                    li
+                      a(href='/ghpages.elder-version/tags/?CSS Spirites') CSS Spirites
+                    li
+                      a(href='/ghpages.elder-version/tags/?雪碧图') 雪碧图
+                    li
+                      a(href='/ghpages.elder-version/tags/?Liquid') Liquid
+                    li
+                      a(href='/ghpages.elder-version/tags/?jQuery') jQuery
+                    li
+                      a(href='/ghpages.elder-version/tags/?HTML') HTML
+                    li
+                      a(href='/ghpages.elder-version/tags/?CSS') CSS
+                    li
+                      a(href='/ghpages.elder-version/tags/?LESS') LESS
+                    li
+                      a(href='/ghpages.elder-version/tags/?CSS3') CSS3
+                    li
+                      a(href='/ghpages.elder-version/tags/?3D变换') 3D变换
+                    li
+                      a(href='/ghpages.elder-version/tags/?Javascript') Javascript
+                    li
+                      a(href='/ghpages.elder-version/tags/?Web应用') Web应用
+                    li
+                      a(href='/ghpages.elder-version/tags/?技术') 技术
+                li.widget-container
+                  h2.widget-title 文章推荐
+                  ul.rp-widget
+                    li
+                      .postimg
+                        img(src='/assets/images/gh-pages/preloadImg.png', alt='搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门', data-img='http://image.beekka.com/blog/201208/bg2012082502.jpg')
+                      h3
+                        .pt_1
+                          .pt_2
+                            .pt_3
+                              a(href='http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html', target='_blank', title='搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门')
+                                | 搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门 
+                                img.link-ico(src='/assets/images/gh-pages/link-sm.png')
+                      span.smalldate 15 Mar 2016
+                      span.clear
+                    li
+                      .postimg
+                        img(src='/assets/images/gh-pages/preloadImg.png', alt='【grunt整合版】30分钟学会使用grunt打包前端代码', data-img='http://ossweb-img.qq.com/upload/webplat/info/tgideas/201307/1373851870_1436653066_25961_imageAddr.jpg')
+                      h3
+                        .pt_1
+                          .pt_2
+                            .pt_3
+                              a(href='http://www.cnblogs.com/yexiaochai/p/3603389.html', target='_blank', title='【grunt整合版】30分钟学会使用grunt打包前端代码')
+                                | 【grunt整合版】30分钟学会使用grunt打包前端代码 
+                                img.link-ico(src='/assets/images/gh-pages/link-sm.png')
+                      span.smalldate 18 Mar 2016
+                      span.clear
+                    li
+                      .postimg
+                        img(src='/assets/images/gh-pages/preloadImg.png', alt='Bootstrap中文网开源项目免费 CDN 服务', data-img='/assets/images/gh-pages/bootcn.png')
+                      h3
+                        .pt_1
+                          .pt_2
+                            .pt_3
+                              a(href='http://www.bootcdn.cn/', target='_blank', title='Bootstrap中文网开源项目免费 CDN 服务')
+                                | Bootstrap中文网开源项目免费 CDN 服务 
+                                img.link-ico(src='/assets/images/gh-pages/link-sm.png')
+                      span.smalldate 18 Mar 2016
+                      span.clear
+                    li
+                      .postimg
+                        img(src='/assets/images/gh-pages/preloadImg.png', alt='快速入门 | Less.js 中文文档', data-img='http://www.kuqin.com/upimg/allimg/111211/2149262137-3.jpg')
+                      h3
+                        .pt_1
+                          .pt_2
+                            .pt_3
+                              a(href='http://less.bootcss.com/', target='_blank', title='快速入门 | Less.js 中文文档')
+                                | 快速入门 | Less.js 中文文档 
+                                img.link-ico(src='/assets/images/gh-pages/link-sm.png')
+                      span.smalldate 19 Mar 2016
+                      span.clear
+                li.widget-container
+                  h2.widget-title 最近留言
+                  .ds-thread.textwidget(data-thread-key='listPage', data-title='Limbory的个人博客，前端技术大杂烩，测试文字文字', data-url='/')
+    footer#footer
+      #outerfootersidebar
+        .container
+          #footersidebar.row
+            .three.columns
+              ul
+                li.widget-container
+                  h2.widget-title 关于
+                  p(style='text-indent: 2em')
+                    | 本站点纯属个人兴趣爱好制作，相关技术解释权归本人所有。网站源码开源并托管于
+                    a(href='http://github.com/limbory/limbory.github.io', style='color: white', target='_blank') Github
+                    | ，访客可自行浏览与拷贝，切勿用于商业用途，谢谢合作。
+                  ul
+                    li 鸣谢：不愿意透漏姓名的UI菇凉
+                    li 反馈或建议请发送邮件至：751386356@qq.com
+            .three.columns
+              ul
+                li.widget-container
+                  h2.widget-title 友情链接
+                  ul.list
+                    li
+                      a(href='http://shua.cn/', title='优优刷机助手', target='_blank') 优优刷机助手
+                    li
+                      a(href='http://51app.cn/', title='51app', target='_blank') 51APP
+                    li
+                      a(href='https://segmentfault.com/', title='Segmentfault', target='_blank') Segmentfault
+                    li
+                      a(href='http://www.bootcss.com/', title='Bootstrap中文网', target='_blank') Bootstrap中文网
+                    li
+                      a(href='http://www.w3school.com.cn/', title='W3school在线教程', target='_blank') W3school在线教程
+            .three.columns
+              ul
+                li.widget-container
+                  h2.widget-title (ง •̀_•́)ง
+                  ul.sn
+                    li
+                      a(href='javascript:;', title='Styling Option', target='_blank')
+                        img(src='/assets/images/gh-pages/wechat.jpg')
+            .clear
+      #outercopyright
+        .container
+          #copyright
+            | 王宬翰 ©2016. All Rights Reserved.
+            br
+            | Powered by
+            a(href='http://jekyllcn.com/', target='_blank', title='Jekyll') Jekyll
+            | .
+    .clear
+.aside-nav
+  .nav-outer
+    h2.widget-title 相关分类
+    ul
+      li
+        a.current(href='/ghpages.elder-version/') 主页
+      li
+        a(href='/ghpages.elder-version/blog/') 个人日志
+      li
+        a(href='/ghpages.elder-version/reprint/') 文章转载
+      li
+        a(href='/ghpages.elder-version/collections/') 站点搜集
+      li
+        a(href='/ghpages.elder-version/modules/') 精美模板
+      li
+        a(href='/ghpages.elder-version/plugins/') 实用插件
+      li
+        a(href='/ghpages.elder-version/tools/') 前端工具
+//- script(src='/ghpages.elder-version/src/js/jquery-1.7.1.min.js')
+//- script(src='/ghpages.elder-version/src/js/jquery.dotdotdot.min.js')
+//- script(src='/ghpages.elder-version/src/js/custom.js')

@@ -35,9 +35,9 @@ module.exports = function(config) {
       indent_size: 2
     })).pipe(named(function(file) {
       var fileStr = String(file.contents);
-      var cutStr = fileStr.match(/^\-{3}[\s\S]+\-{3}/g);
+      var cutStr = fileStr.match(/^\-{3}[^\n]+\-{3}/);
       if (cutStr) {
-        fileStr = fileStr.replace(/^\-{3}[\s\S]+\-{3}/, cutStr[0].replace(/([^\:])\s+/g, '$1\n'));
+        fileStr = fileStr.replace(/^\-{3}[^\n]+\-{3}/, cutStr[0].replace(/([^\:])\s+/g, '$1\n'));
         file.contents = new Buffer(fileStr);
       }
       this.queue(file)

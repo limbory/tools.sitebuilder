@@ -21,7 +21,7 @@ switch (env.PROJECT) {
   default: void 0;
 }
 
-// require('./tasks/hka/main')(gulp);
+require('./tasks/hka/main')(gulp);
 
 /* 测试用 */
 gulp.task('default', function() {

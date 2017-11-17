@@ -18,6 +18,7 @@ const
   util = require('../util'),
   dir = require(util.dir('config/directory'))(env.PROJECT + '/'),
   pug2html = require(util.dir('tasks/common/pug2html')),
+  html2pug = require(util.dir('tasks/common/html2pug')),
   stylus2css = require(util.dir('tasks/common/stylus2css')),
   css2stylus = require(util.dir('tasks/common/css2stylus')),
   less2stylus = require(util.dir('tasks/common/less2stylus')),
@@ -66,7 +67,7 @@ module.exports = function(gulp) {
       browserSync.init({
         server: { baseDir: util.dir(serviceFolder) },
         notify: false,
-        port: 3355,
+        port: 3356,
         logLevel: "silent"
       });
       // 启动jekyll构建任务
@@ -99,4 +100,5 @@ module.exports = function(gulp) {
   /* 工具模块 */
   gulp.task('css2stylus', function() { return css2stylus(null); });
   gulp.task('less2stylus', function() { return less2stylus(null); });
+  gulp.task('html2pug', function() { return html2pug(null); });
 };
