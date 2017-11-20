@@ -6,15 +6,19 @@ append title
 append description
   meta(name='keywords', content='{{ site.keywords }}')
   meta(name='description', content='{{ site.description }}')
-  link(rel='shortcut icon', href='./assets/images/favicon.ico')
+  link(rel='shortcut icon', href=`${assetsUrl}images/favicon.ico${version}`)
 
 //- 静态资源
 append css
-  link(rel='stylesheet', href='./dist/css/main.css')
+  link(rel='stylesheet', href=`${baseUrl}dist/css/main.css${version}`)
   <!--[if lte IE 8]>
-    script(src='./assets/js/html5-shiv.min.js')
-    script(src='./assets/js/respond.min.js')
+    script(src=`${assetsUrl}js/html5-shiv.min.js${version}`)
+    script(src=`${assetsUrl}js/respond.min.js${version}`)
   <![endif]-->
+  script.
+    window.baseUrl = '!{baseUrl}';
+    window.assetsUrl = '!{assetsUrl}';
+    window.version = '!{version}';
 append js
   | {% if page.script %}
   script(src='{{ page.script }}')

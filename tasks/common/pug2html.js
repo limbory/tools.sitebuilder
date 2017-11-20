@@ -22,12 +22,20 @@ module.exports = function(config) {
     baseDir: '', // 带转换文件根路径
     distDir: '', // 构建路径
     isCompress: false, // 转换后是否压缩（默认不压缩）
+    server: {
+      baseUrl: '', assetsUrl: '', version: ''
+    },
   }, config);
 
   var stream = gulp.src(cfg.rootDir, {
     base: cfg.baseDir
   }).pipe(pug({
-    pretty: !cfg.isCompress
+    pretty: !cfg.isCompress,
+    locals: {
+      baseUrl: cfg.server.baseUrl,
+      assetsUrl: cfg.server.assetsUrl,
+      version: cfg.server.version
+    }
   }));
 
   if (!cfg.isCompress) {

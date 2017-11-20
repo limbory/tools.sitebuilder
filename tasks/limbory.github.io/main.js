@@ -31,13 +31,15 @@ module.exports = function(gulp) {
     fullDirMsgHTML = {
       rootDir: util.createSrcDir(dir.html.src, '.pug', dir.exclude),
       baseDir: util.dir(dir.html.src),
-      distDir: util.dir(dir.html.dist)
+      distDir: util.dir(dir.html.dist),
+      server: dir.server[env.NODE_ENV]
     },
     fullDirMsgCSS = {
       rootDir: util.createSrcDir(dir.css.src, '.styl', dir.exclude),
       baseDir: util.dir(dir.css.src),
       distDir: util.dir(dir.css.dist),
-      assetsDir: util.dir(dir.dist),
+      assetsDir: util.dir(dir.dist + 'assets/'),
+      server: dir.server[env.NODE_ENV],
       isCompress: env.NODE_ENV === 'production' ? true : false
     },
     fullDirMsgJS = {

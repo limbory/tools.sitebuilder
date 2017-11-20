@@ -36,6 +36,18 @@ module.exports = function(pathName) {
     js: {
       src: SRC_DIR + pathName + 'javascript/',
       dist: DIST_DIR + pathName + 'dist/js/'
+    },
+    server: {
+      dev: {
+        baseUrl: '/',
+        assetsUrl: '/assets/',
+        version: '?v1.0.0'
+      },
+      production: {
+        baseUrl: '/',
+        assetsUrl: '/assets/',
+        version: '?v1.0.0'
+      }
     }
   };
 };

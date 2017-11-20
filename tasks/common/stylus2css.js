@@ -22,7 +22,10 @@ module.exports = function(config) {
     baseDir: '', // 带转换文件根路径
     distDir: '', // 构建路径
     assetsDir: '', // 静态资源根目录
-    isCompress: false // 转换后是否压缩（默认不压缩）
+    isCompress: false, // 转换后是否压缩（默认不压缩）
+    server: {
+      baseUrl: '', assetsUrl: '', version: ''
+    },
   }, config);
 
   var stream = gulp.src(cfg.rootDir, {
@@ -33,7 +36,11 @@ module.exports = function(config) {
     'compress': cfg.isCompress, // 样式表压缩
     'functions': {
       // 静态资源转base64编码
-      'inline-url': stylus.stylus.url({ paths: [cfg.assetsDir] })
+      'inline-url': stylus.stylus.url({ paths: [cfg.assetsDir] }),
+      'server-url': function (url) {
+        return new stylus.stylus.nodes
+          .Literal('url(' + cfg.server.assetsUrl + url.val + cfg.server.version + ')');
+      },
     },
   }));
 
