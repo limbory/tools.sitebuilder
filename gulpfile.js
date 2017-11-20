@@ -8,9 +8,12 @@
 'use strict';
 
 const
-  gulp  = require('gulp'),
+  gulp = require('gulp'),
   gutil = require('gulp-util'),
-  env   = process.env;
+  env = process.env,
+
+  util = require('./tasks/util'),
+  server = require('./tasks/common/server')(gulp);
 
 switch (env.PROJECT) {
 
@@ -18,10 +21,9 @@ switch (env.PROJECT) {
     require('./tasks/' + env.PROJECT + '/main')(gulp);
     break;
 
-  default: void 0;
+  default:
+    void 0;
 }
-
-require('./tasks/hka/main')(gulp);
 
 /* 测试用 */
 gulp.task('default', function() {

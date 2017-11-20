@@ -7,23 +7,23 @@
 'use strict';
 
 const
-  gutil = require('gulp-util'),
+  gutil        = require('gulp-util'),
   gulpSequence = require('gulp-sequence'),
-  gulpWatch = require('gulp-watch'),
-  browserSync = require('browser-sync').create(),
-  fs = require('fs'),
-  exec = require('child_process').exec,
+  gulpWatch    = require('gulp-watch'),
+  browserSync  = require('browser-sync').create(),
+  fs           = require('fs'),
+  exec         = require('child_process').exec,
 
-  env = process.env,
-  util = require('../util'),
-  dir = require(util.dir('config/directory'))(env.PROJECT + '/'),
-  pug2html = require(util.dir('tasks/common/pug2html')),
-  html2pug = require(util.dir('tasks/common/html2pug')),
-  stylus2css = require(util.dir('tasks/common/stylus2css')),
-  css2stylus = require(util.dir('tasks/common/css2stylus')),
+  env         = process.env,
+  util        = require('../util'),
+  dir         = require(util.dir('config/directory'))(env.PROJECT + '/'),
+  pug2html    = require(util.dir('tasks/common/pug2html')),
+  html2pug    = require(util.dir('tasks/common/html2pug')),
+  stylus2css  = require(util.dir('tasks/common/stylus2css')),
+  css2stylus  = require(util.dir('tasks/common/css2stylus')),
   less2stylus = require(util.dir('tasks/common/less2stylus')),
-  packjs = require(util.dir('tasks/common/packjs')),
-  clean = require(util.dir('tasks/common/clean'));
+  packjs      = require(util.dir('tasks/common/packjs')),
+  clean       = require(util.dir('tasks/common/clean'));
 
 module.exports = function(gulp) {
 
@@ -66,9 +66,9 @@ module.exports = function(gulp) {
       // 启动服务端
       browserSync.init({
         server: { baseDir: util.dir(serviceFolder) },
-        notify: false,
+        // notify: false,
         port: 3356,
-        logLevel: "silent"
+        // logLevel: "silent"
       });
       // 启动jekyll构建任务
       exec('cd ' + dir.dist + ' && jekyll b --watch');
@@ -79,7 +79,7 @@ module.exports = function(gulp) {
       gulpWatch(dir.js.src, function() { return gulpSequence('packjs', util.noop); });
 
       gulpWatch(serviceFolder, function() {
-        clearTimeout(flag)
+        clearTimeout(flag);
         flag = setTimeout(function() {
           gutil.log('browserSync.reload');
           browserSync.reload();
