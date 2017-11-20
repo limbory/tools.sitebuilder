@@ -53,7 +53,7 @@ module.exports = {
   "quotmark": "single", // Enforce use of single quotation marks for strings.
   "unused": true, // Warn when variables are defined but never used.
   "maxlen": 200, // Enforce line length to 100 characters
-  "camelcase": true, // Force all variable names to use either camelCase style or UPPER_CASE with underscores.
+  "camelcase": false, // Force all variable names to use either camelCase style or UPPER_CASE with underscores.
 
   // == Relaxing Options ================================================
   //

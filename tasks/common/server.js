@@ -19,6 +19,7 @@ const
 const
   defaultDir = [// 缺省路径
     '../../hka-oj-dev(20171120090730)',
+    'public/limbory.github.io/',
   ];
 
 module.exports = function(gulp) {

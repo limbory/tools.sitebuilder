@@ -51,7 +51,7 @@ module.exports = function(gulp) {
 
   /* 清除构建文件 */
   gulp.task('clean', function() {
-    return clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*', '404.html', 'H5_page.html', 'VR_hire.html']) });
+    return clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*']) });
   });
 
 
