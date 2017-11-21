@@ -11,9 +11,7 @@ const
   gulp = require('gulp'),
   gutil = require('gulp-util'),
   clean = require('gulp-clean'),
-  named = require('vinyl-named'),
-
-  util = require('../util');
+  named = require('vinyl-named');
 
 module.exports = function(config) {
   var cfg = Object.assign({

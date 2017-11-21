@@ -12,9 +12,7 @@ const
   gutil = require('gulp-util'),
   pug = require('gulp-pug'),
   named = require('vinyl-named'),
-  prettify = require('gulp-html-prettify'),
-
-  util = require('../util');
+  prettify = require('gulp-html-prettify');
   
 module.exports = function(config) {
   var cfg = Object.assign({
@@ -48,7 +46,7 @@ module.exports = function(config) {
         fileStr = fileStr.replace(/^\-{3}[^\n]+\-{3}/, cutStr[0].replace(/([^\:])\s+/g, '$1\n'));
         file.contents = new Buffer(fileStr);
       }
-      this.queue(file)
+      this.queue(file);
     }));
   }
 

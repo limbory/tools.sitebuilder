@@ -14,9 +14,7 @@ const
   dest = require('gulp-dest'),
   html2pug = require('html2pug'),
   prettify = require('gulp-html-prettify'),
-  removeHtmlComments = require('gulp-remove-html-comments'),
-
-  util = require('../util');
+  removeHtmlComments = require('gulp-remove-html-comments');
 
 module.exports = function(config) {
   var cfg = Object.assign({

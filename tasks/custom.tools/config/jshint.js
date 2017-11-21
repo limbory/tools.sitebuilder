@@ -1,9 +1,10 @@
 /**
- * jshint 配置文件
+ * 配置文件 - js文件查错
  * @authors C.H.Wang (751386356@qq.com)
- * @date    2017-11-06 10:59:51
- * @version 1.0
+ * @date    2017-11-21 09:50:43
+ * @version 1.0.0
  */
+
 
 'use strict';
 

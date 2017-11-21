@@ -80,6 +80,35 @@ const
      */
     noop: function() {},
 
+    /**
+     * 构建工具参数合法性校验
+     * @param  {Object}   prs        全局process
+     * @param  {Array}   defaultDir  缺省路径  
+     * @param  {Function} callback   回调函数
+     */
+    validToolConfig: function(prs, defaultDir, callback) {
+      var
+        dir,
+        env = prs.env,
+        argv = prs.argv || env.npm_config_argv;
+
+      if (argv) {
+        dir = argv.slice(-1)[0];
+        if (/^\-\-[^\-\s]/.test(dir)) {
+          dir = dir.slice(2);
+        } else {
+          dir = null;
+        }
+      }
+
+      if (dir) {
+        dir = /^\d+$/.test(dir) ? defaultDir[parseInt(dir)] : dir;
+        dir = /^[a-zA-Z]\:/.test(dir) ? dir : util.dir(dir);
+        
+        callback(dir);
+      }
+    },
+
   };
 
 module.exports = util;

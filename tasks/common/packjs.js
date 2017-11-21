@@ -9,7 +9,6 @@
 
 const
   gulp = require('gulp'),
-  gutil = require('gulp-util'),
   named = require('vinyl-named'),
   jshint = require('gulp-jshint'),
   webpack = require('webpack-stream'),

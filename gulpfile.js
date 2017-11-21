@@ -10,14 +10,15 @@
 const
   gulp = require('gulp'),
   gutil = require('gulp-util'),
-  env = process.env,
-
-  util = require('./tasks/util'),
-  server = require('./tasks/common/server')(gulp);
+  env = process.env;
 
 switch (env.PROJECT) {
 
   case 'limbory.github.io':
+    require('./tasks/' + env.PROJECT + '/main')(gulp);
+    break;
+
+  case 'custom.tools':
     require('./tasks/' + env.PROJECT + '/main')(gulp);
     break;
 

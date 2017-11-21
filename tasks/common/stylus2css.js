@@ -12,9 +12,7 @@ const
   gutil = require('gulp-util'),
   stylus = require('gulp-stylus'),
   cleanCSS = require('gulp-clean-css'),
-  nib = require('nib'),
-
-  util = require('../util');
+  nib = require('nib');
 
 module.exports = function(config) {
   var cfg = Object.assign({

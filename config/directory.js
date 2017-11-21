@@ -8,10 +8,6 @@
 'use strict';
 
 const
-  gulp = require('gulp'),
-  gutil = require('gulp-util');
-
-const
   SRC_DIR = 'lib/',
   DIST_DIR = 'public/';
 

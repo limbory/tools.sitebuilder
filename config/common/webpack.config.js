@@ -7,9 +7,6 @@
 
 'use strict';
 
-var
-  webpack = require('webpack');
-
 module.exports = {
 
   /* 输入输出 */
@@ -23,7 +20,7 @@ module.exports = {
   // watch: true,
   // devtool: 'eval-source-map',
   // devServer: {
-  //   contentBase: "./public", //本地服务器所加载的页面所在的目录
+  //   contentBase: './public', //本地服务器所加载的页面所在的目录
   //   historyApiFallback: true, //不跳转
   //   inline: true //实时刷新
   // },
@@ -35,13 +32,13 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ["es2015", "stage-0", "flow-vue", "react"],
+          presets: ['es2015', 'stage-0', 'flow-vue', 'react'],
           plugins: [
-            ["transform-runtime", {
-              "helpers": false, // 该选项有问题，必须设置为false
-              "polyfill": false, // 该选项有问题，必须设置为false
-              "regenerator": true,
-              "moduleName": "babel-runtime"
+            ['transform-runtime', {
+              'helpers': false, // 该选项有问题，必须设置为false
+              'polyfill': false, // 该选项有问题，必须设置为false
+              'regenerator': true,
+              'moduleName': 'babel-runtime'
             }]
           ]
         }

@@ -6,10 +6,17 @@
   "scripts": {
     "comment": "start、restart、test、stop命令不需要加run",
     "test": "gulp",
+    "tool": "better-npm-run tool",
     "ghpages:dev": "better-npm-run ghpages:debug",
     "ghpages:production": "better-npm-run ghpages:build"
   },
   "betterScripts": {
+    "tool": {
+      "command": "gulp",
+      "env": {
+        "PROJECT": "custom.tools"
+      }
+    },
     "ghpages:debug": {
       "command": "gulp",
       "env": {
