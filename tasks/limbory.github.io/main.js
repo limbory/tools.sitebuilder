@@ -46,7 +46,7 @@ module.exports = function(gulp) {
       rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
       baseDir: util.dir(dir.js.src),
       distDir: util.dir(dir.js.dist),
-      devMode: env.NODE_ENV === 'production' ? '' : 'eval-source-map',
+      devMode: env.NODE_ENV === 'production' ? '' : ''/*'eval-source-map'*/,
       isCompress: env.NODE_ENV === 'production' ? true : false
     };
 

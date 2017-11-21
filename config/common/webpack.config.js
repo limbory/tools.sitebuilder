@@ -7,6 +7,9 @@
 
 'use strict';
 
+const
+  webpack = require('webpack');
+
 module.exports = {
 
   /* 输入输出 */
@@ -29,29 +32,31 @@ module.exports = {
   module: {
     rules: [{
       test: /(\.jsx|\.js)$/,
-      use: {
+      use: [{
+        loader: 'es3ify-loader'
+      }, {
         loader: 'babel-loader',
         options: {
-          presets: ['es2015', 'stage-0', 'flow-vue', 'react'],
-          plugins: [
-            ['transform-runtime', {
-              'helpers': false, // 该选项有问题，必须设置为false
-              'polyfill': false, // 该选项有问题，必须设置为false
-              'regenerator': true,
-              'moduleName': 'babel-runtime'
+          presets: [
+            ['env', {
+              'targets': { 'browsers': ['>= 1%', 'ie >= 7'] }
             }]
+            /*'es2015', 'stage-0', 'flow-vue', 'react'*/
           ]
         }
-      }
+      }]
     }, {
       test: /\.pug$/,
-      use: { loader: 'pug-loader' }
+      use: [{
+        loader: 'pug-loader'
+      }]
     }, {
       test: /\.css$/,
-      use: [
-        { loader: 'style-loader' },
-        { loader: 'css-loader' }
-      ]
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
+      }]
     }]
   },
 
