@@ -20,7 +20,15 @@ const
 module.exports = function(gulp) {
   gulp.task('jshint', function() {
     util.validToolConfig(process, defaultDir, function(sourceDir) {
-      gulp.src(path.win32.join(sourceDir, '**/*.js'))
+      gulp.src([
+          path.win32.join(sourceDir, '**/*.js'),
+          '!' + path.win32.join(sourceDir, 'node_modules/**/*.js'),
+          '!' + path.win32.join(sourceDir, '**/node_modules/**/*.js'),
+          '!' + path.win32.join(sourceDir, 'assets/**/*.js'),
+          '!' + path.win32.join(sourceDir, '**/assets/**/*.js'),
+          '!' + path.win32.join(sourceDir, 'public/**/*.js'),
+          '!' + path.win32.join(sourceDir, '**/public/**/*.js'),
+        ])
         .pipe(jshint(jshintCfg))
         .pipe(jshint.reporter('default'))
         .pipe(named(function(file) {
