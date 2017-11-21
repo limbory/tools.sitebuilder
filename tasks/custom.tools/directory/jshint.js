@@ -7,7 +7,5 @@
 'use strict';
 
 module.exports = [
-  'E:\\Workspace\\website.pages-builder\\tasks\\',
-  'E:\\Workspace\\website.pages-builder\\config\\',
-  'E:\\Workspace\\website.pages-builder\\lib\\',
+  'E:\\Workspace\\website.pages-builder\\',
 ];
