@@ -7,9 +7,6 @@
 
 'use strict';
 
-const
-  webpack = require('webpack');
-
 module.exports = {
 
   /* 输入输出 */

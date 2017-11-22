@@ -19,7 +19,7 @@ module.exports = function(gulp) {
 
       browserSync.init({
         server: {
-          baseDir: sourceDir,
+          baseDir: decodeURI(sourceDir),
           directory: true
         },
         port: 3355,

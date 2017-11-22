@@ -11,51 +11,22 @@ const
   gulpSequence = require('gulp-sequence'),
   gulpWatch    = require('gulp-watch'),
   browserSync  = require('browser-sync').create(),
-  fs           = require('fs'),
   exec         = require('child_process').exec,
+  fs           = require('fs'),
   
-  env          = process.env,
-  util         = require('../util'),
-  dir          = require(util.dir('config/directory'))(env.PROJECT + '/'),
-  pug2html     = require(util.dir('tasks/common/pug2html')),
-  html2pug     = require(util.dir('tasks/common/html2pug')),
-  stylus2css   = require(util.dir('tasks/common/stylus2css')),
-  css2stylus   = require(util.dir('tasks/common/css2stylus')),
-  less2stylus  = require(util.dir('tasks/common/less2stylus')),
-  packjs       = require(util.dir('tasks/common/packjs')),
-  clean        = require(util.dir('tasks/common/clean'));
+  env  = process.env,
+  util = require('../util'),
+  dir  = require('./directory/main')(env.PROJECT + '/');
 
 module.exports = function(gulp) {
 
-  const
-    fullDirMsgHTML = {
-      rootDir: util.createSrcDir(dir.html.src, '.pug', dir.exclude),
-      baseDir: util.dir(dir.html.src),
-      distDir: util.dir(dir.html.dist),
-      server: dir.server[env.NODE_ENV]
-    },
-    fullDirMsgCSS = {
-      rootDir: util.createSrcDir(dir.css.src, '.styl', dir.exclude),
-      baseDir: util.dir(dir.css.src),
-      distDir: util.dir(dir.css.dist),
-      assetsDir: util.dir(dir.dist + 'assets/'),
-      server: dir.server[env.NODE_ENV],
-      isCompress: env.NODE_ENV === 'production' ? true : false
-    },
-    fullDirMsgJS = {
-      rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
-      baseDir: util.dir(dir.js.src),
-      distDir: util.dir(dir.js.dist),
-      devMode: env.NODE_ENV === 'production' ? '' : ''/*'eval-source-map'*/,
-      isCompress: env.NODE_ENV === 'production' ? true : false
-    };
-
-
-  /* 清除构建文件 */
-  gulp.task('clean', function() {
-    return clean({ fileDir: util.deleteSrcDir(dir.dist, ['assets/', '*.md', '*.yml', '.git*']) });
-  });
-
+  require('./components/clean')(gulp);
+  require('./components/pug2html')(gulp);
+  require('./components/stylus2css')(gulp);
+  require('./components/packjs')(gulp);
+  require('./components/css2stylus')(gulp);
+  require('./components/less2stylus')(gulp);
+  require('./components/html2pug')(gulp);
 
   /* 开发模块 */
   gulp.task('dev', function() {
@@ -68,9 +39,9 @@ module.exports = function(gulp) {
       // 启动服务端
       browserSync.init({
         server: { baseDir: util.dir(serviceFolder) },
-        // notify: false,
         port: 3356,
-        // logLevel: "silent"
+        // notify: false,
+        // logLevel: "silent",
       });
       // 启动jekyll构建任务
       exec('cd ' + dir.dist + ' && jekyll b --watch');
@@ -90,17 +61,9 @@ module.exports = function(gulp) {
 
     });
   });
-  gulp.task('pug2html', function() { return pug2html(fullDirMsgHTML); });
-  gulp.task('stylus2css', function() { return stylus2css(fullDirMsgCSS); });
-  gulp.task('packjs', function() { return packjs(fullDirMsgJS); });
 
 
   /* 静态文件构建模块 */
   gulp.task('production', gulpSequence('clean', 'pug2html', 'stylus2css', 'packjs'));
 
-
-  /* 工具模块 */
-  gulp.task('css2stylus', function() { return css2stylus(null); });
-  gulp.task('less2stylus', function() { return less2stylus(null); });
-  gulp.task('html2pug', function() { return html2pug(null); });
 };

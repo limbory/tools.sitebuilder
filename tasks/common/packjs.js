@@ -14,9 +14,7 @@ const
   webpack = require('webpack-stream'),
   webpackOrigin = require('webpack'),
 
-  util = require('../util'),
-  jshintCfg = require(util.dir('config/common/jshint.config')),
-  webpackCfg = require(util.dir('config/common/webpack.config'));
+  util = require('../util');
 
 module.exports = function(config) {
   var cfg = Object.assign({
@@ -26,6 +24,10 @@ module.exports = function(config) {
     isCompress: false, // 转换后是否压缩（默认不压缩）
     devMode: '', // 调试模式
   }, config);
+
+  var
+    jshintCfg = require(cfg.jshintCfg),
+    webpackCfg = require(cfg.webpackCfg);
 
   var stream = gulp.src(cfg.rootDir, {
       base: cfg.baseDir
