@@ -33,8 +33,6 @@ module.exports = {
     rules: [{
       test: /(\.jsx|\.js)$/,
       use: [{
-        loader: 'es3ify-loader'
-      }, {
         loader: 'babel-loader',
         options: {
           presets: [

@@ -20,14 +20,14 @@
     "ghpages:debug": {
       "command": "gulp",
       "env": {
-        "PROJECT": "limbory.github.io",
+        "PROJECT": "yuuuki.gitee.io",
         "NODE_ENV": "dev"
       }
     },
     "ghpages:build": {
       "command": "gulp production",
       "env": {
-        "PROJECT": "limbory.github.io",
+        "PROJECT": "yuuuki.gitee.io",
         "NODE_ENV": "production"
       }
     }

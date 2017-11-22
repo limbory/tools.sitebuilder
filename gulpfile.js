@@ -14,7 +14,7 @@ const
 
 switch (env.PROJECT) {
 
-  case 'limbory.github.io':
+  case 'yuuuki.gitee.io':
     require('./tasks/' + env.PROJECT + '/main')(gulp);
     break;
 

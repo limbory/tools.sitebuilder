@@ -13,17 +13,17 @@ const
   browserSync  = require('browser-sync').create(),
   fs           = require('fs'),
   exec         = require('child_process').exec,
-
-  env         = process.env,
-  util        = require('../util'),
-  dir         = require(util.dir('config/directory'))(env.PROJECT + '/'),
-  pug2html    = require(util.dir('tasks/common/pug2html')),
-  html2pug    = require(util.dir('tasks/common/html2pug')),
-  stylus2css  = require(util.dir('tasks/common/stylus2css')),
-  css2stylus  = require(util.dir('tasks/common/css2stylus')),
-  less2stylus = require(util.dir('tasks/common/less2stylus')),
-  packjs      = require(util.dir('tasks/common/packjs')),
-  clean       = require(util.dir('tasks/common/clean'));
+  
+  env          = process.env,
+  util         = require('../util'),
+  dir          = require(util.dir('config/directory'))(env.PROJECT + '/'),
+  pug2html     = require(util.dir('tasks/common/pug2html')),
+  html2pug     = require(util.dir('tasks/common/html2pug')),
+  stylus2css   = require(util.dir('tasks/common/stylus2css')),
+  css2stylus   = require(util.dir('tasks/common/css2stylus')),
+  less2stylus  = require(util.dir('tasks/common/less2stylus')),
+  packjs       = require(util.dir('tasks/common/packjs')),
+  clean        = require(util.dir('tasks/common/clean'));
 
 module.exports = function(gulp) {
 
