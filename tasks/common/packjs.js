@@ -43,8 +43,17 @@ module.exports = function(config) {
 
   if (cfg.isCompress) {
     webpackCfg.plugins.push(new webpackOrigin.optimize.UglifyJsPlugin({
-      output: { comments: false },
-      compress: { warnings: false }
+      compress: {
+        warnings: false,
+        screw_ie8: false
+      },
+      mangle: {
+        screw_ie8: false
+      },
+      output: {
+        comments: false,
+        screw_ie8: false
+      }
     }));
     delete webpackCfg.devtool;
   }

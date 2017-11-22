@@ -7,6 +7,10 @@
 
 'use strict';
 
+const
+  webpack = require('webpack'),
+  es3ifyWebpackPlugin = require('es3ify-webpack-plugin');
+
 module.exports = {
 
   /* 输入输出 */
@@ -34,7 +38,7 @@ module.exports = {
         options: {
           presets: [
             ['env', {
-              'targets': { 'browsers': ['>= 1%', 'ie >= 7'] }
+              'targets': { 'browsers': ['>= 1%', 'ie >= 6'] }
             }]
             /*'es2015', 'stage-0', 'flow-vue', 'react'*/
           ]
@@ -57,9 +61,20 @@ module.exports = {
 
   /* plugins */
   plugins: [
+    new es3ifyWebpackPlugin(),
     // new webpack.optimize.UglifyJsPlugin({
-    //   output: { comments: false },
-    //   compress: { warnings: false }
+    //   compress: {
+    //     warnings: false,
+    //     screw_ie8: false
+    //   },
+    //   mangle: {
+    //     screw_ie8: false
+    //   },
+    //   output: {
+    //     comments: false,
+    //     screw_ie8: false
+    //   }
+
     // }),
   ]
 };

@@ -61,11 +61,15 @@
     "babel-runtime": "^5.8.38",
     "better-npm-run": "^0.1.0",
     "browser-sync": "^2.18.13",
+    "console-polyfill": "^0.3.0",
     "core-js": "^2.5.1",
     "css-loader": "^0.28.7",
     "css2stylus": "^0.5.0",
     "es3ify-loader": "^0.2.0",
     "es3ify-webpack-plugin": "^0.0.1",
+    "es5-shim": "^4.5.9",
+    "es5-shim-sham": "^0.0.1",
+    "es6-promise": "^4.1.1",
     "express": "^4.15.4",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
@@ -103,7 +107,7 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
-    "jquery": "^1.11.0",
+    "jquery": "^2.0.0",
     "jquery-dotdotdot": "~1.8.0"
   }
 }
