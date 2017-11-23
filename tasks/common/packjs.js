@@ -58,7 +58,7 @@ module.exports = function(config) {
     delete webpackCfg.devtool;
   }
 
-  return stream.pipe(webpack(webpackCfg))
+  return stream.pipe(webpack(webpackCfg, webpackOrigin))
     .pipe(gulp.dest(cfg.distDir));
 
 };

@@ -1,5 +1,5 @@
 /**
- * webpack 配置文件
+ * webpack 配置文件（兼容ie8）
  * @authors C.H.Wang (751386356@qq.com)
  * @date    2017-11-06 10:53:00
  * @version 1.0
@@ -8,8 +8,7 @@
 'use strict';
 
 const
-  webpack = require('webpack'),
-  es3ifyWebpackPlugin = require('es3ify-webpack-plugin');
+  ES3IFYWEBPACKPLUGIN = require('es3ify-webpack-plugin');
 
 module.exports = {
 
@@ -32,49 +31,35 @@ module.exports = {
   /* loaders */
   module: {
     rules: [{
-      test: /(\.jsx|\.js)$/,
+      test: /\.js$/,
+      exclude: /node_modules/,
       use: [{
         loader: 'babel-loader',
         options: {
           presets: [
             ['env', {
-              'targets': { 'browsers': ['>= 1%', 'ie >= 6'] }
+              'targets': { 'browsers': ['>= 1%', 'ie >= 8'] }
             }]
-            /*'es2015', 'stage-0', 'flow-vue', 'react'*/
+          ],
+          plugins: [
+            ['transform-runtime']
           ]
         }
       }]
+
     }, {
-      test: /\.pug$/,
+      test: /\.js$/,
+      exclude: /node_modules/,
+      enforce: 'post',
       use: [{
-        loader: 'pug-loader'
+        loader: 'es3ify-loader'
       }]
-    }, {
-      test: /\.css$/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader'
-      }]
+
     }]
   },
 
   /* plugins */
   plugins: [
-    new es3ifyWebpackPlugin(),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //     screw_ie8: false
-    //   },
-    //   mangle: {
-    //     screw_ie8: false
-    //   },
-    //   output: {
-    //     comments: false,
-    //     screw_ie8: false
-    //   }
-
-    // }),
+    new ES3IFYWEBPACKPLUGIN(),
   ]
 };

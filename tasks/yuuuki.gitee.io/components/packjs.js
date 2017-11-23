@@ -16,15 +16,17 @@ const
 module.exports = function(gulp) {
 
   gulp.task('packjs', function() {
+    
     return packjs({
       rootDir: util.createSrcDir(dir.js.src, '.js', dir.exclude),
       baseDir: util.dir(dir.js.src),
       distDir: util.dir(dir.js.dist),
       devMode: env.NODE_ENV === 'production' ? '' : ''/*'eval-source-map'*/,
-      isCompress: env.NODE_ENV === 'production' ? true : true,
+      isCompress: env.NODE_ENV === 'production' ? true : false,
       jshintCfg: util.dir('tasks/yuuuki.gitee.io/config/jshint.config'),
       webpackCfg: util.dir('tasks/yuuuki.gitee.io/config/webpack.config')
     });
+
   });
 
 };
