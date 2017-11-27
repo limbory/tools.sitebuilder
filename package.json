@@ -8,7 +8,9 @@
     "test": "gulp",
     "tool": "better-npm-run tool",
     "ghpages:dev": "better-npm-run ghpages:debug",
-    "ghpages:production": "better-npm-run ghpages:build"
+    "ghpages:production": "better-npm-run ghpages:build",
+    "vue:dev": "better-npm-run vue:debug",
+    "vue:production": "better-npm-run vue:build"
   },
   "betterScripts": {
     "tool": {
@@ -28,6 +30,20 @@
       "command": "gulp production",
       "env": {
         "PROJECT": "yuuuki.gitee.io",
+        "NODE_ENV": "production"
+      }
+    },
+    "vue:debug": {
+      "command": "gulp",
+      "env": {
+        "PROJECT": "website.vue",
+        "NODE_ENV": "dev"
+      }
+    },
+    "vue:build": {
+      "command": "gulp production",
+      "env": {
+        "PROJECT": "website.vue",
         "NODE_ENV": "production"
       }
     }

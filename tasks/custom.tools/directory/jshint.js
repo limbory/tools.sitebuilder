@@ -7,5 +7,5 @@
 'use strict';
 
 module.exports = [
-  'E:\\Workspace\\website.pages-builder\\',
+  'E:\\Workspace\\tools.sitebuilder\\',
 ];

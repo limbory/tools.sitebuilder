@@ -22,6 +22,10 @@ switch (env.PROJECT) {
     require('./tasks/' + env.PROJECT + '/main')(gulp);
     break;
 
+  case 'website.vue':
+    require('./tasks/' + env.PROJECT + '/main')(gulp);
+    break;
+
   default:
     void 0;
 }
