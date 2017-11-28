@@ -36,6 +36,7 @@ module.exports = {
       use: [{
         loader: 'babel-loader',
         options: {
+          babelrc: false,
           presets: [
             ['env', {
               'targets': { 'browsers': ['>= 1%', 'ie >= 8'] }

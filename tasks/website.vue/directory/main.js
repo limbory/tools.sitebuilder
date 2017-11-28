@@ -40,8 +40,8 @@ module.exports = function(pathName) {
         version: '?v1.0.0'
       },
       production: {
-        baseUrl: '/home/',
-        assetsUrl: '/home/assets/',
+        baseUrl: '/',
+        assetsUrl: '/assets/',
         version: '?v1.0.2'
       }
     }

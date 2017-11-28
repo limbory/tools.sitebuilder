@@ -14,43 +14,85 @@ const
   util = require('../../util'),
   dir = require('../directory/main')(env.PROJECT + '/');
 
-var config = {
-  output: {
-    path: util.dir(dir.js.dist),
-    filename: '[name].js'
-  },
-  /* loaders */
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['env', {
-              'targets': { 'browsers': ['>= 5%', 'ie >= 10'] }
-            }]
-          ],
-          plugins: [
-            ['transform-runtime']
-          ]
-        }
+var
+  babelrc = {
+    presets: [
+      ['env', {
+        'targets': { 'browsers': ['>= 1%', 'ie >= 9'] }
       }]
-
-    // }, {
-    //   test: /\.js$/,
-    //   exclude: /node_modules/,
-    //   enforce: 'post',
-    //   use: [{
-    //     loader: 'es3ify-loader'
-    //   }]
-
-    }]
+    ],
+    plugins: [
+      ['transform-runtime']
+    ]
   },
+  config = {
+    output: {
+      path: util.dir(dir.js.dist),
+      filename: '[name].js'
+    },
+    resolve: {
+      alias: {
+        'vue': 'vue/dist/vue.js'
+      }
+    },
 
-  /* plugins */
-  plugins: []
+    /* loaders */
+    module: {
+      rules: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader'
+        }]
+
+      }, {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'vue-loader'
+        }]
+
+      }, {
+        test: /\.pug$/,
+        use: [{
+          loader: 'pug-loader'
+        }]
+
+      }, {
+        test: /\.styl$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'stylus-loader'
+        }]
+
+      }, {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }]
+
+      }, {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+
+      }, {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader'
+        }]
+
+      }]
+    },
+
+    /* plugins */
+    plugins: []
   
 };
 if (env.NODE_ENV === 'production') {
