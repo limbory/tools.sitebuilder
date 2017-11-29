@@ -2,9 +2,9 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": [">= 1%", "ie >= 9"]
+        "browsers": [">= 5%", "ie >= 10"]
       }
-    }]
+    }], "flow-vue"
   ],
   "plugins": [
     ["transform-runtime"]

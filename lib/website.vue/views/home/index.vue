@@ -13,6 +13,7 @@
     },
     components: {}
   }
+  
 </script>
 
 <style lang="stylus" src="../../style/home/index.styl" scoped></style>

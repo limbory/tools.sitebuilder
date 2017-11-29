@@ -9,93 +9,96 @@
 
 const
   webpack = require('webpack'),
+  stylusLoader = require('stylus-loader'),
+  babelLoader = require('babel-loader'),
 
   env = process.env,
   util = require('../../util'),
   dir = require('../directory/main')(env.PROJECT + '/');
 
-var
-  babelrc = {
-    presets: [
-      ['env', {
-        'targets': { 'browsers': ['>= 1%', 'ie >= 9'] }
-      }]
-    ],
-    plugins: [
-      ['transform-runtime']
-    ]
+var config = {
+  output: {
+    path: util.dir(dir.js.dist),
+    filename: '[name].js'
   },
-  config = {
-    output: {
-      path: util.dir(dir.js.dist),
-      filename: '[name].js'
-    },
-    resolve: {
-      alias: {
-        'vue': 'vue/dist/vue.js'
-      }
-    },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
 
-    /* loaders */
-    module: {
-      rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [{
-          loader: 'babel-loader'
-        }]
-
-      }, {
-        test: /\.vue$/,
-        exclude: /node_modules/,
-        use: [{
-          loader: 'vue-loader'
-        }]
-
-      }, {
-        test: /\.pug$/,
-        use: [{
-          loader: 'pug-loader'
-        }]
-
-      }, {
-        test: /\.styl$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'stylus-loader'
-        }]
-
-      }, {
-        test: /\.css$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }]
-
-      }, {
-        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-        use: [{
-          loader: 'file-loader'
-        }]
-
-      }, {
-        test: /\.(png|jpg|gif)$/,
-        use: [{
-          loader: 'file-loader'
-        }]
-
+  /* loaders */
+  module: {
+    rules: [{
+      test: /\.pug$/,
+      use: [{
+        loader: 'pug-loader'
       }]
-    },
 
-    /* plugins */
-    plugins: []
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'babel-loader'
+      }]
+
+    }, {
+      test: /\.vue$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'vue-loader'
+      }]
+
+    }, {
+      test: /\.styl$/,
+      use: [{
+        loader: 'vue-style-loader'
+      }, {
+        loader: 'css-loader'
+      }, {
+        loader: 'stylus-loader'
+      }]
+
+    }, {
+      test: /\.css$/,
+      use: [{
+        loader: 'vue-style-loader'
+      }, {
+        loader: 'css-loader'
+      }]
+
+    }, {
+      test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+      use: [{
+        loader: 'file-loader'
+      }]
+
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: [{
+        loader: 'file-loader'
+      }]
+
+    }]
+  },
+
+  /* plugins */
+  plugins: [
+    new stylusLoader.OptionsPlugin({
+      default: {
+        use: [require('nib')()],
+      },
+    }),
+  ]
   
 };
 if (env.NODE_ENV === 'production') {
+
+  config.plugins.push(new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: '"production"'
+    }
+  }));
 
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({
 
