@@ -23,7 +23,10 @@ var config = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.common.js'
+      'vue$': 'vue/dist/vue.common.js',
+      'css': util.dir(dir.styl.src),
+      'js': util.dir(dir.js.src),
+      'tpl': util.dir(dir.tpl.src)
     }
   },
 
@@ -86,7 +89,8 @@ var config = {
   plugins: [
     new stylusLoader.OptionsPlugin({
       default: {
-        use: [require('nib')()],
+        'use': [require('nib')()],
+        'import': ['~nib/lib/nib/index.styl']
       },
     }),
   ]

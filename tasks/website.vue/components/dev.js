@@ -28,7 +28,7 @@ module.exports = function(gulp) {
       browserSync.init({
         server: { baseDir: util.dir(dir.dist) },
         port: 3356,
-        // notify: false,
+        notify: false,
         // logLevel: "silent",
       });
 
