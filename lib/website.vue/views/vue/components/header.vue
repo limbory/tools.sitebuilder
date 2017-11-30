@@ -1,28 +1,29 @@
 <style lang="stylus" src="css/components/header.styl" scoped></style>
 
 <template lang="pug">
-  div
-    h1 {{ variable1 }}
-    h2 {{ variable2 }}
-    h3 {{ variable1 }}
+  header#main-header.header-outer
+    .header-holder
+    .header-content.fix.cover
+      header-topbar
+      header-main-nav
 
 </template>
 
 <script>
   import { mapState } from 'vuex';
 
+  import headerTopbar from 'tpl/vue/components/header.topbar.vue'
+  import headerMainNav from 'tpl/vue/components/header.mainNav.vue'
+
   export default {
     data() {
-      return {
-        variable0: '12dewdsw'
-      };
+      return {};
     },
-    computed: mapState({
-      variable1() {
-        return this.variable0.slice(3);
-      },
-      variable2: state => state.home.variable1
-    })
+    computed: mapState({}),
+    components: {
+      headerTopbar,
+      headerMainNav
+    }
   }
   
 </script>

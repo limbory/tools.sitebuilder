@@ -1,7 +1,10 @@
-<style lang="stylus" src="css/components/footer.styl" scoped></style>
+<style lang="stylus" src="css/components/header.mainNav.styl" scoped></style>
 
 <template lang="pug">
-  div
+  .header-main-nav
+    a.logo(href="javascript:;")
+      img(src='', alt="香港航空")
+    nav
 
 </template>
 

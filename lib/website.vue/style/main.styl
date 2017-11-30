@@ -1,10 +1,11 @@
 @charset 'utf-8'
 
-@import '~css/common/constant'
-@import '~css/common/mixin'
-
+/* css-reset */
 global-reset()
 
+/* 自定义字体 */
+
+/* 通用样式 */
 .clearfix,
 .cf
   clearfix()
@@ -13,11 +14,11 @@ global-reset()
 .fr
   float right
   
-.c-rel
+.rel
   position relative
-.c-abs
+.abs
   position absolute
-.c-fix
+.fix
   position fixed
 .tz
   top 0
@@ -34,23 +35,23 @@ global-reset()
   left 0
   z-index 20000
   
-.c-list-n
+.listn
   list-style none
-.c-overhide
+.overh
   overflow hidden
 
-.c-blo
+.blo
   display block
-.c-inl
+.inl
   display inline-block
-.c-tb
+.tb
   display table
   width 100%
   height 100%
-.c-tbc
+.tbc
   display table-cell
   vertical-align middle
-.c-hidden
+.hidden
   display none!important
 .tl
   text-align left
@@ -58,6 +59,15 @@ global-reset()
   text-align center
 .tr
   text-align right
-.c-circle
+.circle
   border-radius 50%
+  
+i.icon
+  display inline-block
+  background transparent center no-repeat
+  background-size 1em
+  text-align center
+  width 1.5em
+  &.chat
+    background-image server-url('images/icon/icon_livechat_web.png')
 

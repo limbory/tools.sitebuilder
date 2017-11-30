@@ -2,9 +2,6 @@
 
 <template lang="pug">
   div
-    h1 {{ variable1 }}
-    h2 {{ variable2 }}
-    h3 {{ variable1 }}
 
 </template>
 
@@ -13,16 +10,9 @@
 
   export default {
     data() {
-      return {
-        variable0: '12dewdsw'
-      };
+      return {};
     },
-    computed: mapState({
-      variable1() {
-        return this.variable0.slice(3);
-      },
-      variable2: state => state.home.variable1
-    })
+    computed: mapState({})
   }
   
 </script>

@@ -9,6 +9,7 @@
 
 const
   webpack = require('webpack'),
+  stylus = require('stylus'),
   stylusLoader = require('stylus-loader'),
   babelLoader = require('babel-loader'),
 
@@ -63,6 +64,23 @@ var config = {
       }]
 
     }, {
+      test: /\.less$/,
+      use: [{
+        loader: 'vue-style-loader'
+      }, {
+        loader: 'css-loader'
+      }, {
+        loader: 'less-loader',
+        options: {
+          globalVars: {
+             'icon-font-path': '"' + dir.server[env.NODE_ENV].assetsUrl + 'fonts/"',
+             'icon-font-name': '"glyphicons-halflings-regular"',
+             'icon-font-svg-id': '"glyphicons_halflingsregular"'
+          }
+        }
+      }]
+
+    }, {
       test: /\.css$/,
       use: [{
         loader: 'vue-style-loader'
@@ -90,7 +108,22 @@ var config = {
     new stylusLoader.OptionsPlugin({
       default: {
         'use': [require('nib')()],
-        'import': ['~nib/lib/nib/index.styl']
+        'import': [
+          '~nib/lib/nib/index.styl',
+          util.dir(dir.styl.src + 'common/constant.styl'),
+          util.dir(dir.styl.src + 'common/mixin.styl'),
+        ],
+        // 'include css': true,
+        'define': {
+          'inline-url': stylus.url({
+            paths: [util.dir(dir.dist + 'assets/')]
+          }),
+          'server-url': function (url) {
+            return new stylus.nodes
+              .Literal('url(' + dir.server[env.NODE_ENV].assetsUrl + 
+                url.val + dir.server[env.NODE_ENV].version + ')');
+          }
+        }
       },
     }),
   ]
