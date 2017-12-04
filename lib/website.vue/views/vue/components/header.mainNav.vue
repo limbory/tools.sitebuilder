@@ -2,8 +2,8 @@
 
 <template lang="pug">
   .header-main-nav
-    a.logo(href="javascript:;")
-      img(src='', alt="香港航空")
+    a.logo(href='javascript:;')
+      img(:src='this.$root.assetsUrl("images/favicon.png")', alt='香港航空')
     nav
 
 </template>

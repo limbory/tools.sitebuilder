@@ -126,6 +126,16 @@ var config = {
         }
       },
     }),
+    // new webpack.LoaderOptionsPlugin({
+    //   options: {
+    //     context: util.dir(''),
+    //     vue: {
+    //       loaders: {
+    //         pug: '?locals[vsd]=123'
+    //       }
+    //     }
+    //   }
+    // })
   ]
   
 };
