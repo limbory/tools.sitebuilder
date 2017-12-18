@@ -73,7 +73,8 @@ var config = {
         loader: 'less-loader',
         options: {
           globalVars: {
-             'icon-font-path': '"' + dir.server[env.NODE_ENV].assetsUrl + 'fonts/"',
+              /* glyphicons图标字体配置 */
+             'icon-font-path': '"' + dir.server[env.NODE_ENV].assetsUrl + 'fonts/glyphicons/"',
              'icon-font-name': '"glyphicons-halflings-regular"',
              'icon-font-svg-id': '"glyphicons_halflingsregular"'
           }

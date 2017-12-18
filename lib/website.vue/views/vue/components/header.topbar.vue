@@ -5,7 +5,7 @@
     nav.fr
       ul.listn.cf
         li.item.fl(v-for='item in items')
-          a(href="javascript:;")
+          a.linkn(href="javascript:;")
             i.icon(v-if='item.icon' :class='item.icon') {{ /glyph/.test(item.icon) ? '' : '&nbsp;' }}
             span {{ item.name }}
             i.icon.glyphicon.glyphicon-chevron-down(v-if='item.dropList')

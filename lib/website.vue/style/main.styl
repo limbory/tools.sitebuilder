@@ -5,6 +5,44 @@ global-reset()
 
 /* 自定义字体 */
 
+/* latin */
+font-latin($src-1, $src-2 = 'Lato Regular', $src-3 = 'Lato-Regular', $font-style = normal, $font-weight = 400)
+  @font-face
+    font-family 'Lato'
+    font-style $font-style
+    font-weight $font-weight
+    src local($src-2), local($src-3), server-url($src-1) format('woff2')
+    {block}
+/* latin-ext */
++font-latin('fonts/Lato/UyBMtLsHKBKXelqf4x7VRQ.woff2')
+  unicode-range U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+/* latin */
++font-latin('fonts/Lato/1YwB1sO8YE1Lyjf12WNiUA.woff2')
+  unicode-range U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215
+/* latin-ext */
++font-latin('fonts/Lato/ObQr5XYcoH0WBoUxiaYK3_Y6323mHUZFJMgTvxaG2iE.woff2', 'Lato Bold', 'Lato-Bold',, 700)
+  unicode-range U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+/* latin */
++font-latin('fonts/Lato/H2DMvhDLycM56KNuAtbJYA.woff2', 'Lato Bold', 'Lato-Bold',, 700)
+  unicode-range U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215
+/* latin-ext */
++font-latin('fonts/Lato/YMOYVM-eg6Qs9YzV9OSqZfesZW2xOQ-xsNqO47m55DA.woff2', 'Lato Italic', 'Lato-Italic', italic)
+  unicode-range U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+/* latin */
++font-latin('fonts/Lato/PLygLKRVCQnA5fhu3qk5fQ.woff2', 'Lato Italic', 'Lato-Italic', italic)
+  unicode-range U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215
+/* latin-ext */
++font-latin('fonts/Lato/AcvTq8Q0lyKKNxRlL28RnxJtnKITppOI_IvcXXDNrsc.woff2', 'Lato Bold Italic', 'Lato-BoldItalic', italic, 700)
+  unicode-range U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+/* latin */
++font-latin('fonts/Lato/HkF_qI1x_noxlxhrhMQYEFtXRa8TVwTICgirnJhmVJw.woff2', 'Lato Bold Italic', 'Lato-BoldItalic', italic, 700)
+  unicode-range U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215
+
+
+
+body
+  font-family $fontFamily
+
 /* 通用样式 */
 .clearfix,
 .cf
@@ -37,6 +75,9 @@ global-reset()
   
 .listn
   list-style none
+.linkn
+  color inherit
+  text-decoration none
 .overh
   overflow hidden
 
@@ -69,5 +110,5 @@ i.icon
   text-align center
   width 1.5em
   &.chat
-    background-image server-url('images/icon/icon_livechat_web.png')
+    background-image server-url('images/icon_livechat_web.png')
 
