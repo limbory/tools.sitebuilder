@@ -59,6 +59,9 @@
     "url": "https://github.com/limbory/website.pages-builder/issues"
   },
   "homepage": "https://github.com/limbory/website.pages-builder#readme",
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
